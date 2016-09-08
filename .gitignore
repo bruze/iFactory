@@ -1,0 +1,126 @@
+Podfile.lock
+iFactory.xcodeproj/project.pbxproj
+iFactory.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+iFactory.xcodeproj/project.xcworkspace/xcuserdata/bgarelli.xcuserdatad/UserInterfaceState.xcuserstate
+iFactory.xcodeproj/xcuserdata/bgarelli.xcuserdatad/xcschemes/iFactory.xcscheme
+iFactory.xcodeproj/xcuserdata/bgarelli.xcuserdatad/xcschemes/xcschememanagement.plist
+iFactory.xcworkspace/contents.xcworkspacedata
+iFactory.xcworkspace/xcuserdata/bgarelli.xcuserdatad/UserInterfaceState.xcuserstate
+iFactory.xcworkspace/xcuserdata/bgarelli.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
+Pods/Manifest.lock
+Pods/EZSwiftExtensions/LICENSE
+Pods/EZSwiftExtensions/README.md
+Pods/EZSwiftExtensions/Sources/ArrayExtensions.swift
+Pods/EZSwiftExtensions/Sources/BlockButton.swift
+Pods/EZSwiftExtensions/Sources/BlockLongPress.swift
+Pods/EZSwiftExtensions/Sources/BlockPan.swift
+Pods/EZSwiftExtensions/Sources/BlockPinch.swift
+Pods/EZSwiftExtensions/Sources/BlockSwipe.swift
+Pods/EZSwiftExtensions/Sources/BlockTap.swift
+Pods/EZSwiftExtensions/Sources/BlockWebView.swift
+Pods/EZSwiftExtensions/Sources/BoolExtensions.swift
+Pods/EZSwiftExtensions/Sources/CGFloatExtensions.swift
+Pods/EZSwiftExtensions/Sources/CGRectExtensions.swift
+Pods/EZSwiftExtensions/Sources/CharacterExtensions.swift
+Pods/EZSwiftExtensions/Sources/DictionaryExtensions.swift
+Pods/EZSwiftExtensions/Sources/DoubleExtensions.swift
+Pods/EZSwiftExtensions/Sources/ErrorTypeExtensions.swift
+Pods/EZSwiftExtensions/Sources/EZSwiftFunctions.swift
+Pods/EZSwiftExtensions/Sources/IntExtensions.swift
+Pods/EZSwiftExtensions/Sources/NSAttributedStringExtensions.swift
+Pods/EZSwiftExtensions/Sources/NSBundleExtensions.swift
+Pods/EZSwiftExtensions/Sources/NSDateExtensions.swift
+Pods/EZSwiftExtensions/Sources/NSDictionaryExtensions.swift
+Pods/EZSwiftExtensions/Sources/NSObjectExtensions.swift
+Pods/EZSwiftExtensions/Sources/NSTimerExtensions.swift
+Pods/EZSwiftExtensions/Sources/NSURLExtensions.swift
+Pods/EZSwiftExtensions/Sources/NSUserDefaultsExtension.swift
+Pods/EZSwiftExtensions/Sources/StringExtensions.swift
+Pods/EZSwiftExtensions/Sources/UIAlertControllerExtensions.swift
+Pods/EZSwiftExtensions/Sources/UIApplicationExtensions.swift
+Pods/EZSwiftExtensions/Sources/UIBarButtonItemExtensions.swift
+Pods/EZSwiftExtensions/Sources/UIButtonExtensions.swift
+Pods/EZSwiftExtensions/Sources/UIColoredView.swift
+Pods/EZSwiftExtensions/Sources/UIColorExtensions.swift
+Pods/EZSwiftExtensions/Sources/UIDeviceExtensions.swift
+Pods/EZSwiftExtensions/Sources/UIFontExtensions.swift
+Pods/EZSwiftExtensions/Sources/UIImageExtensions.swift
+Pods/EZSwiftExtensions/Sources/UIImageViewExtensions.swift
+Pods/EZSwiftExtensions/Sources/UILabelExtensions.swift
+Pods/EZSwiftExtensions/Sources/UISliderExtensions.swift
+Pods/EZSwiftExtensions/Sources/UIStoryboardExtensions.swift
+Pods/EZSwiftExtensions/Sources/UISwitchExtensions.swift
+Pods/EZSwiftExtensions/Sources/UITextFieldExtensions.swift
+Pods/EZSwiftExtensions/Sources/UITextViewExtensions.swift
+Pods/EZSwiftExtensions/Sources/UIUserInterfaceSizeClassExtensions.swift
+Pods/EZSwiftExtensions/Sources/UIViewControllerExtensions.swift
+Pods/EZSwiftExtensions/Sources/UIViewExtensions.swift
+Pods/EZSwiftExtensions/Sources/UIWindowExtensions.swift
+Pods/LTInfiniteScrollView/LICENSE
+Pods/LTInfiniteScrollView/README.md
+Pods/LTInfiniteScrollView/LTInfiniteScrollView/LTInfiniteScrollView.h
+Pods/LTInfiniteScrollView/LTInfiniteScrollView/LTInfiniteScrollView.m
+Pods/Pods.xcodeproj/project.pbxproj
+Pods/Pods.xcodeproj/xcuserdata/bgarelli.xcuserdatad/xcschemes/EZSwiftExtensions.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/bgarelli.xcuserdatad/xcschemes/LTInfiniteScrollView.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/bgarelli.xcuserdatad/xcschemes/Pods-iFactory.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/bgarelli.xcuserdatad/xcschemes/PropertyExtensions.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/bgarelli.xcuserdatad/xcschemes/SwiftFilePath.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/bgarelli.xcuserdatad/xcschemes/SwiftString-SwiftString.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/bgarelli.xcuserdatad/xcschemes/SwiftString.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/bgarelli.xcuserdatad/xcschemes/xcschememanagement.plist
+Pods/PropertyExtensions/LICENSE
+Pods/PropertyExtensions/README.md
+Pods/PropertyExtensions/PropertyExtensions/PropertyExtensions.h
+Pods/PropertyExtensions/PropertyExtensions/PropertyExtensions.swift
+Pods/SwiftFilePath/LICENSE
+Pods/SwiftFilePath/README.md
+Pods/SwiftFilePath/SwiftFilePath/Path.swift
+Pods/SwiftFilePath/SwiftFilePath/PathExtensionDir.swift
+Pods/SwiftFilePath/SwiftFilePath/PathExtensionFile.swift
+Pods/SwiftFilePath/SwiftFilePath/Result.swift
+Pods/SwiftString/LICENSE
+Pods/SwiftString/README.md
+Pods/SwiftString/Pod/Classes/String+HTML.swift
+Pods/SwiftString/Pod/Classes/StringExtensions.swift
+Pods/Target Support Files/EZSwiftExtensions/EZSwiftExtensions-dummy.m
+Pods/Target Support Files/EZSwiftExtensions/EZSwiftExtensions-prefix.pch
+Pods/Target Support Files/EZSwiftExtensions/EZSwiftExtensions-umbrella.h
+Pods/Target Support Files/EZSwiftExtensions/EZSwiftExtensions.modulemap
+Pods/Target Support Files/EZSwiftExtensions/EZSwiftExtensions.xcconfig
+Pods/Target Support Files/EZSwiftExtensions/Info.plist
+Pods/Target Support Files/LTInfiniteScrollView/Info.plist
+Pods/Target Support Files/LTInfiniteScrollView/LTInfiniteScrollView-dummy.m
+Pods/Target Support Files/LTInfiniteScrollView/LTInfiniteScrollView-prefix.pch
+Pods/Target Support Files/LTInfiniteScrollView/LTInfiniteScrollView-umbrella.h
+Pods/Target Support Files/LTInfiniteScrollView/LTInfiniteScrollView.modulemap
+Pods/Target Support Files/LTInfiniteScrollView/LTInfiniteScrollView.xcconfig
+Pods/Target Support Files/Pods-iFactory/Info.plist
+Pods/Target Support Files/Pods-iFactory/Pods-iFactory-acknowledgements.markdown
+Pods/Target Support Files/Pods-iFactory/Pods-iFactory-acknowledgements.plist
+Pods/Target Support Files/Pods-iFactory/Pods-iFactory-dummy.m
+Pods/Target Support Files/Pods-iFactory/Pods-iFactory-frameworks.sh
+Pods/Target Support Files/Pods-iFactory/Pods-iFactory-resources.sh
+Pods/Target Support Files/Pods-iFactory/Pods-iFactory-umbrella.h
+Pods/Target Support Files/Pods-iFactory/Pods-iFactory.debug.xcconfig
+Pods/Target Support Files/Pods-iFactory/Pods-iFactory.modulemap
+Pods/Target Support Files/Pods-iFactory/Pods-iFactory.release.xcconfig
+Pods/Target Support Files/PropertyExtensions/Info.plist
+Pods/Target Support Files/PropertyExtensions/PropertyExtensions-dummy.m
+Pods/Target Support Files/PropertyExtensions/PropertyExtensions-prefix.pch
+Pods/Target Support Files/PropertyExtensions/PropertyExtensions-umbrella.h
+Pods/Target Support Files/PropertyExtensions/PropertyExtensions.modulemap
+Pods/Target Support Files/PropertyExtensions/PropertyExtensions.xcconfig
+Pods/Target Support Files/SwiftFilePath/Info.plist
+Pods/Target Support Files/SwiftFilePath/SwiftFilePath-dummy.m
+Pods/Target Support Files/SwiftFilePath/SwiftFilePath-prefix.pch
+Pods/Target Support Files/SwiftFilePath/SwiftFilePath-umbrella.h
+Pods/Target Support Files/SwiftFilePath/SwiftFilePath.modulemap
+Pods/Target Support Files/SwiftFilePath/SwiftFilePath.xcconfig
+Pods/Target Support Files/SwiftString/Info.plist
+Pods/Target Support Files/SwiftString/ResourceBundle-SwiftString-Info.plist
+Pods/Target Support Files/SwiftString/SwiftString-dummy.m
+Pods/Target Support Files/SwiftString/SwiftString-prefix.pch
+Pods/Target Support Files/SwiftString/SwiftString-umbrella.h
+Pods/Target Support Files/SwiftString/SwiftString.modulemap
+Pods/Target Support Files/SwiftString/SwiftString.xcconfig

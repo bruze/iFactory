@@ -15,19 +15,12 @@ extension AMKButton {
         }
         set {
             setValue(newValue, forProperty: "defaultImage")
-            //resetView(currentImage)
             if defaultImage != nil {
                 resetView(imageContainer)
                 images[AMKTypeTag.ImageDefault] = defaultImage
                 imageContainer = UIImageView.init(image: defaultImage!)
                 addSubview(imageContainer)
-                //imageContainer.centerInSuperView()
-                //addSubview(imageContainer)
-                //imageContainer.origin.x += defaultImage!.size.width / 2 + size.width / 2
-                //imageContainer.origin.y += defaultImage!.size.height / 2 + size.height / 2
-                //imageContainer.centerInSuperView()
-                imageContainer.center = CGPoint.init(x: w / 2 /*- defaultImage!.size.width / 2*/, y: h / 2 /*- defaultImage!.size.height / 2*/)
-                //setImage(ForTag: AMKButton.AMKTypeTag.ImageDefault)
+                imageContainer.center = CGPoint.init(x: w / 2, y: h / 2)
             }
         }
     }
@@ -49,13 +42,26 @@ extension AMKButton {
             images[AMKTypeTag.ImageDisabled] = disabledImage
         }
     }
+    @IBInspectable var imageLeading: CGFloat {
+        get {
+            return getProperty("imageLeading", initial: 0)
+        }
+        set {
+            setValue(newValue, forProperty: "imageLeading")
+            imageContainer.center.x = w / 2 + imageLeading
+        }
+    }
+    @IBInspectable var imageYOffset: CGFloat {
+        get {
+            return getProperty("imageYOffset", initial: 0)
+        }
+        set {
+            setValue(newValue, forProperty: "imageYOffset")
+            imageContainer.center.y = h / 2 + imageYOffset
+        }
+    }
     var imageContainer: UIImageView {
         get {
-            /*if let view = viewWithTag(AMKTypeTag.CurrentImage.rawValue) {
-                view.center = CGPoint.init(x: w / 2, y: h / 2)
-                return view as? UIImageView
-            }
-            return UIImageView.init()*/
             return getProperty("imageContainer", initial: UIImageView.init())
         }
         set {
@@ -95,7 +101,7 @@ extension AMKButton {
             resetView(imageContainer)
             imageContainer = UIImageView.init(image: toSet)
             addSubview(imageContainer)
-            imageContainer.center = CGPoint.init(x: w / 2, y: h / 2)
+            imageContainer.center = CGPoint.init(x: w / 2 + imageLeading, y: h / 2 + imageYOffset)
         }
     }
 }

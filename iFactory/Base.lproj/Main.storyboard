@@ -21,6 +21,39 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="142"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IMz-Ns-Ld7" customClass="AMKButton" customModule="iFactory" customModuleProvider="target">
+                                <rect key="frame" x="46" y="309" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="defaultLabel" value="Hello"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="defaultBackColor">
+                                        <color key="value" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="pressBackColor">
+                                        <color key="value" red="0.65490198135375977" green="0.65490198135375977" blue="0.65490198135375977" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="labelFontColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="labelFontSize">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="defaultImage" value="iconMyRedemp"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="defLabelXOffset">
+                                        <real key="value" value="188"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="defLabelYOffset">
+                                        <real key="value" value="-32"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="pressImage" value="iconRedeemPoints"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="imageLeading">
+                                        <real key="value" value="-65"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="imageYOffset">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -31,4 +64,8 @@
             <point key="canvasLocation" x="-4.5" y="239.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iconMyRedemp" width="25" height="25"/>
+        <image name="iconRedeemPoints" width="25" height="25"/>
+    </resources>
 </document>

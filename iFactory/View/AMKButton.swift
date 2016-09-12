@@ -41,11 +41,6 @@ class AMKButton: UIView {
         }
     }
     var images: [AMKTypeTag: UIImage] = [:]
-    @IBInspectable var imageLeading: CGFloat = 10 {
-        didSet {
-            //currentImage?.origin.x += imageLeading
-        }
-    }
     @IBInspectable var labelRelativeImage: CGFloat = 5 {
         didSet {
             /*if let image = currentImage {

@@ -7,9 +7,20 @@
 //
 
 //import LTInfiniteScrollView
+import UIKit
+import EZSwiftExtensions
 import PropertyExtensions
 
-@IBDesignable class AMKCarousel: UIView, PropertyExtensions {
+@IBDesignable
+class AMKCarousel: UIView {
+    @IBInspectable override var storeID: String {
+        get {
+            return getProperty("storeID", initial: "")
+        }
+        set {
+            setValue(newValue, forProperty: "storeID")
+        }
+    }
     @IBOutlet var views: [UIView]? {
         didSet {
             scrollView.reloadDataWithInitialIndex(0)
@@ -33,7 +44,6 @@ import PropertyExtensions
         self.initialize()
     }
     func initialize() {
-        
     }
     override func didMoveToSuperview() {
         if !scrollSetupDone {
@@ -45,7 +55,7 @@ import PropertyExtensions
         }
     }
     override func didAddSubview(subview: UIView) {
-        subview.centerInSuperView()
+        //subview.centerInSuperView()
         setNeedsLayout()
     }
 }

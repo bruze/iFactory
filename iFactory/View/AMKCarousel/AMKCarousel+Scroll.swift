@@ -21,12 +21,27 @@ extension AMKCarousel: LTInfiniteScrollViewDataSource, LTInfiniteScrollViewDeleg
     }
     
     func viewAtIndex(index: Int, reusingView view: UIView?) -> UIView {
-        let button = AMKButton.init(frame: CGRect.init(x: 0, y: 0, width: 250, height: 100))
-        button.pressBackColor = UIColor.cyanColor()
-        button.addLabelWith(Text: "Cataplimba", AndOffset: CGPoint.zero)
-        button.defaultImage = UIImage.init(named: "iconMyRedemp")
-        button.pressImage = UIImage.init(named: "iconRedeemPoints")
-        return button
+        //let button = AMKButton.init(frame: CGRect.zero)
+        //button.defaultLabel = "Hello"
+        /*button.pressBackColor = UIColor.cyanColor()
+         button.defaultImage = UIImage.init(named: "iconMyRedemp")
+         button.pressImage = UIImage.init(named: "iconRedeemPoints")*/
+        //button.storeID = "DashButton" + String(index)
+        //button.decode()
+        /*if storeID == "specialCarrousel" {
+            let carousel = AMKCarousel.init(frame: CGRect.init(x: 400, y: 200, w: 200, h: 200))
+            carousel.setupScroll()
+            carousel.scrollView.verticalScroll = false
+            //carousel.views = [button, button, button]
+            return carousel
+        } else {*/
+            //return button
+        //}
+        let newsView = UITextView.init(x: 0, y: 0, w: 350, h: 100)
+        newsView.text = "asdaskdlkalsdkalskdksldkasldkalskdlaksdlaksldksalkdl" +
+        "asdklaskdlksaldkasldkalsdklaskdlaksdlksaldksaldksalkdlsakdlaskdlaskd" +
+        "asdjajdkjsakdjaksdjksjdkajskdjaskjdkasjdkasjdkasjdkjasdjaksdjkasjdka"
+        return newsView
     }
     func numberOfViews() -> Int {
         return 2
@@ -46,7 +61,7 @@ extension AMKCarousel: LTInfiniteScrollViewDataSource, LTInfiniteScrollViewDeleg
         scrollView.verticalScroll = true
         scrollView.dataSource = self
         scrollView.delegate = self
-        scrollView.maxScrollDistance = 5
+        scrollView.maxScrollDistance = 10
         scrollView.reloadDataWithInitialIndex(0)
         scrollSetupDone = true
     }

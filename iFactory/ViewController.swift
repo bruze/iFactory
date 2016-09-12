@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
    // @IBOutlet weak var theButton: AMKButton!
-    @IBOutlet weak var scrollView: AMKCarousel!
+    //@IBOutlet weak var scrollView: AMKCarousel!
     
     //var scrollView: LTInfiniteScrollView?
     override func viewDidLoad() {
@@ -23,7 +23,10 @@ class ViewController: UIViewController {
         /*theButton.addBlock({
                 print("blockExecuted")
             }, ForAction: 0)*/
-        //scrollView.clipsToBounds = true
+        //let carruso = AMKCarousel.init(frame: CGRect.init(x: 100, y: 0, w: 350, h: 400))
+        //carruso.storeID = "specialCarrousel"
+        //carruso.scrollView.verticalScroll = false
+        //view.addSubview(carruso)
     }
 
     override func didReceiveMemoryWarning() {

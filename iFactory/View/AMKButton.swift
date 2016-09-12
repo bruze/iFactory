@@ -11,7 +11,7 @@ import EZSwiftExtensions
 import PropertyExtensions
 
 @IBDesignable
-class AMKButton: UIView, PropertyExtensions {
+class AMKButton: UIView {
     enum AMKTypeTag: Int {
         case Default       = -1
         case CurrentImage  =  7
@@ -41,52 +41,19 @@ class AMKButton: UIView, PropertyExtensions {
         }
     }
     var images: [AMKTypeTag: UIImage] = [:]
-    var currentImage: UIImageView? {
-        get {
-            if let view = viewWithTag(AMKTypeTag.CurrentImage.rawValue) {
-                return view as? UIImageView
-            }
-            return nil
-        }
-    }
-    var currentDefaultLabel: UILabel? {
-        get {
-            if let view = viewWithTag(AMKTypeTag.LabelDefault.rawValue) {
-                return view as? UILabel
-            }
-            return nil
-        }
-    }
-    @IBInspectable var defaultLabel: String = "" {
-        didSet {
-            resetView(currentDefaultLabel)
-            if !defaultLabel.isEmpty {
-                addLabelWith(Text: defaultLabel, AndOffset: CGPoint.zero)
-            }
-        }
-    }
-    @IBInspectable var defLabelXOffset: CGFloat = CGFloat.init() {
-        didSet {
-            if labelRelativeImage == 0 {
-                currentDefaultLabel?.origin.x += defLabelXOffset
-            } else {
-                print(labelRelativeImage)
-            }
-        }
-    }
     @IBInspectable var imageLeading: CGFloat = 10 {
         didSet {
-            currentImage?.origin.x += imageLeading
+            //currentImage?.origin.x += imageLeading
         }
     }
     @IBInspectable var labelRelativeImage: CGFloat = 5 {
         didSet {
-            if let image = currentImage {
+            /*if let image = currentImage {
                 currentDefaultLabel?.origin.x = image.origin.x + image.w + labelRelativeImage
-            }
+            }*/
         }
     }
-    @IBInspectable var storeID: String {
+    /*@IBInspectable override var storeID: String {
         get {
             return getProperty("storeID", initial: "")
         }
@@ -95,7 +62,7 @@ class AMKButton: UIView, PropertyExtensions {
             //encode()
             //decode()
         }
-    }
+    }*/
     /*override func willMoveToSuperview(newSuperview: UIView?) {
         //encode()
         print("")
@@ -107,22 +74,25 @@ class AMKButton: UIView, PropertyExtensions {
         if superview != nil {
             centerInSuperView()
             superview!.layoutIfNeeded()
+            setNeedsLayout()
         }
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.initialize()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.initialize()
     }
-    
+
     convenience init() {
-        self.init(frame: CGRectZero)
+        self.init(frame: CGRect.zero)
         self.initialize()
     }
     func initialize() {
+        //decode()
+        addSubview(imageContainer)
     }
 }

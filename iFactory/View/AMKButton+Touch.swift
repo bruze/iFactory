@@ -13,10 +13,13 @@ extension AMKButton {
         guard enabled else {
             return
         }
-        setImage(ForTag: AMKTypeTag.ImagePressed)
+        if let _ = getImage(ForTag: AMKTypeTag.ImagePressed) {
+            setImage(ForTag: AMKTypeTag.ImagePressed)
+        }
         if pressBackColor != nil {
             backgroundColor = pressBackColor
         }
+        //encode()
         super.touchesBegan(touches, withEvent: event)
     }
 

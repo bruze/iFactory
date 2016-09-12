@@ -15,6 +15,7 @@ extension AMKButton {
         }
         set {
             setValue(newValue, forProperty: "defaultBackColor")
+            setDefaultBackColor()
         }
     }
     @IBInspectable weak var pressBackColor: UIColor? {
@@ -33,14 +34,15 @@ extension AMKButton {
         }
         return false
     }
-    
-    internal func updateViews() {
-        currentImage?.origin.x += imageLeading
+
+    /*internal func updateViews() {
+        currentImage?.origin.x = origin.x + imageLeading
+        print(currentImage?.origin.x)
         if let image = currentImage where labelRelativeImage != 0 {
             currentDefaultLabel?.origin.x = image.origin.x + image.w + labelRelativeImage
         }
-    }
-    
+    }*/
+
     internal func setDefaultBackColor() {
         if defaultBackColor != nil {
             backgroundColor = defaultBackColor

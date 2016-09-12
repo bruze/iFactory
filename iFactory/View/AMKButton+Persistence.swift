@@ -10,15 +10,15 @@ import Foundation
 import SwiftFilePath
 
 extension AMKButton {
-    internal func encode() {
-        //let textFile = Path.documentsDir[storeID + ".txt"]
-        //textFile.writeString(touchAction + "\n")
+    /*internal override func encode() {
+        let textFile = Path.documentsDir["stored" + ".txt"]
+        textFile.writeString(touchAction + "\n")*/
         //NSUserDefaults.standardUserDefaults().setObject("stored", forKey: "stored")
         /*for action in actions {
             textFile.writeString(action+"\n")
         }*/
-     }
-    internal func decode() {
+     //}
+    //internal override func decode() {
         //let textFile = Path.documentsDir[storeID + ".txt"]
         /*if let text = textFile.readString() {
             let components = text.componentsSeparatedByString("\n")
@@ -26,5 +26,5 @@ extension AMKButton {
                 actions.append(component)
             }
         }*/
-     }
+     //}
 }

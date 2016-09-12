@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftString
 
 extension AMKButton {
     /*internal var actions: [String] {
@@ -86,6 +85,9 @@ extension AMKButton {
         //if !touchAction.isEmpty {
             if actionBlocks?.count == 0 {
                 if let executer = delegate as? UIViewController {
+                    let aSelector = Selector.init(extendedGraphemeClusterLiteral: touchAction)
+                    executer.performSelector(aSelector, withObject: "")
+                } else if let executer = delegate as? ViewController {
                     let aSelector = Selector.init(extendedGraphemeClusterLiteral: touchAction)
                     executer.performSelector(aSelector, withObject: "")
                 }

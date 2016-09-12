@@ -56,7 +56,7 @@ extension AMKButton {
     }
     @IBInspectable var labelFontColor: UIColor {
         get {
-            return getProperty("labelFontColor", initial: defaultOverlapLabelFontColor)
+            return getProperty("labelFontColor", initial: UIColor.blackColor())
         }
         set {
             setValue(newValue, forProperty: "labelFontColor")
@@ -66,7 +66,7 @@ extension AMKButton {
 
     @IBInspectable var labelFontName: String {
         get {
-            return getProperty("labelFontName", initial: defaultOverlapLabelFontName)
+            return getProperty("labelFontName", initial: "")
         }
         set {
             setValue(newValue, forProperty: "labelFontName")
@@ -77,7 +77,7 @@ extension AMKButton {
 
     @IBInspectable var labelFontSize: CGFloat {
         get {
-            return getProperty("labelFontSize", initial: defaultOverlapLabelFontSize)
+            return getProperty("labelFontSize", initial: 16)
         }
         set {
             setValue(newValue, forProperty: "labelFontSize")

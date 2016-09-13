@@ -90,6 +90,7 @@ extension AMKButton {
         label.tag = AMKTypeTag.LabelDefault.rawValue
         label.text = labelText
         addSubview(label)
+        label.layer.zPosition = 1000
         label.origin = CGPoint.init(x: defLabelXOffset, y: defLabelYOffset)
         //label.centerYInSuperView()
         /*if let image = currentImage where labelRelativeImage != 0 {

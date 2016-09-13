@@ -89,5 +89,6 @@ class AMKButton: UIView {
     func initialize() {
         //decode()
         addSubview(imageContainer)
+        clipsToBounds = true
     }
 }

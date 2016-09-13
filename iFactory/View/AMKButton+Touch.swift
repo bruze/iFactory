@@ -20,6 +20,9 @@ extension AMKButton {
             backgroundColor = pressBackColor
         }
         //encode()
+        if showPassAtTap {
+            passingLayerColor(UIColor.cyanColor(), GoingRight: true)
+        }
         super.touchesBegan(touches, withEvent: event)
     }
 

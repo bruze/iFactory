@@ -17,7 +17,7 @@ import PropertyExtensions
 }
 
 extension UIView: AMKEncodable, PropertyExtensions {
-    @IBInspectable public var storeID: String {
+    /*@IBInspectable*/ public var storeID: String {
         get {
             return getProperty("storeID", initial:"")
         }

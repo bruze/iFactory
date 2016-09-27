@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 let emptyLayer = CALayer.init()
+let emptyImage = UIImage.init()
+let emptyImageView = UIImageView.init()
 public struct Global {
     enum RLMove {
         case Right

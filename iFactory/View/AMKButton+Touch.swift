@@ -27,6 +27,9 @@ extension AMKButton {
     }
 
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        guard enabled else {
+            return
+        }
         setImage(ForTag: AMKTypeTag.ImageDefault)
         setDefaultBackColor()
         delegatePerformTouch()
@@ -34,6 +37,9 @@ extension AMKButton {
     }
 
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+        guard enabled else {
+            return
+        }
         setImage(ForTag: AMKTypeTag.ImageDefault)
         setDefaultBackColor()
         super.touchesCancelled(touches, withEvent: event)

@@ -24,4 +24,8 @@ extension CGRect {
         let hValue = lModel.getNextValueForModel("h=", cutAt: ",")
         return CGRect.init(x: xValue, y: yValue, width: wValue, height: hValue)
     }
+    
+    func getScaledSize(factor: CGFloat, overSize: CGSize) -> CGSize {
+        return CGSize.init(width: w * (factor / overSize.width), height: h * (factor / overSize.height))
+    }
 }

@@ -16,6 +16,14 @@ extension AMKSuperView {
             setValue(newValue, forProperty: "blinkOnTouch")
         }
     }
+    @IBInspectable var blinkLabelToo: Bool {
+        get {
+            return getProperty("blinkLabelToo", initial: false)
+        }
+        set {
+            setValue(newValue, forProperty: "blinkLabelToo")
+        }
+    }
     @IBInspectable var touchImage: UIImage {
         get {
             return getProperty("touchImage", initial: emptyImage)
@@ -65,28 +73,27 @@ extension AMKSuperView {
     }
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard userInteractionEnabled else { return }
-        /*guard enabled else {
-            return
-        }
-        if let _ = getImage(ForTag: AMKTypeTag.ImagePressed) {
-            setImage(ForTag: AMKTypeTag.ImagePressed)
-        }
-        if pressBackColor != nil {
-            backgroundColor = pressBackColor
-        }
-        //encode()
+        /*encode()
         if showPassAtTap {
             passingLayerColor(UIColor.cyanColor(), GoingRight: true)
         }*/
         if enabled {
-            backgroundColor = touchBackColor
-            if !touchImageView.isEmpty() || blinkIfNoTouchImage {
+            if !touchBackColor.isEmpty() {
+                backgroundColor = touchBackColor
+            }
+            var blinked = false
+            if !touchImageView.isEmpty() {
                 idleImageView.hidden.toggle()
                 touchImageView.hidden.toggle()
+                blinked.toggle()
+            } else if (touchImageView.isEmpty() && blinkIfNoTouchImage) {
+                backgroundColor = UIColor.clearColor()
+                blinked.toggle()
+            }
+            if blinked && blinkLabelToo {
+                label.hidden = true
             }
             super.touchesBegan(touches, withEvent: event)
-        } else {
-            
         }
     }
     
@@ -99,14 +106,17 @@ extension AMKSuperView {
         setDefaultBackColor()
         delegatePerformTouch()*/
         if enabled {
-            backgroundColor = backColor
-            if !touchImageView.isEmpty() || blinkIfNoTouchImage {
+            if !touchBackColor.isEmpty() {
+                backgroundColor = backColor
+            }
+            if !touchImageView.isEmpty() {
                 idleImageView.hidden.toggle()
                 touchImageView.hidden.toggle()
+            } else if (touchImageView.isEmpty() && blinkIfNoTouchImage) {
+                backgroundColor = backColor
             }
+            label.hidden = false
             super.touchesEnded(touches, withEvent: event)
-        } else {
-            
         }
     }
     

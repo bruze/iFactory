@@ -17,7 +17,7 @@ import PropertyExtensions
 }
 
 extension UIView: AMKEncodable, PropertyExtensions {
-    /*@IBInspectable*/ public var storeID: String {
+    @IBInspectable public var storeID: String {
         get {
             return getProperty("storeID", initial:"")
         }
@@ -47,7 +47,7 @@ extension UIView: AMKEncodable, PropertyExtensions {
         #if !TARGET_INTERFACE_BUILDER
             let textFile = Path.documentsDir[storeID + ".txt"]
         #else
-            let textFile = Path.init("/Users/bgarelli/Library/Developer/CoreSimulator/Devices/AAF9BE99-DC9E-4822-8C6B-F6E31DCBE133/data/Containers/Data/Application/8C70B497-5042-4E58-89A0-57A541C818D0/Documents/" + storeID + ".txt")
+            let textFile = Path.init("/Users/bgarelli/Library/Developer/CoreSimulator/Devices/AAF9BE99-DC9E-4822-8C6B-F6E31DCBE133/data/Containers/Data/Application/DDB0390B-F977-45DD-A92A-B287ED2ED340/Documents/" + storeID + ".txt")
         #endif
         
         if textFile.readString() != nil {

@@ -114,13 +114,13 @@ class AMKLabel: UIView, NSXMLParserDelegate {
         print("label move to window")
         #if TARGET_INTERFACE_BUILDER
         /*let parser = NSXMLParser.init(contentsOfURL: NSURL.init(fileURLWithPath: "/Users/bgarelli/Git/iFactory/iFactory/iFactory/Base.lproj/Main.storyboard"))*/
-        beginParsing()
+        /*beginParsing()
         print("The route is")
         let t = elements["route"]!
         print(t)
         print("The timestamp is")
         let u = elements["timestamp"]!
-        print(u)
+        print(u)*/
         if let _ = label {
             drawRect(frame)
         }

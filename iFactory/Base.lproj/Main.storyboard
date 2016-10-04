@@ -51,11 +51,11 @@
                                     <outlet property="label" destination="dto-jz-LFo" id="sry-C4-uQr"/>
                                 </connections>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUQ-bt-eQe" userLabel="AMKLabel" customClass="AMKLabel" customModule="iFactory" customModuleProvider="target">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUQ-bt-eQe" userLabel="AMKLabel" customClass="AMKLabel" customModule="iFactory">
                                 <rect key="frame" x="26" y="346" width="316" height="301"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="huhuhu"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="1212"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="label" destination="baW-Nz-GFT" id="6Ik-r8-huT"/>

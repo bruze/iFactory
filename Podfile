@@ -9,7 +9,6 @@ target 'iFactory' do
   pod 'SwiftString'
   pod 'SwiftFilePath'
   pod 'LTInfiniteScrollView'
-  pod 'AEXML', '3.0.0'
   # Pods for iFactory
 
 end

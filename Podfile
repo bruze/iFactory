@@ -4,7 +4,7 @@
 target 'iFactory' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  pod 'EZSwiftExtensions'
+  pod 'EZSwiftExtensions', '1.6'
   pod 'PropertyExtensions'
   pod 'SwiftString'
   pod 'SwiftFilePath'

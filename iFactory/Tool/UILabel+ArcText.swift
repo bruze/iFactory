@@ -5,7 +5,7 @@
 //  Created by Bruno Garelli on 9/28/16.
 //  Copyright © 2016 Bruno Garelli. All rights reserved.
 //
-
+/*
 import UIKit
 import EZSwiftExtensions
 extension UILabel {
@@ -42,11 +42,11 @@ extension UILabel {
         }
     }
     override public func didMoveToSuperview() {
-        print("label move to superview")
+        //print("uilabel move to superview")
         drawRect(frame)
     }
     override public func didMoveToWindow() {
-        print("label move to window")
+        //print("uilabel move to window")
         #if TARGET_INTERFACE_BUILDER
             //layer.backgroundColor = UIColor.blueColor().CGColor
             //let superL = layer.superlayer
@@ -186,4 +186,4 @@ extension UILabel {
         // Restore the context
         CGContextRestoreGState(context)
     }
-}
+}*/

@@ -16,6 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        //let manager = NSFileManager.defaultManager()
+        //print(manager.currentDirectoryPath)
+        /*let bundle = NSBundle.mainBundle()
+        let filePath = bundle.pathForResource("1212.plist", ofType: nil)
+        let copyPath = String.init(format: "%@/Documents/", NSHomeDirectory())
+        
+        if let asset = NSDataAsset(name: "Data") {
+            let data = asset.data
+            let d = try? NSJSONSerialization.JSONObjectWithData(data, options: [])
+        }*/
+        /*do {
+            try manager.copyItemAtPath(filePath!, toPath: copyPath)
+        } catch {
+            
+        }*/
         return true
     }
 

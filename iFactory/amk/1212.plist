@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fontName</key>
+	<string>System</string>
+	<key>pointSize</key>
+	<string>37</string>
+	<key>text</key>
+	<string>Label</string>
+	<key>textColor</key>
+	<string>NSCustomColorSpace HD 709-A colorspace 0.898039 0.772549 0.341176 1</string>
+	<key>type</key>
+	<string>1</string>
+	<key>weightCategory</key>
+	<string>0</string>
+</dict>
+</plist>

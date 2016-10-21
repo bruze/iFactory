@@ -20,10 +20,10 @@ extension AMKSuperView {
             label.textColor = newValue.textColor
             label.textAlignment = newValue.textAlignment
             label.font = newValue.font
-            label.curve = newValue.curve
+            /*label.curve = newValue.curve
             label.curveRadius = newValue.curveRadius
             label.curveAngle = newValue.curveAngle
-            label.curveClockwise = newValue.curveClockwise
+            label.curveClockwise = newValue.curveClockwise*/
             
             newValue.hidden = true
             newValue.enabled = false

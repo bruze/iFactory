@@ -1,0 +1,18 @@
+{
+  "properties" : {
+    "on-demand-resource-tags" : [
+      "amk"
+    ]
+  },
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "data" : [
+    {
+      "idiom" : "iphone",
+      "filename" : "Data.json",
+      "universal-type-identifier" : "json"
+    }
+  ]
+}

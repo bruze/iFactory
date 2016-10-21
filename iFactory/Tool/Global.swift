@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+let bundle = NSBundle.mainBundle()
+let fileMan = NSFileManager.defaultManager()
+//////////////////////////////////
 let emptyLayer = CALayer.init()
 let emptyImage = UIImage.init()
 let emptyImageView = UIImageView.init()

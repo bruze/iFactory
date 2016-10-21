@@ -13,7 +13,7 @@ import PropertyExtensions
 @objc protocol AMKEncodable {
     var storeID: String {get set}
     func encode()
-    func decode()
+    func decode(data: NSDictionary)
 }
 
 extension UIView: AMKEncodable, PropertyExtensions {
@@ -25,6 +25,14 @@ extension UIView: AMKEncodable, PropertyExtensions {
             setValue(newValue, forProperty: "storeID")
         }
     }
+    var storeLoaded: Bool {
+        get {
+            return getProperty("storeLoaded", initial:false)
+        }
+        set {
+            setValue(newValue, forProperty: "storeLoaded")
+        }
+    }
     var defaultLabel: String {
         get {
             return getProperty("defaultLabel", initial:"")
@@ -34,6 +42,12 @@ extension UIView: AMKEncodable, PropertyExtensions {
         }
     }
     func encode() {
+        
+    }
+    func decode(data: NSDictionary) {
+        
+    }
+    /*func encode() {
         let textFile = Path.documentsDir[storeID + ".txt"]
         let dataToWrite = ">".join(["class", className + "\n"]) +
                           ">".join(["frame", frame.toString() + "\n"]) +
@@ -60,5 +74,5 @@ extension UIView: AMKEncodable, PropertyExtensions {
             self.frame = reconstructedFrame
             defaultLabel = dataToRead.readLine().readStoredValue("label")
         }
-    }
+    }*/
 }

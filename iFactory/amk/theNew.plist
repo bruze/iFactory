@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fontName</key>
+	<string>Helvetica Neue Bold</string>
+	<key>pointSize</key>
+	<string>17</string>
+	<key>text</key>
+	<string>Label</string>
+	<key>textColor</key>
+	<string>NSNamedColorSpace iPhoneSDK darkTextColor</string>
+</dict>
+</plist>

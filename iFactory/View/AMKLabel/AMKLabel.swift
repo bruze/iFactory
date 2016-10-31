@@ -10,69 +10,6 @@ import UIKit
 @IBDesignable
 class AMKLabel: UIView, NSXMLParserDelegate {
     //var kvoContext: UInt = 1
-    @IBInspectable dynamic var curve: Bool {
-        get {
-            return getProperty("curve", initial: false)
-        }
-        set {
-            setValue(newValue, forProperty: "curve")
-        }
-    }
-    @IBInspectable dynamic var curveRadius: CGFloat {
-        get {
-            return getProperty("curveRadius", initial: 1)
-        }
-        set {
-            setValue(newValue, forProperty: "curveRadius")
-        }
-    }
-    @IBInspectable dynamic var curveAngle: CGFloat {
-        get {
-            return getProperty("curveAngle", initial: 0)
-        }
-        set {
-            setValue(newValue, forProperty: "curveAngle")
-        }
-    }
-    @IBInspectable dynamic var curveClockwise: Bool {
-        get {
-            return getProperty("curveClockwise", initial: true)
-        }
-        set {
-            setValue(newValue, forProperty: "curveClockwise")
-        }
-    }
-    @IBOutlet weak var label: UILabel? {
-        didSet {
-            //label?.enabled = false
-            label!.hidden = true
-            //text = label!.text!
-            //setNilValueForKey("text")
-            //setValue(text, forKey: "text")
-            //drawRect(frame)
-            /*let newLabel = (label?.copy() as? UILabel)!
-            addSubview(newLabel)
-            newLabel.center = center*/
-            //let path = NSBundle.mainBundle().pathForResource(storeID, ofType: ".plist")
-           // print(NSFileManager.defaultManager().
-        }
-    }
-    dynamic var text: String {
-        get {
-            return getProperty("text", initial: "")
-        }
-        set {
-            setValue(newValue, forProperty: "text")
-        }
-    }
-    dynamic var textColor: UIColor {
-        get {
-            return getProperty("textColor", initial: UIColor.blueColor())
-        }
-        set {
-            setValue(newValue, forProperty: "textColor")
-        }
-    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.initialize()
@@ -125,21 +62,75 @@ class AMKLabel: UIView, NSXMLParserDelegate {
         #endif
     }
     override func decode(data: NSDictionary) {
-        text = (data["text"] as? String)!
-        textColor = colorFromStoredInfo((data["textColor"] as? String)!)
+        text = data["text"]!.str()
+        textColor = colorFromStoredInfo(data["textColor"]!.str())
+        let fontName = data["fontName"]!.str()
+        //let family = UIFont.fontNamesForFamilyName(fontName)
+        textFont = fontFromStoredInfo(fontName)//UIFont.init(name: fontName + "- Bold", size: 16)!
         setNeedsDisplay()
     }
     func colorFromStoredInfo(infoColor: String) -> UIColor {
         var result = UIColor.clearColor()
-        let components = infoColor.componentsSeparatedByString(" ").filter { (component) -> Bool in
+        let components = infoColor.componentsSeparatedByString(" ")
+        let filtered = components.filter { (component) -> Bool in
             return component.isNumber()
         }
-        if components.count == 4 {
-            result = UIColor.init(red: components[0].toFloat()!.cg(), green: components[1].toFloat()!.cg(), blue: components[2].toFloat()!.cg(), alpha: components[3].toFloat()!.cg())
+        if filtered.count == 4 {
+            result = UIColor.init(red: filtered[0].toFloat()!.cg(), green: filtered[1].toFloat()!.cg(), blue: filtered[2].toFloat()!.cg(), alpha: filtered[3].toFloat()!.cg())
         } else {
-            let meKnow = true
+            let selectorName = components.last!
+            let selector = NSSelectorFromString(selectorName)
+            if UIColor.respondsToSelector(selector) {
+                if let posibleColor = UIColor.performSelector(selector).takeRetainedValue() as? UIColor {
+                    result = posibleColor
+                }
+            }
         }
         return result
+    }
+    func fontFromStoredInfo(infoFont: String) -> UIFont {
+        var result = UIFont.systemFontOfSize(16)
+        var components = infoFont.componentsSeparatedByString(" ")
+        var tryName = ""
+        
+        var lastComponent: [String] = [components.popLast()!]
+        if lastComponent.flatString() != "System" {
+            let flatString = components.flatString(" ")
+            var family = UIFont.fontNamesForFamilyName(flatString)
+            while family.count == 0 {
+                lastComponent.insertAsFirst(components.popLast()!)
+                let flatString = components.flatString()
+                family = UIFont.fontNamesForFamilyName(flatString)
+            }
+            let filtered = family.filter { (comp) -> Bool in
+                let sComponents = comp.componentsSeparatedByString("-")
+                return sComponents.last! == lastComponent.flatString(" ")
+            }
+            tryName = filtered.first!
+            
+            result = UIFont.init(name: tryName, size: 16)!
+        }
+        
+        return result
+    }
+}
+
+extension CollectionType where Generator.Element == String {
+    func flatString(separator: String = "") -> String {
+        var result = ""
+        self.forEach { (component) in
+            result.appendContentsOf(component)
+            if self.indexOf(component)?.successor() != self.endIndex {
+                result.appendContentsOf(separator)
+            }
+        }
+        return result
+    }
+}
+
+extension NSObject {
+    func str() -> String {
+        return String(self)
     }
 }
 

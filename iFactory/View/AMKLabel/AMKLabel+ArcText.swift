@@ -36,7 +36,8 @@ extension AMKLabel {
         centreArcPerpendicularText("Anticlockwise", context: context, radius: 100, angle: CGFloat(-M_PI_2), colour: UIColor.redColor(), font: UIFont.systemFontOfSize(16), clockwise: false)
         centreText("Hello flat world", context: context, radius: 0, angle: 0 , colour: UIColor.yellowColor(), font: UIFont.systemFontOfSize(16), slantAngle: CGFloat(M_PI_4))*/
         /*centreArcPerpendicularText(label!.text!, context: context, radius: 40 + label!.curveRadius, angle: label!.curveAngle.degreesToRadians(), colour: label!.textColor, font: label!.font, clockwise: label!.curveClockwise)*/
-        centreArcPerpendicularText(text, context: context, radius: 40 + curveRadius, angle: /*CGFloat(-135)*/curveAngle.degreesToRadians(), colour: textColor, font: UIFont.systemFontOfSize(16), clockwise: curveClockwise)
+        let drawText = overrideStoredText ? overrideText : text
+        centreArcPerpendicularText(drawText, context: context, radius: 40 + curveRadius, angle: /*CGFloat(-135)*/curveAngle.degreesToRadians(), colour: textColor, font: textFont, clockwise: curveClockwise)
         
         
         /*centreArcPerpendicularText(text!, context: context, radius: 40 + curveRadius, angle: curveAngle.degreesToRadians(), colour: textColor, font: font, clockwise: curveClockwise)*/

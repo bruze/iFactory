@@ -51,9 +51,23 @@
                                     <outlet property="label" destination="dto-jz-LFo" id="sry-C4-uQr"/>
                                 </connections>
                             </view>
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUQ-bt-eQe" userLabel="AMKLabel" customClass="AMKLabel" customModule="iFactory">
+                                <rect key="frame" x="26" y="346" width="316" height="301"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="nuevo"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="curve" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveRadius">
+                                        <real key="value" value="-20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveAngle">
+                                        <real key="value" value="104"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dto-jz-LFo">
                                 <rect key="frame" x="84" y="230" width="207" height="208"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                 <color key="textColor" red="0.91047781705856323" green="0.800517737865448" blue="0.38243666291236877" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -67,33 +81,12 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="curveClockwise" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LALALALA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kba-l6-gOa">
-                                <rect key="frame" x="166" y="361" width="149" height="65"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kba-l6-gOa">
+                                <rect key="frame" x="166" y="361" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.91764706370000004" green="0.59215688710000003" blue="0.25490197539999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUQ-bt-eQe" userLabel="AMKLabel" customClass="AMKLabel" customModule="iFactory">
-                                <rect key="frame" x="55" y="446" width="307" height="201"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="curveRadius">
-                                        <real key="value" value="7"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="curveAngle">
-                                        <real key="value" value="89"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="theNew"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextSize" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredText" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="curveClockwise" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="overrideText" value="APIWorking"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="curve" value="NO"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="label" destination="dto-jz-LFo" id="Zqj-Hw-D3e"/>
-                                </connections>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>

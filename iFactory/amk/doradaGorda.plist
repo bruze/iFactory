@@ -3,16 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>fontName</key>
-	<string>System</string>
+	<string>Helvetica Neue Bold</string>
 	<key>pointSize</key>
-	<string>17</string>
+	<string>37</string>
 	<key>text</key>
-	<string>LALALALA</string>
+	<string>Label</string>
 	<key>textColor</key>
-	<string>NSCustomColorSpace Generic RGB colorspace 0.917647 0.592157 0.254902 1</string>
-	<key>type</key>
-	<string>1</string>
-	<key>weightCategory</key>
-	<string>0</string>
+	<string>NSCustomColorSpace sRGB IEC61966-2.1 colorspace 0.910478 0.800518 0.382437 1</string>
 </dict>
 </plist>

@@ -20,11 +20,21 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xbe-ue-P26" customClass="AMKSuperView" customModule="iFactory" customModuleProvider="target">
                                 <rect key="frame" x="41" y="46" width="308" height="292"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chimbongo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baW-Nz-GFT">
-                                        <rect key="frame" x="74" y="89" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dto-jz-LFo">
+                                        <rect key="frame" x="131" y="102" width="207" height="208"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="33"/>
+                                        <color key="textColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="curve" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="curveRadius">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="curveAngle">
+                                                <real key="value" value="-83"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="curveClockwise" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,44 +61,75 @@
                                     <outlet property="label" destination="dto-jz-LFo" id="sry-C4-uQr"/>
                                 </connections>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUQ-bt-eQe" userLabel="AMKLabel" customClass="AMKLabel" customModule="iFactory">
-                                <rect key="frame" x="26" y="346" width="316" height="301"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="nuevo"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="curve" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="curveRadius">
-                                        <real key="value" value="-20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="curveAngle">
-                                        <real key="value" value="104"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dto-jz-LFo">
-                                <rect key="frame" x="84" y="230" width="207" height="208"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <color key="textColor" red="0.91047781705856323" green="0.800517737865448" blue="0.38243666291236877" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="curve" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="curveRadius">
-                                        <real key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="curveAngle">
-                                        <real key="value" value="-83"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="curveClockwise" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kba-l6-gOa">
-                                <rect key="frame" x="166" y="361" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="166" y="361" width="164" height="46"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUQ-bt-eQe" userLabel="AMKLabel1" customClass="AMKLabel" customModule="iFactory">
+                                <rect key="frame" x="90" y="303" width="195" height="61"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="chimbongo"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="curve" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveAngle">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="overrideText" value="fdsfsd"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideTextSize">
+                                        <real key="value" value="59"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredText" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextSize" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="overrideTextColor">
+                                        <color key="value" red="0.46923016504317805" green="0.77169052572861863" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="label" destination="Kba-l6-gOa" id="UK7-ej-y3u"/>
+                                </connections>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHm-MG-03C" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
+                                <rect key="frame" x="90" y="367" width="195" height="61"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="chimbongo"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="curve" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveAngle">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="overrideText" value="fdsfsd"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideTextSize">
+                                        <real key="value" value="59"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredText" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextSize" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="overrideTextColor">
+                                        <color key="value" red="1" green="0.80198166711324492" blue="0.11865000744608067" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="label" destination="Kba-l6-gOa" id="Fg6-8J-3RZ"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JUQ-bt-eQe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EVD-zh-2el"/>
+                            <constraint firstItem="JUQ-bt-eQe" firstAttribute="trailing" secondItem="MHm-MG-03C" secondAttribute="trailing" id="Ers-2Y-GUA"/>
+                            <constraint firstItem="JUQ-bt-eQe" firstAttribute="leading" secondItem="MHm-MG-03C" secondAttribute="leading" id="ch9-wj-8R7"/>
+                            <constraint firstItem="MHm-MG-03C" firstAttribute="top" secondItem="JUQ-bt-eQe" secondAttribute="bottom" constant="3" id="xOf-CU-XdB"/>
+                            <constraint firstItem="JUQ-bt-eQe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yp9-nO-1V1"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>

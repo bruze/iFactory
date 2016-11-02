@@ -42,6 +42,7 @@ extension AMKLabel {
             setValue(newValue, forProperty: "curveClockwise")
         }
     }
+    //MARK: Override Text
     @IBInspectable dynamic var overrideStoredText: Bool {
         get {
             return getProperty("overrideStoredText", initial: true)
@@ -58,9 +59,10 @@ extension AMKLabel {
             setValue(newValue, forProperty: "overrideText")
         }
     }
+    //MARK: Override Text Size
     @IBInspectable dynamic var overrideStoredTextSize: Bool {
         get {
-            return getProperty("overrideStoredTextSize", initial: true)
+            return getProperty("overrideStoredTextSize", initial: false)
         }
         set {
             setValue(newValue, forProperty: "overrideStoredTextSize")
@@ -72,6 +74,34 @@ extension AMKLabel {
         }
         set {
             setValue(newValue, forProperty: "overrideTextSize")
+            let otherFont = textFont.fontWithSize(newValue)
+            self.textFont = otherFont
+            setNeedsDisplay()
+        }
+    }
+    //MARK: Override Text Color
+    @IBInspectable dynamic var overrideStoredTextColor: Bool {
+        get {
+            return getProperty("overrideStoredTextColor", initial: false)
+        }
+        set {
+            setValue(newValue, forProperty: "overrideStoredTextColor")
+            if newValue {
+                textColor = overrideTextColor
+                setNeedsDisplay()
+            }
+        }
+    }
+    @IBInspectable dynamic var overrideTextColor: UIColor {
+        get {
+            return getProperty("overrideTextColor", initial: UIColor.blackColor())
+        }
+        set {
+            setValue(newValue, forProperty: "overrideTextColor")
+            if overrideStoredTextColor {
+                textColor = newValue
+                setNeedsDisplay()
+            }
         }
     }
 }

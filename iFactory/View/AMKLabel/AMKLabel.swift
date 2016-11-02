@@ -33,6 +33,9 @@ class AMKLabel: UIView, NSXMLParserDelegate {
     }
     
     //MARK:OVERRIDE
+    override func intrinsicContentSize() -> CGSize {
+        return frame.size
+    }
     override func didMoveToSuperview() {
         //print("label move to superview")
         //print(storeID)
@@ -63,7 +66,7 @@ class AMKLabel: UIView, NSXMLParserDelegate {
     }
     override func decode(data: NSDictionary) {
         text = data["text"]!.str()
-        textColor = colorFromStoredInfo(data["textColor"]!.str())
+        textColor = overrideStoredTextColor ? overrideTextColor : colorFromStoredInfo(data["textColor"]!.str())
         let fontName = data["fontName"]!.str()
         //let family = UIFont.fontNamesForFamilyName(fontName)
         textFont = fontFromStoredInfo(fontName)//UIFont.init(name: fontName + "- Bold", size: 16)!
@@ -89,12 +92,17 @@ class AMKLabel: UIView, NSXMLParserDelegate {
         return result
     }
     func fontFromStoredInfo(infoFont: String) -> UIFont {
-        var result = UIFont.systemFontOfSize(16)
+        let tTextSize = overrideStoredTextSize ? overrideTextSize : 16
+        var result = UIFont.systemFontOfSize(tTextSize)
+        let italicSystemResult = UIFont.italicSystemFontOfSize(tTextSize)
+        let boldSystemResult = UIFont.boldSystemFontOfSize(tTextSize)
+        
         var components = infoFont.componentsSeparatedByString(" ")
         var tryName = ""
         
         var lastComponent: [String] = [components.popLast()!]
-        if lastComponent.flatString() != "System" {
+        let firstIsSystemCheck = components.first! == "System"
+        if lastComponent.flatString() != "System" && !firstIsSystemCheck {
             let flatString = components.flatString(" ")
             var family = UIFont.fontNamesForFamilyName(flatString)
             while family.count == 0 {
@@ -106,9 +114,19 @@ class AMKLabel: UIView, NSXMLParserDelegate {
                 let sComponents = comp.componentsSeparatedByString("-")
                 return sComponents.last! == lastComponent.flatString(" ")
             }
-            tryName = filtered.first!
+            if filtered.count > 0 {
+                tryName = filtered.first!
+            } else {
+                tryName = family.first!
+            }
             
-            result = UIFont.init(name: tryName, size: 16)!
+            result = UIFont.init(name: tryName, size: overrideStoredTextSize ? overrideTextSize : 16)!
+        } else if firstIsSystemCheck {
+            if lastComponent.flatString() == "Bold" {
+                result = boldSystemResult
+            } else if lastComponent.flatString() == "Italic" {
+                result = italicSystemResult
+            }
         }
         
         return result

@@ -14,7 +14,7 @@ extension AMKLabel {
             return
         }*/
         #if TARGET_INTERFACE_BUILDER
-            let size = CGSize.init(width: 256, height: 256)
+            let size = frame.size//CGSize.init(width: 256, height: 256)
         #else
             let size = rect.size
         #endif
@@ -27,7 +27,11 @@ extension AMKLabel {
         // at the centre of the screen maths convention
         // Obviously change your origin to suit...
         // *******************************************************************
-        CGContextTranslateCTM (context, size.width / 2, size.height / 2)
+        var tHeight = size.height / 2
+        if curve {
+            tHeight += 30
+        }
+        CGContextTranslateCTM (context, size.width / 2, tHeight)
         CGContextScaleCTM (context, 1, -1)
         CGContextSetFillColorWithColor(context, UIColor.clearColor().CGColor)
         CGContextFillRect(context, bounds)
@@ -36,8 +40,13 @@ extension AMKLabel {
         centreArcPerpendicularText("Anticlockwise", context: context, radius: 100, angle: CGFloat(-M_PI_2), colour: UIColor.redColor(), font: UIFont.systemFontOfSize(16), clockwise: false)
         centreText("Hello flat world", context: context, radius: 0, angle: 0 , colour: UIColor.yellowColor(), font: UIFont.systemFontOfSize(16), slantAngle: CGFloat(M_PI_4))*/
         /*centreArcPerpendicularText(label!.text!, context: context, radius: 40 + label!.curveRadius, angle: label!.curveAngle.degreesToRadians(), colour: label!.textColor, font: label!.font, clockwise: label!.curveClockwise)*/
-        let drawText = overrideStoredText ? overrideText : text
-        centreArcPerpendicularText(drawText, context: context, radius: 40 + curveRadius, angle: /*CGFloat(-135)*/curveAngle.degreesToRadians(), colour: textColor, font: textFont, clockwise: curveClockwise)
+        let drawText: String = overrideStoredText ? overrideText : text
+        if curve {
+            centreArcPerpendicularText(drawText, context: context, radius: 40 + curveRadius, angle: /*CGFloat(-135)*/curveAngle.degreesToRadians(), colour: textColor, font: textFont, clockwise: curveClockwise)
+        } else {
+            centreText(drawText, context: context, radius: 0, angle: 180, colour: textColor, font: textFont, slantAngle: 0)
+        }
+        
         
         
         /*centreArcPerpendicularText(text!, context: context, radius: 40 + curveRadius, angle: curveAngle.degreesToRadians(), colour: textColor, font: font, clockwise: curveClockwise)*/

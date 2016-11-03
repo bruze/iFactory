@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Delegate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iFactory" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,26 +17,232 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xbe-ue-P26" customClass="AMKSuperView" customModule="iFactory" customModuleProvider="target">
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MHm-MG-03C" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
+                                <rect key="frame" x="7" y="487" width="208" height="93"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="sysItalic"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="curve" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveAngle">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="overrideText" value="ghyghj"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideTextSize">
+                                        <real key="value" value="59"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredText" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextSize" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="overrideTextColor">
+                                        <color key="value" red="0.16977985414315966" green="0.96370936266369678" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUa-h5-MS0" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
+                                <rect key="frame" x="20" y="15" width="208" height="93"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="sysItalic"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="curve" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveAngle">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="overrideText" value="ghyghj"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideTextSize">
+                                        <real key="value" value="59"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredText" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextSize" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="overrideTextColor">
+                                        <color key="value" red="0.16977985409999999" green="0.96370936269999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p8S-t5-r6c" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
+                                <rect key="frame" x="13" y="245" width="208" height="93"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="sysItalic"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="curve" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveAngle">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="overrideText" value="ghyghj"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideTextSize">
+                                        <real key="value" value="59"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredText" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextSize" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="overrideTextColor">
+                                        <color key="value" red="0.16977985409999999" green="0.96370936269999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ala-K0-Ncq" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
+                                <rect key="frame" x="13" y="90" width="208" height="93"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="sysItalic"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="curve" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveAngle">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="overrideText" value="ghyghj"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideTextSize">
+                                        <real key="value" value="59"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredText" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextSize" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="overrideTextColor">
+                                        <color key="value" red="0.16977985409999999" green="0.96370936269999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rf5-pf-L2H" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
+                                <rect key="frame" x="20" y="159" width="208" height="93"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="sysItalic"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="curve" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveAngle">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="overrideText" value="ghyghj"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideTextSize">
+                                        <real key="value" value="59"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredText" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextSize" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="overrideTextColor">
+                                        <color key="value" red="1" green="0.74481734906667807" blue="0.30038625017964227" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rxD-SF-2z1" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
+                                <rect key="frame" x="7" y="566" width="208" height="93"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="sysItalic"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="curve" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveAngle">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="overrideText" value="ghyghj"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideTextSize">
+                                        <real key="value" value="59"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredText" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextSize" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="overrideTextColor">
+                                        <color key="value" red="0.16977985409999999" green="0.96370936269999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ABJ-m3-EZj" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
+                                <rect key="frame" x="13" y="415" width="208" height="93"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="sysItalic"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="curve" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveAngle">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="overrideText" value="ghyghj"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideTextSize">
+                                        <real key="value" value="59"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredText" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextSize" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="overrideTextColor">
+                                        <color key="value" red="0.16977985409999999" green="0.96370936269999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RMC-7t-CrC" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
+                                <rect key="frame" x="20" y="346" width="208" height="93"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="sysItalic"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="curve" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curveAngle">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="overrideText" value="ghyghj"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideTextSize">
+                                        <real key="value" value="59"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredText" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextSize" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="overrideTextColor">
+                                        <color key="value" red="0.16977985409999999" green="0.96370936269999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="riQ-gS-HXA" customClass="AMKButton" customModule="iFactory" customModuleProvider="target">
+                                <rect key="frame" x="229" y="476" width="126" height="74"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="defaultLabel" value="Try Me!"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="defLabelXOffset">
+                                        <real key="value" value="36"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="defLabelYOffset">
+                                        <real key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="defaultBackColor">
+                                        <color key="value" red="1" green="0.74481734906667807" blue="0.30038625017964227" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="pressBackColor">
+                                        <color key="value" red="0.81059695512820507" green="0.60374667528011072" blue="0.24349217975799725" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="labelFontColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="touchAction" value="boldMe"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Vz3-J5-tra"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rasta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyZ-Na-Vfd">
+                                <rect key="frame" x="227" y="113" width="131" height="89"/>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="48"/>
+                                <color key="textColor" red="0.68361560191928405" green="0.75889423076923079" blue="0.41893895344613435" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbe-ue-P26" customClass="AMKSuperView" customModule="iFactory" customModuleProvider="target">
                                 <rect key="frame" x="41" y="46" width="308" height="292"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dto-jz-LFo">
-                                        <rect key="frame" x="131" y="102" width="207" height="208"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="33"/>
-                                        <color key="textColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="curve" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="curveRadius">
-                                                <real key="value" value="12"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="curveAngle">
-                                                <real key="value" value="-83"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="curveClockwise" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backColor">
@@ -57,21 +263,12 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="touchImage" value="iconMyRedemp"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="idleImage" value="iconMyRedemp"/>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="label" destination="dto-jz-LFo" id="sry-C4-uQr"/>
-                                </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kba-l6-gOa">
-                                <rect key="frame" x="166" y="361" width="164" height="46"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUQ-bt-eQe" userLabel="AMKLabel1" customClass="AMKLabel" customModule="iFactory">
-                                <rect key="frame" x="90" y="303" width="195" height="61"/>
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUQ-bt-eQe" userLabel="AMKLabel1" customClass="AMKLabel" customModule="iFactory">
+                                <rect key="frame" x="206" y="169" width="142" height="58"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="chimbongo"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="pesto"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="curve" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="curveRadius">
                                         <real key="value" value="0.0"/>
@@ -81,57 +278,31 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="overrideText" value="fdsfsd"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="overrideTextSize">
-                                        <real key="value" value="59"/>
+                                        <real key="value" value="43"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredText" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredText" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextSize" value="YES"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="overrideTextColor">
                                         <color key="value" red="0.46923016504317805" green="0.77169052572861863" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="label" destination="Kba-l6-gOa" id="UK7-ej-y3u"/>
-                                </connections>
-                            </view>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHm-MG-03C" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
-                                <rect key="frame" x="90" y="367" width="195" height="61"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="chimbongo"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="curve" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="curveRadius">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="curveAngle">
-                                        <real key="value" value="90"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="overrideText" value="fdsfsd"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideTextSize">
-                                        <real key="value" value="59"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredText" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextSize" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="overrideTextColor">
-                                        <color key="value" red="1" green="0.80198166711324492" blue="0.11865000744608067" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="label" destination="Kba-l6-gOa" id="Fg6-8J-3RZ"/>
+                                    <outlet property="label" destination="kyZ-Na-Vfd" id="Xy1-sK-tmb"/>
                                 </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="JUQ-bt-eQe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EVD-zh-2el"/>
-                            <constraint firstItem="JUQ-bt-eQe" firstAttribute="trailing" secondItem="MHm-MG-03C" secondAttribute="trailing" id="Ers-2Y-GUA"/>
-                            <constraint firstItem="JUQ-bt-eQe" firstAttribute="leading" secondItem="MHm-MG-03C" secondAttribute="leading" id="ch9-wj-8R7"/>
-                            <constraint firstItem="MHm-MG-03C" firstAttribute="top" secondItem="JUQ-bt-eQe" secondAttribute="bottom" constant="3" id="xOf-CU-XdB"/>
-                            <constraint firstItem="JUQ-bt-eQe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yp9-nO-1V1"/>
-                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="xbe-ue-P26"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="amkTestLabel" destination="p8S-t5-r6c" id="naH-Mw-8QT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

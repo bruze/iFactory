@@ -12,6 +12,7 @@ class ViewController: UIViewController {
    // @IBOutlet weak var theButton: AMKButton!
     //@IBOutlet weak var scrollView: AMKCarousel!
     
+    @IBOutlet weak var amkTestLabel: AMKLabel!
     //var scrollView: LTInfiniteScrollView?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class ViewController: UIViewController {
         //carruso.storeID = "specialCarrousel"
         //carruso.scrollView.verticalScroll = false
         //view.addSubview(carruso)
+        //boldMe()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +36,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @objc func boldMe() {
+        let backUp = amkTestLabel.backStoreID
+        if backUp.isEmpty {
+            amkTestLabel.storeID = "sysBold"
+        } else {
+            amkTestLabel.storeID = backUp
+        }
+        amkTestLabel.reloadAMKConfig()
+    }
+    
     @objc func printaline(message: AnyObject) {
         print("GOOD JOB" + String(message))
     }

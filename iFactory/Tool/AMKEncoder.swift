@@ -22,7 +22,16 @@ extension UIView: AMKEncodable, PropertyExtensions {
             return getProperty("storeID", initial:"")
         }
         set {
+            backStoreID = storeID
             setValue(newValue, forProperty: "storeID")
+        }
+    }
+    public var backStoreID: String {
+        get {
+            return getProperty("backStoreID", initial:"")
+        }
+        set {
+            setValue(newValue, forProperty: "backStoreID")
         }
     }
     var storeLoaded: Bool {

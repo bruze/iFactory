@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fontName</key>
+	<string>Iowan Old Style Roman</string>
+	<key>pointSize</key>
+	<string>38</string>
+	<key>text</key>
+	<string>Pesto</string>
+	<key>textColor</key>
+	<string>NSCalibratedRGBColorSpace 0.336694 0.549083 0.890525 1</string>
+</dict>
+</plist>

@@ -64,6 +64,12 @@ class AMKLabel: UIView, NSXMLParserDelegate {
             }
         #endif
     }
+    func reloadAMKConfig() {
+        if let path = bundle.pathForResource(storeID.stringByAppendingString(".plist"), ofType: nil, inDirectory: "amk") {
+            let entityData = NSDictionary.init(contentsOfFile: path)
+            decode(entityData!)
+        }
+    }
     override func decode(data: NSDictionary) {
         text = data["text"]!.str()
         textColor = overrideStoredTextColor ? overrideTextColor : colorFromStoredInfo(data["textColor"]!.str())
@@ -100,8 +106,15 @@ class AMKLabel: UIView, NSXMLParserDelegate {
         var components = infoFont.componentsSeparatedByString(" ")
         var tryName = ""
         
-        var lastComponent: [String] = [components.popLast()!]
-        let firstIsSystemCheck = components.first! == "System"
+        var lastComponent: [String] = []
+        
+        if components.count == 1 {
+            lastComponent = components
+        } else {
+            lastComponent = [components.popLast()!]
+        }
+        
+        let firstIsSystemCheck = components.count > 0 ? components.first! == "System" : false
         if lastComponent.flatString() != "System" && !firstIsSystemCheck {
             let flatString = components.flatString(" ")
             var family = UIFont.fontNamesForFamilyName(flatString)

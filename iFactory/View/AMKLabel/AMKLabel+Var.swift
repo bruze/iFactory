@@ -56,4 +56,12 @@ extension AMKLabel {
             setValue(newValue, forProperty: "textFont")
         }
     }
+    @IBOutlet var delegate: AnyObject? {
+        get {
+            return getProperty("delegate", initial: nil)
+        }
+        set {
+            setValue(newValue, forProperty: "delegate")
+        }
+    }
 }

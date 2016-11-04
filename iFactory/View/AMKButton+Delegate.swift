@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import EZSwiftExtensions
 extension AMKButton {
     /*internal var actions: [String] {
         get {
@@ -84,12 +84,22 @@ extension AMKButton {
     internal func delegatePerformTouch() {
         //if !touchAction.isEmpty {
             if actionBlocks?.count == 0 {
+                guard !touchAction.isEmpty else {
+                    return
+                }
+                let aSelector = Selector.init(extendedGraphemeClusterLiteral: touchAction)
                 if let executer = delegate as? UIViewController {
-                    let aSelector = Selector.init(extendedGraphemeClusterLiteral: touchAction)
-                    executer.performSelector(aSelector, withObject: "")
+                    if executer.respondsToSelector(aSelector) {
+                        executer.performSelector(aSelector, withObject: "")
+                    }
                 } else if let executer = delegate as? ViewController {
-                    let aSelector = Selector.init(extendedGraphemeClusterLiteral: touchAction)
-                    executer.performSelector(aSelector, withObject: "")
+                    if executer.respondsToSelector(aSelector) {
+                        executer.performSelector(aSelector, withObject: "")
+                    }
+                } else if let executer = ez.topMostVC {
+                    if executer.respondsToSelector(aSelector) {
+                        executer.performSelector(aSelector, withObject: "")
+                    }
                 }
             } else {
                 actionBlocks?.first!()

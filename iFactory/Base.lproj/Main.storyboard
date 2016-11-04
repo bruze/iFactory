@@ -235,10 +235,10 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Vz3-J5-tra"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rasta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyZ-Na-Vfd">
-                                <rect key="frame" x="227" y="113" width="131" height="89"/>
-                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="48"/>
-                                <color key="textColor" red="0.68361560191928405" green="0.75889423076923079" blue="0.41893895344613435" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BoldEd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyZ-Na-Vfd">
+                                <rect key="frame" x="184" y="62" width="183" height="89"/>
+                                <fontDescription key="fontDescription" name="Trebuchet-BoldItalic" family="Trebuchet MS" pointSize="45"/>
+                                <color key="textColor" red="0.38667111474847327" green="0.75889423076923079" blue="0.59246620442848019" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbe-ue-P26" customClass="AMKSuperView" customModule="iFactory" customModuleProvider="target">
@@ -265,10 +265,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUQ-bt-eQe" userLabel="AMKLabel1" customClass="AMKLabel" customModule="iFactory">
-                                <rect key="frame" x="206" y="169" width="142" height="58"/>
+                                <rect key="frame" x="197" y="191" width="158" height="58"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="pesto"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="trebuchet"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="curve" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="curveRadius">
                                         <real key="value" value="0.0"/>
@@ -286,9 +286,11 @@
                                         <color key="value" red="0.46923016504317805" green="0.77169052572861863" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="mutateOnTouch" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="touchAction" value="boldMe"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="label" destination="kyZ-Na-Vfd" id="Xy1-sK-tmb"/>
+                                    <outlet property="label" destination="kyZ-Na-Vfd" id="3tk-iQ-noa"/>
                                 </connections>
                             </view>
                         </subviews>

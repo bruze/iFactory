@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EZSwiftExtensions
 @IBDesignable
 class AMKLabel: UIView, NSXMLParserDelegate {
     //var kvoContext: UInt = 1
@@ -70,6 +71,12 @@ class AMKLabel: UIView, NSXMLParserDelegate {
             decode(entityData!)
         }
     }
+    func initialConfig() {
+        if mutateOnTouch && storeID == mutateStoreID {
+            storeID = backStoreID
+            reloadAMKConfig()
+        }
+    }
     override func decode(data: NSDictionary) {
         text = data["text"]!.str()
         textColor = overrideStoredTextColor ? overrideTextColor : colorFromStoredInfo(data["textColor"]!.str())
@@ -97,7 +104,64 @@ class AMKLabel: UIView, NSXMLParserDelegate {
         }
         return result
     }
+    func obtenerFamiliaFuente(inout chequeando: [String], inout componentes: [String]) -> String {
+        let flatted = chequeando.flatString(" ")
+        let fonts = UIFont.fontNamesForFamilyName(flatted)
+        if fonts.count > 0 {
+            return flatted
+        } else {
+            if componentes.count > 0 {
+                chequeando.append(componentes.removeFirst())
+                return obtenerFamiliaFuente(&chequeando, componentes: &componentes)
+            } else {
+                return ""
+            }
+        }
+    }
     func fontFromStoredInfo(infoFont: String) -> UIFont {
+        let tTextSize = overrideStoredTextSize ? overrideTextSize : 16
+        let systemResult = UIFont.systemFontOfSize(tTextSize) // and default result
+        if infoFont.contains("System") {
+            let italicSystemResult = UIFont.italicSystemFontOfSize(tTextSize)
+            let boldSystemResult = UIFont.boldSystemFontOfSize(tTextSize)
+            
+            let components = infoFont.componentsSeparatedByString(" ")
+            if components.count == 1 {
+                return systemResult
+            } else {
+                let lastComponent = components.last
+                if lastComponent == "Bold" {
+                    return boldSystemResult
+                } else if lastComponent == "Italic" {
+                    return italicSystemResult
+                }
+            }
+        } else {
+            var components = infoFont.componentsSeparatedByString(" ")
+            var checking = [components.removeFirst()]
+            let familyName = obtenerFamiliaFuente(&checking, componentes: &components)
+            if familyName.isEmpty {
+                return systemResult
+            } else {
+                let family = UIFont.fontNamesForFamilyName(familyName)
+                if family.count == 1 {
+                    return UIFont.init(name: family.first!, size: overrideStoredTextSize ? overrideTextSize : 16)!
+                } else {
+                    let filtered = family.filter { (comp) -> Bool in
+                        let sComponents = comp.componentsSeparatedByString("-")
+                        return sComponents.last! == components.flatString() || sComponents.last! == components.flatString(" ")
+                    }
+                    if filtered.count == 1 {
+                        return UIFont.init(name: filtered.first!, size: overrideStoredTextSize ? overrideTextSize : 16)!
+                    } else {
+                        return systemResult
+                    }
+                }
+            }
+        }
+        return systemResult
+    }
+    /*func fontFromStoredInfo(infoFont: String) -> UIFont {
         let tTextSize = overrideStoredTextSize ? overrideTextSize : 16
         var result = UIFont.systemFontOfSize(tTextSize)
         let italicSystemResult = UIFont.italicSystemFontOfSize(tTextSize)
@@ -107,6 +171,11 @@ class AMKLabel: UIView, NSXMLParserDelegate {
         var tryName = ""
         
         var lastComponent: [String] = []
+        
+        var testComponents = components
+        var testChequeando = lastComponent
+        testChequeando.append(testComponents.removeFirst())
+        //print(obtenerFamiliaFuente(&testChequeando, componentes: &testComponents))
         
         if components.count == 1 {
             lastComponent = components
@@ -143,6 +212,22 @@ class AMKLabel: UIView, NSXMLParserDelegate {
         }
         
         return result
+    }*/
+    internal func delegatePerformTouch() {
+        guard !touchAction.isEmpty else {
+            return
+        }
+        if let executer = delegate as? UIViewController {
+            let aSelector = Selector.init(extendedGraphemeClusterLiteral: touchAction)
+            if executer.respondsToSelector(aSelector) {
+                executer.performSelector(aSelector, withObject: "")
+            }
+        } else if let executer = ez.topMostVC {
+            let aSelector = Selector.init(extendedGraphemeClusterLiteral: touchAction)
+            if executer.respondsToSelector(aSelector) {
+                executer.performSelector(aSelector, withObject: "")
+            }
+        }
     }
 }
 

@@ -104,4 +104,30 @@ extension AMKLabel {
             }
         }
     }
+    //MARK: Mutate on Touch
+    @IBInspectable dynamic var mutateOnTouch: Bool {
+        get {
+            return getProperty("mutateOnTouch", initial: false)
+        }
+        set {
+            setValue(newValue, forProperty: "mutateOnTouch")
+        }
+    }
+    @IBInspectable dynamic var mutateStoreID: String {
+        get {
+            return getProperty("mutateStoreID", initial: "")
+        }
+        set {
+            setValue(newValue, forProperty: "mutateStoreID")
+        }
+    }
+    //MARK: Action on Touch
+    @IBInspectable dynamic var touchAction: String {
+        get {
+            return getProperty("touchAction", initial: "")
+        }
+        set {
+            setValue(newValue, forProperty: "touchAction")
+        }
+    }
 }

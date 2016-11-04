@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fontName</key>
+	<string>Futura Medium</string>
+	<key>pointSize</key>
+	<string>45</string>
+	<key>text</key>
+	<string>BoldMe</string>
+	<key>textColor</key>
+	<string>NSCalibratedRGBColorSpace 0.683616 0.758894 0.418939 1</string>
+</dict>
+</plist>

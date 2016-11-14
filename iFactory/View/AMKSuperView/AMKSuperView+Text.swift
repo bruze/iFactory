@@ -8,7 +8,7 @@
 
 import UIKit
 extension AMKSuperView {
-    @IBOutlet weak var label: UILabel! {
+    /*@IBOutlet weak var label: UILabel! {
         get {
             return getProperty("label", initial: UILabel.init())
         }
@@ -32,6 +32,14 @@ extension AMKSuperView {
             label.center = center
             label.drawRect(newFrame)
             //label.centerInSuperView()
+        }
+    }*/
+    dynamic var label: AMKLabel {
+        get {
+            return getProperty("label", initial: AMKLabel.init(frame: CGRectMake(0, 0, 100, 80)))
+        }
+        set {
+            setValue(newValue, forProperty: "label")
         }
     }
 }

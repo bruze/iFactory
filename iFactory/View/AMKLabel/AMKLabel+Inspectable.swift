@@ -53,7 +53,7 @@ extension AMKLabel {
     }
     @IBInspectable dynamic var overrideText: String {
         get {
-            return getProperty("overrideText", initial: "")
+            return getProperty("overrideText", initial: "overrideText")
         }
         set {
             setValue(newValue, forProperty: "overrideText")

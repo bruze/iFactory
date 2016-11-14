@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MHm-MG-03C" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHm-MG-03C" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
                                 <rect key="frame" x="7" y="487" width="208" height="93"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
@@ -41,7 +41,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUa-h5-MS0" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUa-h5-MS0" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
                                 <rect key="frame" x="20" y="15" width="208" height="93"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
@@ -65,7 +65,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p8S-t5-r6c" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8S-t5-r6c" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
                                 <rect key="frame" x="13" y="245" width="208" height="93"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
@@ -89,7 +89,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ala-K0-Ncq" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ala-K0-Ncq" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
                                 <rect key="frame" x="13" y="90" width="208" height="93"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
@@ -113,7 +113,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rf5-pf-L2H" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rf5-pf-L2H" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
                                 <rect key="frame" x="20" y="159" width="208" height="93"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
@@ -137,7 +137,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rxD-SF-2z1" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rxD-SF-2z1" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
                                 <rect key="frame" x="7" y="566" width="208" height="93"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
@@ -161,7 +161,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ABJ-m3-EZj" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABJ-m3-EZj" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
                                 <rect key="frame" x="13" y="415" width="208" height="93"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
@@ -185,7 +185,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RMC-7t-CrC" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMC-7t-CrC" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
                                 <rect key="frame" x="20" y="346" width="208" height="93"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
@@ -209,7 +209,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="overrideStoredTextColor" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="riQ-gS-HXA" customClass="AMKButton" customModule="iFactory" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="riQ-gS-HXA" customClass="AMKButton" customModule="iFactory" customModuleProvider="target">
                                 <rect key="frame" x="229" y="476" width="126" height="74"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
@@ -235,14 +235,14 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Vz3-J5-tra"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BoldEd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyZ-Na-Vfd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BoldEd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyZ-Na-Vfd">
                                 <rect key="frame" x="184" y="62" width="183" height="89"/>
                                 <fontDescription key="fontDescription" name="Trebuchet-BoldItalic" family="Trebuchet MS" pointSize="45"/>
                                 <color key="textColor" red="0.38667111474847327" green="0.75889423076923079" blue="0.59246620442848019" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbe-ue-P26" customClass="AMKSuperView" customModule="iFactory" customModuleProvider="target">
-                                <rect key="frame" x="41" y="46" width="308" height="292"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xbe-ue-P26" customClass="AMKSuperView" customModule="iFactory" customModuleProvider="target">
+                                <rect key="frame" x="41" y="46" width="106" height="123"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backColor">
@@ -262,9 +262,34 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="image" keyPath="touchImage" value="iconMyRedemp"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="idleImage" value="iconMyRedemp"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="skyBlue"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="storeButtonID" value="a"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUQ-bt-eQe" userLabel="AMKLabel1" customClass="AMKLabel" customModule="iFactory">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MKo-kT-mff" customClass="AMKSuperViewRefEncodable" customModule="iFactory" customModuleProvider="target">
+                                <rect key="frame" x="67" y="219" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="superView" destination="xbe-ue-P26" id="TID-64-0eB"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R6H-jF-dzl" customClass="AMKLabel" customModule="iFactory" customModuleProvider="target">
+                                <rect key="frame" x="60" y="438" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="pinka"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="label" destination="zs4-9u-Pcy" id="5Ra-zS-zoX"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zs4-9u-Pcy">
+                                <rect key="frame" x="279" y="416" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.46645519660754931" blue="0.99296019855054407" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUQ-bt-eQe" userLabel="AMKLabel1" customClass="AMKLabel" customModule="iFactory">
                                 <rect key="frame" x="197" y="191" width="158" height="58"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
@@ -297,7 +322,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="xbe-ue-P26"/>
+                                <exclude reference="MHm-MG-03C"/>
+                                <exclude reference="JUa-h5-MS0"/>
+                                <exclude reference="p8S-t5-r6c"/>
+                                <exclude reference="ala-K0-Ncq"/>
+                                <exclude reference="rf5-pf-L2H"/>
+                                <exclude reference="rxD-SF-2z1"/>
+                                <exclude reference="ABJ-m3-EZj"/>
+                                <exclude reference="RMC-7t-CrC"/>
+                                <exclude reference="riQ-gS-HXA"/>
+                                <exclude reference="kyZ-Na-Vfd"/>
+                                <exclude reference="JUQ-bt-eQe"/>
                             </mask>
                         </variation>
                     </view>

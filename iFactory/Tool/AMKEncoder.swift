@@ -15,7 +15,9 @@ import PropertyExtensions
     func encode()
     func decode(data: NSDictionary)
 }
-
+class AMKSuperViewRefEncodable: AMKSuperView {
+    @IBOutlet weak var superView: AMKSuperView?
+}
 extension UIView: AMKEncodable, PropertyExtensions {
     @IBInspectable public var storeID: String {
         get {

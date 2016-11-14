@@ -50,6 +50,7 @@
 		9D7BD50D1DC7C386005FC81D /* AMKLabel+Var.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7BD50C1DC7C386005FC81D /* AMKLabel+Var.swift */; };
 		9DC069EA1DAE8B4700A7CD05 /* 1212.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DC069E81DAE8B4700A7CD05 /* 1212.plist */; };
 		9DC069EC1DAE8C0400A7CD05 /* amk in Resources */ = {isa = PBXBuildFile; fileRef = 9DC069EB1DAE8C0400A7CD05 /* amk */; };
+		9DC167431DD11AA800ABCFDF /* AMKSuperView+Inspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC167421DD11AA800ABCFDF /* AMKSuperView+Inspectable.swift */; };
 		9DD823AD1D83247D003B2FAC /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD823AC1D83247D003B2FAC /* Global.swift */; };
 		9DD823DA1D87325D003B2FAC /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD823D91D87325D003B2FAC /* String+Extension.swift */; };
 		9DFDC46C1DCBD03B00785F9F /* AMKLabel+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFDC46B1DCBD03B00785F9F /* AMKLabel+Touch.swift */; };
@@ -125,6 +126,7 @@
 		9D7BD50C1DC7C386005FC81D /* AMKLabel+Var.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKLabel+Var.swift"; path = "View/AMKLabel/AMKLabel+Var.swift"; sourceTree = "<group>"; };
 		9DC069E91DAE8B4700A7CD05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/1212.plist; sourceTree = "<group>"; };
 		9DC069EB1DAE8C0400A7CD05 /* amk */ = {isa = PBXFileReference; lastKnownFileType = folder; path = amk; sourceTree = "<group>"; };
+		9DC167421DD11AA800ABCFDF /* AMKSuperView+Inspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKSuperView+Inspectable.swift"; path = "View/AMKSuperView/AMKSuperView+Inspectable.swift"; sourceTree = "<group>"; };
 		9DD823AC1D83247D003B2FAC /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = Tool/Global.swift; sourceTree = "<group>"; };
 		9DD823D91D87325D003B2FAC /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "Tool/String+Extension.swift"; sourceTree = "<group>"; };
 		9DFDC46B1DCBD03B00785F9F /* AMKLabel+Touch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKLabel+Touch.swift"; path = "View/AMKLabel/AMKLabel+Touch.swift"; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				9D483D501D9AEE0400AD569C /* AMKSuperView+Background.swift */,
 				9D483D521D9AF00400AD569C /* AMKSuperView+View.swift */,
 				9D483D541D9AFCA600AD569C /* AMKSuperView+Text.swift */,
+				9DC167421DD11AA800ABCFDF /* AMKSuperView+Inspectable.swift */,
 			);
 			name = AMKSuperView;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				9D483D3F1D9AAD1100AD569C /* AMKSuperView.swift in Sources */,
 				9D483D411D9AAE9100AD569C /* AMKSuperView+Gradient.swift in Sources */,
 				9D483D451D9AB01200AD569C /* AMKSuperView+Border.swift in Sources */,
+				9DC167431DD11AA800ABCFDF /* AMKSuperView+Inspectable.swift in Sources */,
 				9D483D471D9AB56F00AD569C /* AMKSuperView+Touch.swift in Sources */,
 				9D4058101D7F037E002C4571 /* AMKButton+Image.swift in Sources */,
 			);

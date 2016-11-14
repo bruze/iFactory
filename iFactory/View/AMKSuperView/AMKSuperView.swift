@@ -19,6 +19,39 @@ class AMKSuperView: UIView {
     }
     override func didMoveToWindow() {
         super.didMoveToWindow()
+        
+        #if TARGET_INTERFACE_BUILDER
+            if !storeLoaded && !storeID.isEmpty {
+                label.storeID = storeID
+                label.overrideStoredText = false
+                addSubview(label)
+                label.reloadAMKConfig()
+                /*let path = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Overlays/amk/\(storeID).plist"
+                if fileMan.fileExistsAtPath(path) {
+                    let entityData = NSDictionary.init(contentsOfFile: path)
+                    label.decode(entityData!)
+                    addSubview(label)
+                    label.reloadAMKConfig()
+                    storeLoaded = true
+                }*/
+            }
+            /*if let _ = label {
+                drawRect(frame)
+            }*/
+        #else
+            if !storeLoaded && !storeID.isEmpty {
+                label.storeID = storeID
+                label.overrideStoredText = false
+                if let path = bundle.pathForResource(storeID.stringByAppendingString(".plist"), ofType: nil, inDirectory: "amk") {
+                    let entityData = NSDictionary.init(contentsOfFile: path)
+                    label.decode(entityData!)
+                    addSubview(label)
+                    label.reloadAMKConfig()
+                    storeLoaded = true
+                }
+            }
+        #endif
+        
         /*if label != nil {
             label.drawRect(frame)
         }*/
@@ -50,17 +83,17 @@ class AMKSuperView: UIView {
         //clipsToBounds = true
     }
     override func prepareForInterfaceBuilder() {
-        if label != nil {
+        /*if label != nil {
             //label.drawTextInRect(label.bounds)
             label.drawRect(frame)
-        }
+        }*/
         //label.drawCurves(frame)
     }
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
-        if label != nil {
+        /*if label != nil {
             label.drawRect(rect)
-        }
+        }*/
         //label.drawCurves(rect)
     }
 }

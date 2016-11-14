@@ -31,6 +31,7 @@ class AMKLabel: UIView, NSXMLParserDelegate {
             addObserver(self, forKeyPath: "enabled", options: NSKeyValueObservingOptions.New, context: &kvoContext)
             addObserver(self, forKeyPath: "origin", options: NSKeyValueObservingOptions.New, context: &kvoContext)
         #endif*/
+        backgroundColor = UIColor.clearColor()
     }
     
     //MARK:OVERRIDE

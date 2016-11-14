@@ -36,7 +36,7 @@ extension AMKButton {
         super.touchesEnded(touches, withEvent: event)
     }
 
-    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+    override func touchesCancelled(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard enabled else {
             return
         }

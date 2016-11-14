@@ -120,7 +120,7 @@ extension AMKSuperView {
         }
     }
     
-    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+    override func touchesCancelled(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard userInteractionEnabled else { return }
         /*guard enabled else {
             return

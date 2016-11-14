@@ -23,7 +23,7 @@ extension AMKLabel {
         initialConfig()
         delegatePerformTouch()
     }
-    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+    override func touchesCancelled(touches: Set<UITouch>, withEvent event: UIEvent?) {
         initialConfig()
     }
     /*override func touchesEstimatedPropertiesUpdated(touches: Set<NSObject>) {

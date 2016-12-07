@@ -4,14 +4,24 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>amkFactoryLib.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>iFactory.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>9D276F531DCA329400FBCF12</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9D4057EE1D7DE8A8002C4571</key>
 		<dict>
 			<key>primary</key>

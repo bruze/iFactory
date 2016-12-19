@@ -17,9 +17,12 @@ class AMKSuperView: UIView {
              setNeedsLayout()*/
         }
     }
+    func handle(not: NSNotification) {
+        print(not)
+    }
     override func didMoveToWindow() {
         super.didMoveToWindow()
-        
+        noti.addObserver(self, selector: #selector(handle), name: nil, object: nil)
         #if TARGET_INTERFACE_BUILDER
             if !storeLoaded && !storeID.isEmpty {
                 label.storeID = storeID

@@ -17,6 +17,23 @@ extension AMKSuperView {
             encode()
         }
     }
+    //MARK: Action on Touch
+    @IBInspectable dynamic var touchAction: String {
+        get {
+            return getProperty("touchAction", initial: "")
+        }
+        set {
+            setValue(newValue, forProperty: "touchAction")
+        }
+    }
+    @IBOutlet var delegate: AnyObject? {
+        get {
+            return getProperty("delegate", initial: nil)
+        }
+        set {
+            setValue(newValue, forProperty: "delegate")
+        }
+    }
     override func encode() {
         let parsedData = ["": idleImage.imageAsset.debugDescription]
         print(parsedData)

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fontName</key>
+	<string>Hoefler Text Black Italic</string>
+	<key>pointSize</key>
+	<string>35</string>
+	<key>text</key>
+	<string>Label</string>
+	<key>textColor</key>
+	<string>NSCustomColorSpace sRGB IEC61966-2.1 colorspace 0.815384 0.866375 0.99296 1</string>
+</dict>
+</plist>

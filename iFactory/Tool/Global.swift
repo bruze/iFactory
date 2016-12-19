@@ -11,6 +11,7 @@ import UIKit
 
 let bundle = NSBundle.mainBundle()
 let fileMan = NSFileManager.defaultManager()
+let noti = NSNotificationCenter.defaultCenter()
 //////////////////////////////////
 let emptyLayer = CALayer.init()
 let emptyImage = UIImage.init()

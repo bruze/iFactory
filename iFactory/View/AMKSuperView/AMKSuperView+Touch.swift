@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EZSwiftExtensions
 extension AMKSuperView {
     @IBInspectable var blinkIfNoTouchImage: Bool {
         get {
@@ -131,6 +132,22 @@ extension AMKSuperView {
             super.touchesCancelled(touches, withEvent: event)
         } else {
             
+        }
+    }
+    internal func delegatePerformTouch() {
+        guard !touchAction.isEmpty else {
+            return
+        }
+        if let executer = delegate as? UIViewController {
+            let aSelector = Selector.init(extendedGraphemeClusterLiteral: touchAction)
+            if executer.respondsToSelector(aSelector) {
+                executer.performSelector(aSelector, withObject: "")
+            }
+        } else if let executer = ez.topMostVC {
+            let aSelector = Selector.init(extendedGraphemeClusterLiteral: touchAction)
+            if executer.respondsToSelector(aSelector) {
+                executer.performSelector(aSelector, withObject: "")
+            }
         }
     }
 }

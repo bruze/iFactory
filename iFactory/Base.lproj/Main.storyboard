@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHm-MG-03C" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
-                                <frame key="frameInset" minX="7" minY="487" width="208" height="93"/>
+                                <rect key="frame" x="7" y="487" width="208" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
@@ -44,7 +47,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUa-h5-MS0" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
-                                <frame key="frameInset" minX="20" minY="15" width="208" height="93"/>
+                                <rect key="frame" x="20" y="15" width="208" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
@@ -69,7 +72,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8S-t5-r6c" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
-                                <frame key="frameInset" minX="13" minY="245" width="208" height="93"/>
+                                <rect key="frame" x="13" y="245" width="208" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
@@ -94,7 +97,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ala-K0-Ncq" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
-                                <frame key="frameInset" minX="13" minY="90" width="208" height="93"/>
+                                <rect key="frame" x="13" y="90" width="208" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
@@ -119,7 +122,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rf5-pf-L2H" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
-                                <frame key="frameInset" minX="20" minY="159" width="208" height="93"/>
+                                <rect key="frame" x="20" y="159" width="208" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
@@ -144,7 +147,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rxD-SF-2z1" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
-                                <frame key="frameInset" minX="7" minY="566" width="208" height="93"/>
+                                <rect key="frame" x="7" y="566" width="208" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
@@ -169,7 +172,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABJ-m3-EZj" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
-                                <frame key="frameInset" minX="13" minY="415" width="208" height="93"/>
+                                <rect key="frame" x="13" y="415" width="208" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
@@ -194,7 +197,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMC-7t-CrC" userLabel="AMKLabel2" customClass="AMKLabel" customModule="iFactory">
-                                <frame key="frameInset" minX="20" minY="346" width="208" height="93"/>
+                                <rect key="frame" x="20" y="346" width="208" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
@@ -219,7 +222,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="riQ-gS-HXA" customClass="AMKButton" customModule="iFactory" customModuleProvider="target">
-                                <frame key="frameInset" minX="229" minY="476" width="126" height="74"/>
+                                <rect key="frame" x="229" y="476" width="126" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
@@ -246,14 +249,14 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BoldEd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyZ-Na-Vfd">
-                                <frame key="frameInset" minX="184" minY="62" width="183" height="89"/>
+                                <rect key="frame" x="184" y="62" width="183" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Trebuchet-BoldItalic" family="Trebuchet MS" pointSize="45"/>
                                 <color key="textColor" red="0.38667111474847327" green="0.75889423076923079" blue="0.59246620442848019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xbe-ue-P26" customClass="AMKSuperView" customModule="iFactory" customModuleProvider="target">
-                                <frame key="frameInset" minX="41" minY="46" width="106" height="123"/>
+                                <rect key="frame" x="41" y="46" width="106" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
@@ -279,7 +282,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MKo-kT-mff" customClass="AMKSuperViewRefEncodable" customModule="iFactory" customModuleProvider="target">
-                                <frame key="frameInset" minX="67" minY="219" width="240" height="128"/>
+                                <rect key="frame" x="67" y="219" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -287,25 +290,25 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R6H-jF-dzl" customClass="AMKLabel" customModule="iFactory" customModuleProvider="target">
-                                <frame key="frameInset" minX="60" minY="438" width="240" height="128"/>
+                                <rect key="frame" x="60" y="438" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="1212"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="softViolet"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="label" destination="zs4-9u-Pcy" id="5Ra-zS-zoX"/>
+                                    <outlet property="label" destination="zs4-9u-Pcy" id="bS1-SY-rk9"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zs4-9u-Pcy">
-                                <frame key="frameInset" minX="279" minY="416" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zs4-9u-Pcy">
+                                <rect key="frame" x="176" y="345" width="145" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.46645519660754931" blue="0.99296019855054407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-BlackItalic" family="Hoefler Text" pointSize="35"/>
+                                <color key="textColor" red="0.81538380872483196" green="0.86637479026845643" blue="0.99296019855054407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUQ-bt-eQe" userLabel="AMKLabel1" customClass="AMKLabel" customModule="iFactory">
-                                <frame key="frameInset" minX="197" minY="191" width="158" height="58"/>
+                                <rect key="frame" x="197" y="191" width="158" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="nkm"/>
@@ -358,7 +361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4.5" y="239.5"/>
+            <point key="canvasLocation" x="-5.5999999999999996" y="238.83058470764618"/>
         </scene>
     </scenes>
     <resources>

@@ -32,8 +32,10 @@ extension AMKSuperView {
         set {
             setValue(newValue, forProperty: "touchImage")
             let size = newValue.size
-            var setX = centerX - size.width / 2
-            var setY = centerY - size.height / 2
+            //var setX = centerX - size.width / 2
+            //var setY = centerY - size.height / 2
+            var setX = /*centerX*/frame.size.width / 2 - size.width / 2
+            var setY = /*centerY*/frame.size.height / 2 - size.height / 2
             !touchPositionAngle.isZero && !touchPositionRadius.isZero ? {
                 setX += cos(touchPositionAngle.degreesToRadians()) * touchPositionRadius
                 setY -= sin(touchPositionAngle.degreesToRadians()) * touchPositionRadius
@@ -79,21 +81,24 @@ extension AMKSuperView {
             passingLayerColor(UIColor.cyanColor(), GoingRight: true)
         }*/
         if enabled {
-            if !touchBackColor.isEmpty() {
-                backgroundColor = touchBackColor
-            }
-            var blinked = false
-            if !touchImageView.isEmpty() {
-                idleImageView.hidden.toggle()
-                touchImageView.hidden.toggle()
-                blinked.toggle()
-            } else if (touchImageView.isEmpty() && blinkIfNoTouchImage) {
-                backgroundColor = UIColor.clearColor()
-                blinked.toggle()
-            }
-            if blinked && blinkLabelToo {
-                label.hidden = true
-            }
+            ez.runThisInMainThread({ 
+                if !self.touchBackColor.isEmpty() {
+                    self.backgroundColor = self.touchBackColor
+                }
+                var blinked = false
+                if !self.touchImageView.isEmpty() {
+                    self.idleImageView.hidden.toggle()
+                    self.touchImageView.hidden.toggle()
+                    blinked.toggle()
+                } else if (self.touchImageView.isEmpty() && self.blinkIfNoTouchImage) {
+                    self.backgroundColor = UIColor.clearColor()
+                    blinked.toggle()
+                }
+                if blinked && self.blinkLabelToo {
+                    self.label.hidden = true
+                }
+                self.setNeedsDisplay()
+            })
             super.touchesBegan(touches, withEvent: event)
         }
     }
@@ -104,8 +109,50 @@ extension AMKSuperView {
             return
         }
         setImage(ForTag: AMKTypeTag.ImageDefault)
-        setDefaultBackColor()
-        delegatePerformTouch()*/
+        setDefaultBackColor()*/
+        if enabled {
+            /*if !touchBackColor.isEmpty() {
+                backgroundColor = backColor
+            }
+            if !touchImageView.isEmpty() {
+                idleImageView.hidden.toggle()
+                touchImageView.hidden.toggle()
+            } else if (touchImageView.isEmpty() && blinkIfNoTouchImage) {
+                backgroundColor = backColor
+            }*/
+            label.hidden = false
+            ez.runThisAfterDelay(seconds: 0.1, after: {
+                self.delegatePerformTouch()
+                super.touchesEnded(touches, withEvent: event)
+            })
+        }
+    }
+    
+    /*override func touchesEstimatedPropertiesUpdated(touches: Set<UITouch>) {
+        print("estimatedUpdated")
+    }*/
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if #available(iOS 9.1, *) {
+            let contained = frame.contains((touches.first?.preciseLocationInView(self))!)
+            if !contained {
+                UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+                return
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        super.touchesMoved(touches, withEvent: event)
+    }
+    
+    override func touchesCancelled(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        UIApplication.sharedApplication().endIgnoringInteractionEvents()
+        guard userInteractionEnabled else { return }
+        /*guard enabled else {
+            return
+        }
+        setImage(ForTag: AMKTypeTag.ImageDefault)
+        setDefaultBackColor()*/
         if enabled {
             if !touchBackColor.isEmpty() {
                 backgroundColor = backColor
@@ -117,24 +164,23 @@ extension AMKSuperView {
                 backgroundColor = backColor
             }
             label.hidden = false
-            super.touchesEnded(touches, withEvent: event)
-        }
-    }
-    
-    override func touchesCancelled(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        guard userInteractionEnabled else { return }
-        /*guard enabled else {
-            return
-        }
-        setImage(ForTag: AMKTypeTag.ImageDefault)
-        setDefaultBackColor()*/
-        if enabled {
+            
             super.touchesCancelled(touches, withEvent: event)
         } else {
             
         }
     }
     internal func delegatePerformTouch() {
+        if !touchBackColor.isEmpty() {
+            backgroundColor = backColor
+        }
+        if !touchImageView.isEmpty() {
+            idleImageView.hidden.toggle()
+            touchImageView.hidden.toggle()
+        } else if (touchImageView.isEmpty() && blinkIfNoTouchImage) {
+            backgroundColor = backColor
+        }
+        setNeedsDisplay()
         guard !touchAction.isEmpty else {
             return
         }

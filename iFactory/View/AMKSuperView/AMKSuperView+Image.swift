@@ -8,6 +8,14 @@
 import AssociatedValues
 import UIKit
 extension AMKSuperView {
+    @IBInspectable var adoptImgSize: Bool {
+        get {
+            return getAssociatedValue(key: "adoptImgSize", object: self, initialValue: false)
+        }
+        set {
+            set(associatedValue: newValue, key: "adoptImgSize", object: self)
+        }
+    }
     @IBInspectable var idleImage: UIImage {
         get {
             return getAssociatedValue(key: "idleImage", object: self, initialValue: emptyImage)

@@ -10,6 +10,12 @@ import UIKit
 @IBDesignable
 class AMKSuperView: UIView {
     var kvoContext: UInt = 1
+    override public var intrinsicContentSize: CGSize {
+        let standardSize = frame.size
+        let scale = UIScreen.main.bounds.width / 375.0
+        let finalSize = CGSize.init(width: standardSize.width * scale, height: standardSize.height)
+        return finalSize
+    }
     override func didMoveToSuperview() {
         if superview != nil {
             /*centerInSuperView()
@@ -88,12 +94,6 @@ class AMKSuperView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         settleImageView()
-    }
-    override func intrinsicContentSize() -> CGSize {
-        let standardSize = frame.size
-        let scale = UIScreen.main.bounds.width / 375.0
-        let finalSize = CGSize.init(width: standardSize.width * scale, height: standardSize.height)
-        return finalSize
     }
     override func prepareForInterfaceBuilder() {
         /*if label != nil {

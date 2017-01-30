@@ -8,7 +8,7 @@
 
 import UIKit
 extension AMKLabel {
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         /*guard let _ = label else {
             print("NO LABEL")
             return
@@ -31,10 +31,10 @@ extension AMKLabel {
         if curve {
             tHeight += 30
         }
-        CGContextTranslateCTM (context, size.width / 2, tHeight)
-        CGContextScaleCTM (context, 1, -1)
-        CGContextSetFillColorWithColor(context, UIColor.clearColor().CGColor)
-        CGContextFillRect(context, bounds)
+        context.translateBy (x: size.width / 2, y: tHeight)
+        context.scaleBy (x: 1, y: -1)
+        context.setFillColor(UIColor.clear.cgColor)
+        context.fill(bounds)
         
         /*centreArcPerpendicularText("Hello round world", context: context, radius: 100, angle: 0, colour: UIColor.redColor(), font: UIFont.systemFontOfSize(16), clockwise: true)
         centreArcPerpendicularText("Anticlockwise", context: context, radius: 100, angle: CGFloat(-M_PI_2), colour: UIColor.redColor(), font: UIFont.systemFontOfSize(16), clockwise: false)
@@ -56,7 +56,7 @@ extension AMKLabel {
         UIGraphicsEndImageContext()
     }
     
-    func centreArcPerpendicularText(str: String, context: CGContextRef, radius r: CGFloat, angle theta: CGFloat, colour c: UIColor, font: UIFont, clockwise: Bool){
+    func centreArcPerpendicularText(_ str: String, context: CGContext, radius r: CGFloat, angle theta: CGFloat, colour c: UIColor, font: UIFont, clockwise: Bool){
         // *******************************************************
         // This draws the String str around an arc of radius r,
         // with the text centred at polar angle theta
@@ -71,8 +71,8 @@ extension AMKLabel {
         
         // Calculate the arc subtended by each letter and their total
         for i in 0 ..< l {
-            characters += [String(str[str.startIndex.advancedBy(i)])]
-            arcs += [chordToArc(characters[i].sizeWithAttributes(attributes).width, radius: r)]
+            characters += [String(str[str.characters.index(str.startIndex, offsetBy: i)])]
+            arcs += [chordToArc(characters[i].size(attributes: attributes).width, radius: r)]
             totalArc += arcs[i]
         }
         
@@ -99,14 +99,14 @@ extension AMKLabel {
         }
     }
     
-    func chordToArc(chord: CGFloat, radius: CGFloat) -> CGFloat {
+    func chordToArc(_ chord: CGFloat, radius: CGFloat) -> CGFloat {
         // *******************************************************
         // Simple geometry
         // *******************************************************
         return 2 * asin(chord / (2 * radius))
     }
     
-    func centreText(str: String, context: CGContextRef, radius r:CGFloat, angle theta: CGFloat, colour c: UIColor, font: UIFont, slantAngle: CGFloat) {
+    func centreText(_ str: String, context: CGContext, radius r:CGFloat, angle theta: CGFloat, colour c: UIColor, font: UIFont, slantAngle: CGFloat) {
         // *******************************************************
         // This draws the String str centred at the position
         // specified by the polar coordinates (r, theta)
@@ -118,20 +118,20 @@ extension AMKLabel {
         let attributes = [NSForegroundColorAttributeName: c,
                           NSFontAttributeName: font]
         // Save the context
-        CGContextSaveGState(context)
+        context.saveGState()
         // Undo the inversion of the Y-axis (or the text goes backwards!)
-        CGContextScaleCTM(context, 1, -1)
+        context.scaleBy(x: 1, y: -1)
         // Move the origin to the centre of the text (negating the y-axis manually)
-        CGContextTranslateCTM(context, r * cos(theta), -(r * sin(theta)))
+        context.translateBy(x: r * cos(theta), y: -(r * sin(theta)))
         // Rotate the coordinate system
-        CGContextRotateCTM(context, -slantAngle)
+        context.rotate(by: -slantAngle)
         // Calculate the width of the text
-        let offset = str.sizeWithAttributes(attributes)
+        let offset = str.size(attributes: attributes)
         // Move the origin by half the size of the text
-        CGContextTranslateCTM (context, -offset.width / 2, -offset.height / 2) // Move the origin to the centre of the text (negating the y-axis manually)
+        context.translateBy (x: -offset.width / 2, y: -offset.height / 2) // Move the origin to the centre of the text (negating the y-axis manually)
         // Draw the text
-        str.drawAtPoint(CGPointZero, withAttributes: attributes)
+        str.draw(at: CGPoint.zero, withAttributes: attributes)
         // Restore the context
-        CGContextRestoreGState(context)
+        context.restoreGState()
     }
 }

@@ -9,39 +9,39 @@
 import UIKit
 
 extension AMKButton {
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard enabled else {
             return
         }
-        if let _ = getImage(ForTag: AMKTypeTag.ImagePressed) {
-            setImage(ForTag: AMKTypeTag.ImagePressed)
+        if let _ = getImage(ForTag: AMKTypeTag.imagePressed) {
+            setImage(ForTag: AMKTypeTag.imagePressed)
         }
         if pressBackColor != nil {
             backgroundColor = pressBackColor
         }
         //encode()
         if showPassAtTap {
-            passingLayerColor(UIColor.cyanColor(), GoingRight: true)
+            passingLayerColor(UIColor.cyan, GoingRight: true)
         }
-        super.touchesBegan(touches, withEvent: event)
+        super.touchesBegan(touches, with: event)
     }
 
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard enabled else {
             return
         }
-        setImage(ForTag: AMKTypeTag.ImageDefault)
+        setImage(ForTag: AMKTypeTag.imageDefault)
         setDefaultBackColor()
         delegatePerformTouch()
-        super.touchesEnded(touches, withEvent: event)
+        super.touchesEnded(touches, with: event)
     }
 
-    override func touchesCancelled(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard enabled else {
             return
         }
-        setImage(ForTag: AMKTypeTag.ImageDefault)
+        setImage(ForTag: AMKTypeTag.imageDefault)
         setDefaultBackColor()
-        super.touchesCancelled(touches, withEvent: event)
+        super.touchesCancelled(touches, with: event)
     }
 }

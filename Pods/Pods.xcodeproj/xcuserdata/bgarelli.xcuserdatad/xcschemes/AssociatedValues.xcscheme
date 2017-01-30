@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9D276F531DCA329400FBCF12"
-               BuildableName = "amkFactoryLib.framework"
-               BlueprintName = "amkFactoryLib"
-               ReferencedContainer = "container:iFactory.xcodeproj">
+               BlueprintIdentifier = "846FFC8CC6016ABBDE037990E7B594DD"
+               BuildableName = "AssociatedValues.framework"
+               BlueprintName = "AssociatedValues"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9D276F531DCA329400FBCF12"
-            BuildableName = "amkFactoryLib.framework"
-            BlueprintName = "amkFactoryLib"
-            ReferencedContainer = "container:iFactory.xcodeproj">
+            BlueprintIdentifier = "846FFC8CC6016ABBDE037990E7B594DD"
+            BuildableName = "AssociatedValues.framework"
+            BlueprintName = "AssociatedValues"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9D276F531DCA329400FBCF12"
-            BuildableName = "amkFactoryLib.framework"
-            BlueprintName = "amkFactoryLib"
-            ReferencedContainer = "container:iFactory.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

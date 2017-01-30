@@ -8,54 +8,54 @@
 
 import UIKit
 //import SwiftFilePath
-import PropertyExtensions
+import AssociatedValues
 
 @objc protocol AMKEncodable {
     var storeID: String {get set}
     func encode()
-    func decode(data: NSDictionary)
+    func decode(_ data: NSDictionary)
 }
 class AMKSuperViewRefEncodable: AMKSuperView {
     @IBOutlet weak var superView: AMKSuperView?
 }
-extension UIView: AMKEncodable, PropertyExtensions {
+extension UIView: AMKEncodable {
     @IBInspectable public var storeID: String {
         get {
-            return getProperty("storeID", initial:"")
+            return getAssociatedValue(key: "storeID", object: self, initialValue: "")
         }
         set {
             backStoreID = storeID
-            setValue(newValue, forProperty: "storeID")
+            set(associatedValue: newValue, key: "storeID", object: self)
         }
     }
     public var backStoreID: String {
         get {
-            return getProperty("backStoreID", initial:"")
+            return getAssociatedValue(key: "backStoreID", object: self, initialValue: "")
         }
         set {
-            setValue(newValue, forProperty: "backStoreID")
+            set(associatedValue: newValue, key: "backStoreID", object: self)
         }
     }
     var storeLoaded: Bool {
         get {
-            return getProperty("storeLoaded", initial:false)
+            return getAssociatedValue(key: "storeLoaded", object: self, initialValue: false)
         }
         set {
-            setValue(newValue, forProperty: "storeLoaded")
+            set(associatedValue: newValue, key: "storeLoaded", object: self)
         }
     }
     var defaultLabel: String {
         get {
-            return getProperty("defaultLabel", initial:"")
+            return getAssociatedValue(key: "defaultLabel", object: self, initialValue: "")
         }
         set {
-            setValue(newValue, forProperty: "defaultLabel")
+            set(associatedValue: newValue, key: "defaultLabel", object: self)
         }
     }
     func encode() {
         
     }
-    func decode(data: NSDictionary) {
+    func decode(_ data: NSDictionary) {
         
     }
     /*func encode() {

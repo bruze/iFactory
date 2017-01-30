@@ -5,15 +5,15 @@
 //  Created by Bruno Garelli on 9/27/16.
 //  Copyright © 2016 Bruno Garelli. All rights reserved.
 //
-
+import AssociatedValues
 import UIKit
 extension AMKSuperView {
     @IBInspectable var idleImage: UIImage {
         get {
-            return getProperty("idleImage", initial: emptyImage)
+            return getAssociatedValue(key: "idleImage", object: self, initialValue: emptyImage)
         }
         set {
-            setValue(newValue, forProperty: "idleImage")
+            set(associatedValue: newValue, key: "idleImage", object: self)
             var size = newValue.size
             var setX = centerX - size.width / 2
             var setY = centerY - size.height / 2
@@ -29,35 +29,35 @@ extension AMKSuperView {
     }
     @IBInspectable var idlePositionAngle: CGFloat {
         get {
-            return getProperty("idlePositionAngle", initial: 0)
+            return getAssociatedValue(key: "idlePositionAngle", object: self, initialValue: 0)
         }
         set {
-            setValue(newValue, forProperty: "idlePositionAngle")
+            set(associatedValue: newValue, key: "idlePositionAngle", object: self)
             updateImageViewLocation(idlePositionAngle, radius: idlePositionRadius, imageView: &idleImageView)
         }
     }
     @IBInspectable var idlePositionRadius: CGFloat {
         get {
-            return getProperty("idlePositionRadius", initial: 0)
+            return getAssociatedValue(key: "idlePositionRadius", object: self, initialValue: 0)
         }
         set {
-            setValue(newValue, forProperty: "idlePositionRadius")
+            set(associatedValue: newValue, key: "idlePositionRadius", object: self)
             updateImageViewLocation(idlePositionAngle, radius: idlePositionRadius, imageView: &idleImageView)
         }
     }
     var idleImageView: UIImageView {
         get {
-            return getProperty("idleImageView", initial: emptyImageView)
+            return getAssociatedValue(key: "idleImageView", object: self, initialValue: emptyImageView)
         }
         set {
-            setValue(newValue, forProperty: "idleImageView")
+            set(associatedValue: newValue, key: "idleImageView", object: self)
         }
     }
-    internal func addIdleImageView(origin: CGPoint, size: CGSize, image: UIImage) {
+    internal func addIdleImageView(_ origin: CGPoint, size: CGSize, image: UIImage) {
         idleImageView = UIImageView.init(x: origin.x, y: origin.y, w: size.width, h: size.height, image: image)
         addSubview(idleImageView)
     }
-    internal func updateImageViewLocation(angle: CGFloat, radius: CGFloat, inout imageView: UIImageView, newSize: CGSize? = nil) {
+    internal func updateImageViewLocation(_ angle: CGFloat, radius: CGFloat, imageView: inout UIImageView, newSize: CGSize? = nil) {
         guard !imageView.isEmpty() && imageView.image != nil else {
             return
         }

@@ -15,9 +15,6 @@
 		9D1F1D0B1D81F3EE00DF41E6 /* AMKEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1F1D0A1D81F3EE00DF41E6 /* AMKEncoder.swift */; };
 		9D1F1D0D1D81F82000DF41E6 /* CGRect+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1F1D0C1D81F82000DF41E6 /* CGRect+Extension.swift */; };
 		9D1F1D0F1D8201F400DF41E6 /* AMKEncoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1F1D0E1D8201F400DF41E6 /* AMKEncoder+Extension.swift */; };
-		9D276F571DCA329400FBCF12 /* amkFactoryLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D276F561DCA329400FBCF12 /* amkFactoryLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9D276F5B1DCA329400FBCF12 /* amkFactoryLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D276F541DCA329400FBCF12 /* amkFactoryLib.framework */; };
-		9D276F5D1DCA329400FBCF12 /* amkFactoryLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D276F541DCA329400FBCF12 /* amkFactoryLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D4057F31D7DE8A8002C4571 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4057F21D7DE8A8002C4571 /* AppDelegate.swift */; };
 		9D4057F51D7DE8A8002C4571 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4057F41D7DE8A8002C4571 /* ViewController.swift */; };
 		9D4057F81D7DE8A8002C4571 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D4057F61D7DE8A8002C4571 /* Main.storyboard */; };
@@ -56,16 +53,6 @@
 		9DFDC46C1DCBD03B00785F9F /* AMKLabel+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFDC46B1DCBD03B00785F9F /* AMKLabel+Touch.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		9D276F591DCA329400FBCF12 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D4057E71D7DE8A8002C4571 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D276F531DCA329400FBCF12;
-			remoteInfo = amkFactoryLib;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		9D276F5C1DCA329400FBCF12 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -73,7 +60,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9D276F5D1DCA329400FBCF12 /* amkFactoryLib.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,7 +75,6 @@
 		9D1F1D0A1D81F3EE00DF41E6 /* AMKEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AMKEncoder.swift; path = Tool/AMKEncoder.swift; sourceTree = "<group>"; };
 		9D1F1D0C1D81F82000DF41E6 /* CGRect+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGRect+Extension.swift"; path = "Tool/CGRect+Extension.swift"; sourceTree = "<group>"; };
 		9D1F1D0E1D8201F400DF41E6 /* AMKEncoder+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKEncoder+Extension.swift"; path = "Tool/AMKEncoder+Extension.swift"; sourceTree = "<group>"; };
-		9D276F541DCA329400FBCF12 /* amkFactoryLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = amkFactoryLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D276F561DCA329400FBCF12 /* amkFactoryLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = amkFactoryLib.h; sourceTree = "<group>"; };
 		9D276F581DCA329400FBCF12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D4057EF1D7DE8A8002C4571 /* iFactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,19 +120,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9D276F501DCA329400FBCF12 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9D4057EC1D7DE8A8002C4571 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				55C0D7A36FEA0454B6D080C9 /* Pods_iFactory.framework in Frameworks */,
-				9D276F5B1DCA329400FBCF12 /* amkFactoryLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				9D4057EF1D7DE8A8002C4571 /* iFactory.app */,
-				9D276F541DCA329400FBCF12 /* amkFactoryLib.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -293,36 +269,7 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		9D276F511DCA329400FBCF12 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9D276F571DCA329400FBCF12 /* amkFactoryLib.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		9D276F531DCA329400FBCF12 /* amkFactoryLib */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9D276F601DCA329400FBCF12 /* Build configuration list for PBXNativeTarget "amkFactoryLib" */;
-			buildPhases = (
-				9D276F4F1DCA329400FBCF12 /* Sources */,
-				9D276F501DCA329400FBCF12 /* Frameworks */,
-				9D276F511DCA329400FBCF12 /* Headers */,
-				9D276F521DCA329400FBCF12 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = amkFactoryLib;
-			productName = amkFactoryLib;
-			productReference = 9D276F541DCA329400FBCF12 /* amkFactoryLib.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		9D4057EE1D7DE8A8002C4571 /* iFactory */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D4058011D7DE8A8002C4571 /* Build configuration list for PBXNativeTarget "iFactory" */;
@@ -338,7 +285,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				9D276F5A1DCA329400FBCF12 /* PBXTargetDependency */,
 			);
 			name = iFactory;
 			productName = iFactory;
@@ -355,15 +301,13 @@
 					amk,
 				);
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Bruno Garelli";
 				TargetAttributes = {
-					9D276F531DCA329400FBCF12 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
 					9D4057EE1D7DE8A8002C4571 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						DevelopmentTeam = 27KRJ3F74B;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -381,19 +325,11 @@
 			projectRoot = "";
 			targets = (
 				9D4057EE1D7DE8A8002C4571 /* iFactory */,
-				9D276F531DCA329400FBCF12 /* amkFactoryLib */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9D276F521DCA329400FBCF12 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9D4057ED1D7DE8A8002C4571 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -457,13 +393,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9D276F4F1DCA329400FBCF12 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9D4057EB1D7DE8A8002C4571 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -511,14 +440,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		9D276F5A1DCA329400FBCF12 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D276F531DCA329400FBCF12 /* amkFactoryLib */;
-			targetProxy = 9D276F591DCA329400FBCF12 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		9D4057F61D7DE8A8002C4571 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -547,46 +468,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9D276F5E1DCA329400FBCF12 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = amkFactoryLib/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = altimetrik.amkFactoryLib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9D276F5F1DCA329400FBCF12 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = amkFactoryLib/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = altimetrik.amkFactoryLib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		9D4057FF1D7DE8A8002C4571 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -601,8 +482,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -646,8 +529,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -666,6 +551,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -674,12 +560,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CB5A512C289080325E2674BB /* Pods-iFactory.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 27KRJ3F74B;
 				INFOPLIST_FILE = iFactory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ametric.iFactory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -687,27 +575,20 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6F99198B7B516B6CC9BB0FA0 /* Pods-iFactory.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 27KRJ3F74B;
 				INFOPLIST_FILE = iFactory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ametric.iFactory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9D276F601DCA329400FBCF12 /* Build configuration list for PBXNativeTarget "amkFactoryLib" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9D276F5E1DCA329400FBCF12 /* Debug */,
-				9D276F5F1DCA329400FBCF12 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		9D4057EA1D7DE8A8002C4571 /* Build configuration list for PBXProject "iFactory" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

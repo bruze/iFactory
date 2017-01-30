@@ -5,15 +5,15 @@
 //  Created by Bruno Garelli on 9/27/16.
 //  Copyright © 2016 Bruno Garelli. All rights reserved.
 //
-
+import AssociatedValues
 import UIKit
 extension AMKSuperView {
     @IBInspectable var idleImageScale: CGFloat {
         get {
-            return getProperty("idleImageScale", initial: 0)
+            return getAssociatedValue(key: "idleImageScale", object: self, initialValue: 0)
         }
         set {
-            setValue(newValue, forProperty: "idleImageScale")
+            set(associatedValue: newValue, key: "idleImageScale", object: self)
             let imageSize = idleImage.size
             let scaled = frame.getScaledSize(newValue, overSize: imageSize)
             updateImageViewLocation(idlePositionAngle, radius: idlePositionRadius, imageView: &idleImageView, newSize: scaled)
@@ -21,10 +21,11 @@ extension AMKSuperView {
     }
     @IBInspectable var fonta: CGFont {
         get {
-            return getProperty("fonta", initial: CGFontCreateWithFontName("")!)
+            let initialStr: CFString = "" as CFString
+            return getAssociatedValue(key: "fonta", object: self, initialValue: CGFont.init(initialStr)!)
         }
         set {
-            setValue(newValue, forProperty: "fonta")
+            set(associatedValue: newValue, key: "fonta", object: self)
         }
     }
 }

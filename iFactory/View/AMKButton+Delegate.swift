@@ -5,7 +5,7 @@
 //  Created by Bruno Garelli on 9/6/16.
 //  Copyright © 2016 Bruno Garelli. All rights reserved.
 //
-
+import AssociatedValues
 import UIKit
 import EZSwiftExtensions
 extension AMKButton {
@@ -43,42 +43,42 @@ extension AMKButton {
     }*/
     var actionBlocks: [() -> ()]? {
         get {
-            return getProperty("actionBlocks", initial: [])
+            return getAssociatedValue(key: "actionBlocks", object: self, initialValue: [])
         }
         set {
-            setValue(newValue, forProperty: "actionBlocks")
+            set(associatedValue: newValue, key: "actionBlocks", object: self)
         }
     }
     @IBInspectable var touchAction: String {
         get {
-            return getProperty("touchAction", initial: "")
+            return getAssociatedValue(key: "touchAction", object: self, initialValue: "")
         }
         set {
-            setValue(newValue, forProperty: "touchAction")
+            set(associatedValue: newValue, key: "touchAction", object: self)
         }
     }
     @IBInspectable var enabledAction: String {
         get {
-            return getProperty("enabledAction", initial: "")
+            return getAssociatedValue(key: "enabledAction", object: self, initialValue: "")
         }
         set {
-            setValue(newValue, forProperty: "enabledAction")
+            set(associatedValue: newValue, key: "enabledAction", object: self)
         }
     }
     @IBInspectable var disabledAction: String {
         get {
-            return getProperty("disabledAction", initial: "")
+            return getAssociatedValue(key: "disabledAction", object: self, initialValue: "")
         }
         set {
-            setValue(newValue, forProperty: "disabledAction")
+            set(associatedValue: newValue, key: "disabledAction", object: self)
         }
     }
     @IBOutlet var delegate: AnyObject? {
         get {
-            return getProperty("delegate", initial: nil)
+            return getAssociatedValue(key: "delegate", object: self, initialValue: nil)
         }
         set {
-            setValue(newValue, forProperty: "delegate")
+            set(associatedValue: newValue, key: "delegate", object: self)
         }
     }
     internal func delegatePerformTouch() {
@@ -89,16 +89,16 @@ extension AMKButton {
                 }
                 let aSelector = Selector.init(extendedGraphemeClusterLiteral: touchAction)
                 if let executer = delegate as? UIViewController {
-                    if executer.respondsToSelector(aSelector) {
-                        executer.performSelector(aSelector, withObject: "")
+                    if executer.responds(to: aSelector) {
+                        executer.perform(aSelector, with: "")
                     }
                 } else if let executer = delegate as? ViewController {
-                    if executer.respondsToSelector(aSelector) {
-                        executer.performSelector(aSelector, withObject: "")
+                    if executer.responds(to: aSelector) {
+                        executer.perform(aSelector, with: "")
                     }
                 } else if let executer = ez.topMostVC {
-                    if executer.respondsToSelector(aSelector) {
-                        executer.performSelector(aSelector, withObject: "")
+                    if executer.responds(to: aSelector) {
+                        executer.performSelector(inBackground: aSelector, with: "")
                     }
                 }
             } else {
@@ -110,7 +110,7 @@ extension AMKButton {
         if !enabledAction.isEmpty {
             if let executer = delegate as? UIViewController {
                 let aSelector = Selector.init(extendedGraphemeClusterLiteral: enabledAction)
-                executer.performSelector(aSelector, withObject: "")
+                executer.perform(aSelector, with: "")
             }
         }
     }
@@ -118,11 +118,11 @@ extension AMKButton {
         if !disabledAction.isEmpty {
             if let executer = delegate as? UIViewController {
                 let aSelector = Selector.init(extendedGraphemeClusterLiteral: disabledAction)
-                executer.performSelector(aSelector, withObject: "")
+                executer.perform(aSelector, with: "")
             }
         }
     }
-    internal func addBlock(block: () -> (), ForAction action: Int) {
+    internal func addBlock(_ block: @escaping () -> (), ForAction action: Int) {
         actionBlocks?.append(block)
     }
     //internal func delegatePerform() {

@@ -9,7 +9,7 @@
 import UIKit
 
 extension AMKLabel {
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //print("Label Touch")
         if mutateOnTouch && !mutateStoreID.isEmpty {
             storeID = mutateStoreID
@@ -19,11 +19,11 @@ extension AMKLabel {
     /*override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
     }*/
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         initialConfig()
         delegatePerformTouch()
     }
-    override func touchesCancelled(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         initialConfig()
     }
     /*override func touchesEstimatedPropertiesUpdated(touches: Set<NSObject>) {

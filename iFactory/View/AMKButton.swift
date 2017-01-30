@@ -8,25 +8,25 @@
 
 import UIKit
 import EZSwiftExtensions
-import PropertyExtensions
+import AssociatedValues
 
 @IBDesignable
 class AMKButton: UIView {
     enum AMKTypeTag: Int {
-        case Default       = -1
-        case CurrentImage  =  7
-        case ImageDefault  = 10
-        case ImagePressed  = 11
-        case ImageDisabled = 12
-        case LabelDefault  = 13
+        case `default`       = -1
+        case currentImage  =  7
+        case imageDefault  = 10
+        case imagePressed  = 11
+        case imageDisabled = 12
+        case labelDefault  = 13
     }
     internal var kvoContext: UInt = 1
     dynamic var enabled: Bool {
         get {
-            return getProperty("enabled", initial: true)
+            return getAssociatedValue(key: "enabled", object: self, initialValue: true)
         }
         set {
-            setValue(newValue, forProperty: "enabled")
+            set(associatedValue: newValue, key: "enabled", object: self)
             if newValue {
                 currentDefaultLabel?.alpha = 1.0
                 if !enabledAction.isEmpty {

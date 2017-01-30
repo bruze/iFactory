@@ -8,19 +8,19 @@
 
 import UIKit
 import LTInfiniteScrollView
-
+import AssociatedValues
 extension AMKCarousel: LTInfiniteScrollViewDataSource, LTInfiniteScrollViewDelegate {
     var scrollView: LTInfiniteScrollView {
         get {
-            let scroll = getProperty("scrollView", initial: LTInfiniteScrollView.init(frame: bounds))
+            let scroll = getAssociatedValue(key: "scrollView", object: self, initialValue: LTInfiniteScrollView.init(frame: bounds))
             return scroll
         }
         set {
-            setValue(newValue, forProperty: "scrollView")
+            set(associatedValue: newValue, key: "scrollView", object: self)
         }
     }
     
-    func viewAtIndex(index: Int, reusingView view: UIView?) -> UIView {
+    func view(at index: Int, reusing view: UIView?) -> UIView {
         //let button = AMKButton.init(frame: CGRect.zero)
         //button.defaultLabel = "Hello"
         /*button.pressBackColor = UIColor.cyanColor()
@@ -56,13 +56,13 @@ extension AMKCarousel: LTInfiniteScrollViewDataSource, LTInfiniteScrollViewDeleg
      
      }*/
     internal func setupScroll() {
-        scrollView.backgroundColor = UIColor.clearColor()
+        scrollView.backgroundColor = UIColor.clear
         scrollView.clipsToBounds = true
         scrollView.verticalScroll = true
         scrollView.dataSource = self
         scrollView.delegate = self
         scrollView.maxScrollDistance = 10
-        scrollView.reloadDataWithInitialIndex(0)
+        scrollView.reloadData(withInitialIndex: 0)
         scrollSetupDone = true
     }
 }

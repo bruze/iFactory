@@ -5,32 +5,32 @@
 //  Created by Bruno Garelli on 9/27/16.
 //  Copyright © 2016 Bruno Garelli. All rights reserved.
 //
-
+import AssociatedValues
 import UIKit
 import EZSwiftExtensions
 extension AMKSuperView {
     @IBInspectable var blinkIfNoTouchImage: Bool {
         get {
-            return getProperty("blinkOnTouch", initial: false)
+            return getAssociatedValue(key: "blinkOnTouch", object: self, initialValue: false)
         }
         set {
-            setValue(newValue, forProperty: "blinkOnTouch")
+            set(associatedValue: newValue, key: "blinkOnTouch", object: self)
         }
     }
     @IBInspectable var blinkLabelToo: Bool {
         get {
-            return getProperty("blinkLabelToo", initial: false)
+            return getAssociatedValue(key: "blinkLabelToo", object: self, initialValue: false)
         }
         set {
-            setValue(newValue, forProperty: "blinkLabelToo")
+            set(associatedValue: newValue, key: "blinkLabelToo", object: self)
         }
     }
     @IBInspectable var touchImage: UIImage {
         get {
-            return getProperty("touchImage", initial: emptyImage)
+            return getAssociatedValue(key: "touchImage", object: self, initialValue: emptyImage)
         }
         set {
-            setValue(newValue, forProperty: "touchImage")
+            set(associatedValue: newValue, key: "touchImage", object: self)
             let size = newValue.size
             //var setX = centerX - size.width / 2
             //var setY = centerY - size.height / 2
@@ -45,37 +45,37 @@ extension AMKSuperView {
     }
     @IBInspectable var touchPositionAngle: CGFloat {
         get {
-            return getProperty("touchPositionAngle", initial: 0)
+            return getAssociatedValue(key: "touchPositionAngle", object: self, initialValue: 0)
         }
         set {
-            setValue(newValue, forProperty: "touchPositionAngle")
+            set(associatedValue: newValue, key: "touchPositionAngle", object: self)
             updateImageViewLocation(touchPositionAngle, radius: touchPositionRadius, imageView: &touchImageView)
         }
     }
     @IBInspectable var touchPositionRadius: CGFloat {
         get {
-            return getProperty("touchPositionRadius", initial: 0)
+            return getAssociatedValue(key: "touchPositionRadius", object: self, initialValue: 0)
         }
         set {
-            setValue(newValue, forProperty: "touchPositionRadius")
+            set(associatedValue: newValue, key: "touchPositionRadius", object: self)
             updateImageViewLocation(touchPositionAngle, radius: touchPositionRadius, imageView: &touchImageView)
         }
     }
     var touchImageView: UIImageView {
         get {
-            return getProperty("touchImageView", initial: emptyImageView)
+            return getAssociatedValue(key: "touchImageView", object: self, initialValue: emptyImageView)
         }
         set {
-            setValue(newValue, forProperty: "touchImageView")
+            set(associatedValue: newValue, key: "touchImageView", object: self)
         }
     }
-    internal func addTouchImageView(origin: CGPoint, size: CGSize, image: UIImage) {
+    internal func addTouchImageView(_ origin: CGPoint, size: CGSize, image: UIImage) {
         touchImageView = UIImageView.init(x: origin.x, y: origin.y, w: size.width, h: size.height, image: image)
-        touchImageView.hidden = true
+        touchImageView.isHidden = true
         addSubview(touchImageView)
     }
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        guard userInteractionEnabled else { return }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard isUserInteractionEnabled else { return }
         /*encode()
         if showPassAtTap {
             passingLayerColor(UIColor.cyanColor(), GoingRight: true)
@@ -87,24 +87,24 @@ extension AMKSuperView {
                 }
                 var blinked = false
                 if !self.touchImageView.isEmpty() {
-                    self.idleImageView.hidden.toggle()
-                    self.touchImageView.hidden.toggle()
+                    self.idleImageView.isHidden.toggle()
+                    self.touchImageView.isHidden.toggle()
                     blinked.toggle()
                 } else if (self.touchImageView.isEmpty() && self.blinkIfNoTouchImage) {
-                    self.backgroundColor = UIColor.clearColor()
+                    self.backgroundColor = UIColor.clear
                     blinked.toggle()
                 }
                 if blinked && self.blinkLabelToo {
-                    self.label.hidden = true
+                    self.label.isHidden = true
                 }
                 self.setNeedsDisplay()
             })
-            super.touchesBegan(touches, withEvent: event)
+            super.touchesBegan(touches, with: event)
         }
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        guard userInteractionEnabled else { return }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard isUserInteractionEnabled else { return }
         /*guard enabled else {
             return
         }
@@ -120,10 +120,10 @@ extension AMKSuperView {
             } else if (touchImageView.isEmpty() && blinkIfNoTouchImage) {
                 backgroundColor = backColor
             }*/
-            label.hidden = false
+            label.isHidden = false
             ez.runThisAfterDelay(seconds: 0.1, after: {
                 self.delegatePerformTouch()
-                super.touchesEnded(touches, withEvent: event)
+                super.touchesEnded(touches, with: event)
             })
         }
     }
@@ -132,22 +132,22 @@ extension AMKSuperView {
         print("estimatedUpdated")
     }*/
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if #available(iOS 9.1, *) {
-            let contained = frame.contains((touches.first?.preciseLocationInView(self))!)
+            let contained = frame.contains((touches.first?.preciseLocation(in: self))!)
             if !contained {
-                UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+                UIApplication.shared.beginIgnoringInteractionEvents()
                 return
             }
         } else {
             // Fallback on earlier versions
         }
-        super.touchesMoved(touches, withEvent: event)
+        super.touchesMoved(touches, with: event)
     }
     
-    override func touchesCancelled(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        UIApplication.sharedApplication().endIgnoringInteractionEvents()
-        guard userInteractionEnabled else { return }
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        UIApplication.shared.endIgnoringInteractionEvents()
+        guard isUserInteractionEnabled else { return }
         /*guard enabled else {
             return
         }
@@ -158,14 +158,14 @@ extension AMKSuperView {
                 backgroundColor = backColor
             }
             if !touchImageView.isEmpty() {
-                idleImageView.hidden.toggle()
-                touchImageView.hidden.toggle()
+                idleImageView.isHidden.toggle()
+                touchImageView.isHidden.toggle()
             } else if (touchImageView.isEmpty() && blinkIfNoTouchImage) {
                 backgroundColor = backColor
             }
-            label.hidden = false
+            label.isHidden = false
             
-            super.touchesCancelled(touches, withEvent: event)
+            super.touchesCancelled(touches, with: event)
         } else {
             
         }
@@ -175,8 +175,8 @@ extension AMKSuperView {
             backgroundColor = backColor
         }
         if !touchImageView.isEmpty() {
-            idleImageView.hidden.toggle()
-            touchImageView.hidden.toggle()
+            idleImageView.isHidden.toggle()
+            touchImageView.isHidden.toggle()
         } else if (touchImageView.isEmpty() && blinkIfNoTouchImage) {
             backgroundColor = backColor
         }
@@ -186,13 +186,13 @@ extension AMKSuperView {
         }
         if let executer = delegate as? UIViewController {
             let aSelector = Selector.init(extendedGraphemeClusterLiteral: touchAction)
-            if executer.respondsToSelector(aSelector) {
-                executer.performSelector(aSelector, withObject: "")
+            if executer.responds(to: aSelector) {
+                executer.perform(aSelector, with: "")
             }
         } else if let executer = ez.topMostVC {
             let aSelector = Selector.init(extendedGraphemeClusterLiteral: touchAction)
-            if executer.respondsToSelector(aSelector) {
-                executer.performSelector(aSelector, withObject: "")
+            if executer.responds(to: aSelector) {
+                executer.performSelector(inBackground: aSelector, with: "")
             }
         }
     }

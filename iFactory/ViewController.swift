@@ -46,15 +46,15 @@ class ViewController: UIViewController {
         amkTestLabel.reloadAMKConfig()
     }
     
-    @objc func printaline(message: AnyObject) {
-        print("GOOD JOB" + String(message))
+    @objc func printaline(_ message: AnyObject) {
+        print("GOOD JOB" + String(describing: message))
     }
     
-    @objc func disablaline(message: AnyObject) {
-        print("DISABLING" + String(message))
+    @objc func disablaline(_ message: AnyObject) {
+        print("DISABLING" + String(describing: message))
     }
     
-    @objc func enablaaline(message: AnyObject) {
-        print("ENABLING" + String(message))
+    @objc func enablaaline(_ message: AnyObject) {
+        print("ENABLING" + String(describing: message))
     }
 }

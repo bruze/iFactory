@@ -5,28 +5,28 @@
 //  Created by Bruno Garelli on 9/6/16.
 //  Copyright © 2016 Bruno Garelli. All rights reserved.
 //
-
+import AssociatedValues
 import UIKit
 
 extension AMKButton {
     @IBInspectable weak var defaultBackColor: UIColor? {
         get {
-            return getProperty("defaultBackColor", initial: UIColor.whiteColor())
+            return getAssociatedValue(key: "defaultBackColor", object: self, initialValue: UIColor.white)
         }
         set {
-            setValue(newValue, forProperty: "defaultBackColor")
+            set(associatedValue: newValue, key: "defaultBackColor", object: self)
             setDefaultBackColor()
         }
     }
     @IBInspectable weak var pressBackColor: UIColor? {
         get {
-            return getProperty("pressBackColor", initial: UIColor.grayColor())
+            return getAssociatedValue(key: "pressBackColor", object: self, initialValue: UIColor.gray)
         }
         set {
-            setValue(newValue, forProperty: "pressBackColor")
+            set(associatedValue: newValue, key: "pressBackColor", object: self)
         }
     }
-    internal func resetView(view: UIView?) -> Bool {
+    internal func resetView(_ view: UIView?) -> Bool {
         if let unwrap = view {
             unwrap.removeSubviews()
             unwrap.removeFromSuperview()

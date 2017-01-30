@@ -8,11 +8,11 @@
 
 import UIKit
 extension CGPoint {
-    func substract(point: CGPoint) -> CGPoint {
+    func substract(_ point: CGPoint) -> CGPoint {
         return CGPoint.init(x: x - point.x, y: y - point.y)
     }
     
-    func add(point: CGPoint) -> CGPoint {
+    func add(_ point: CGPoint) -> CGPoint {
         return CGPoint.init(x: x + point.x, y: y + point.y)
     }
 }

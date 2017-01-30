@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import AssociatedValues
 extension AMKSuperView {
     /*dynamic var kvoContext: UInt {
         get {
@@ -19,10 +19,10 @@ extension AMKSuperView {
     }*/
     @IBInspectable var enabled: Bool {
         get {
-            return getProperty("enabled", initial: true)
+            return getAssociatedValue(key: "enabled", object: self, initialValue: true)
         }
         set {
-            setValue(newValue, forProperty: "enabled")
+            set(associatedValue: newValue, key: "enabled", object: self)
             if newValue {
                 /*currentDefaultLabel?.alpha = 1.0
                 if !enabledAction.isEmpty {
@@ -36,11 +36,11 @@ extension AMKSuperView {
             }
         }
     }
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if context == &kvoContext {
             //print("Change at keyPath = \(keyPath) for \(object)")
             if keyPath == "enabled" {
-                if let value = change?["new"]! as? Bool {
+                if let value = change?[.newKey]! as? Bool {
                     /*if value {
                         currentDefaultLabel?.alpha = 1.0
                         if !enabledAction.isEmpty {

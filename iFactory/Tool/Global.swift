@@ -9,21 +9,21 @@
 import Foundation
 import UIKit
 
-let bundle = NSBundle.mainBundle()
-let fileMan = NSFileManager.defaultManager()
-let noti = NSNotificationCenter.defaultCenter()
+let bundle = Bundle.main
+let fileMan = FileManager.default
+let noti = NotificationCenter.default
 //////////////////////////////////
 let emptyLayer = CALayer.init()
 let emptyImage = UIImage.init()
 let emptyImageView = UIImageView.init()
 public struct Global {
     enum RLMove {
-        case Right
-        case Left
+        case right
+        case left
     }
-    static public func stringToInt(value: String) -> Int? {
-        if let num = NSNumberFormatter().numberFromString(value) {
-            return num.integerValue
+    static public func stringToInt(_ value: String) -> Int? {
+        if let num = NumberFormatter().number(from: value) {
+            return num.intValue
         } else {
             return nil
         }

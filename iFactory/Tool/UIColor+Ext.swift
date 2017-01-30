@@ -9,6 +9,6 @@
 import UIKit
 extension UIColor {
     func isEmpty() -> Bool {
-        return self == UIColor.clearColor()
+        return self == UIColor.clear
     }
 }

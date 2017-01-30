@@ -8,15 +8,15 @@
 
 import Foundation
 import UIKit
-
+import AssociatedValues
 extension AMKLabel {
     @IBOutlet weak var label: UILabel? {
         get {
-            return getProperty("label", initial: nil)
+            return getAssociatedValue(key: "label", object: self, initialValue: nil)
         }
         set {
-            setValue(newValue, forProperty: "label")
-            label!.hidden = true
+            set(associatedValue: newValue, key: "label", object: self)
+            label!.isHidden = true
         }
         /*didSet {
             //label?.enabled = false
@@ -34,34 +34,34 @@ extension AMKLabel {
     }
     dynamic var text: String {
         get {
-            return getProperty("text", initial: "")
+            return getAssociatedValue(key: "text", object: self, initialValue: "")
         }
         set {
-            setValue(newValue, forProperty: "text")
+            set(associatedValue: newValue, key: "text", object: self)
         }
     }
     dynamic var textColor: UIColor {
         get {
-            return getProperty("textColor", initial: UIColor.blueColor())
+            return getAssociatedValue(key: "textColor", object: self, initialValue: UIColor.blue)
         }
         set {
-            setValue(newValue, forProperty: "textColor")
+            set(associatedValue: newValue, key: "textColor", object: self)
         }
     }
     dynamic var textFont: UIFont {
         get {
-            return getProperty("textFont", initial: UIFont.systemFontOfSize(16))
+            return getAssociatedValue(key: "textFont", object: self, initialValue: UIFont.systemFont(ofSize: 16))
         }
         set {
-            setValue(newValue, forProperty: "textFont")
+            set(associatedValue: newValue, key: "textFont", object: self)
         }
     }
     @IBOutlet var delegate: AnyObject? {
         get {
-            return getProperty("delegate", initial: nil)
+            return getAssociatedValue(key: "delegate", object: self, initialValue: nil)
         }
         set {
-            setValue(newValue, forProperty: "delegate")
+            set(associatedValue: newValue, key: "delegate", object: self)
         }
     }
 }

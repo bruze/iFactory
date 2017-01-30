@@ -9,7 +9,7 @@
 import UIKit
 import EZSwiftExtensions
 @IBDesignable
-class AMKLabel: UIView, NSXMLParserDelegate {
+class AMKLabel: UIView, XMLParserDelegate {
     //var kvoContext: UInt = 1
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,11 +31,11 @@ class AMKLabel: UIView, NSXMLParserDelegate {
             addObserver(self, forKeyPath: "enabled", options: NSKeyValueObservingOptions.New, context: &kvoContext)
             addObserver(self, forKeyPath: "origin", options: NSKeyValueObservingOptions.New, context: &kvoContext)
         #endif*/
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
     }
     
     //MARK:OVERRIDE
-    override func intrinsicContentSize() -> CGSize {
+    override var intrinsicContentSize : CGSize {
         return frame.size
     }
     override func didMoveToSuperview() {
@@ -58,7 +58,7 @@ class AMKLabel: UIView, NSXMLParserDelegate {
             }
         #else
             if !storeLoaded {
-                if let path = bundle.pathForResource(storeID.stringByAppendingString(".plist"), ofType: nil, inDirectory: "amk") {
+                if let path = bundle.path(forResource: storeID + ".plist", ofType: nil, inDirectory: "amk") {
                     let entityData = NSDictionary.init(contentsOfFile: path)
                     decode(entityData!)
                     storeLoaded = true
@@ -67,7 +67,7 @@ class AMKLabel: UIView, NSXMLParserDelegate {
         #endif
     }
     func reloadAMKConfig() {
-        if let path = bundle.pathForResource(storeID.stringByAppendingString(".plist"), ofType: nil, inDirectory: "amk") {
+        if let path = bundle.path(forResource: storeID + ".plist", ofType: nil, inDirectory: "amk") {
             let entityData = NSDictionary.init(contentsOfFile: path)
             decode(entityData!)
         }
@@ -78,17 +78,17 @@ class AMKLabel: UIView, NSXMLParserDelegate {
             reloadAMKConfig()
         }
     }
-    override func decode(data: NSDictionary) {
-        text = data["text"]!.str()
-        textColor = overrideStoredTextColor ? overrideTextColor : colorFromStoredInfo(data["textColor"]!.str())
-        let fontName = data["fontName"]!.str()
+    override func decode(_ data: NSDictionary) {
+        text = (data["text"]! as AnyObject).str()
+        textColor = overrideStoredTextColor ? overrideTextColor : colorFromStoredInfo((data["textColor"]! as AnyObject).str())
+        let fontName = (data["fontName"]! as AnyObject).str()
         //let family = UIFont.fontNamesForFamilyName(fontName)
         textFont = fontFromStoredInfo(fontName)//UIFont.init(name: fontName + "- Bold", size: 16)!
         setNeedsDisplay()
     }
-    func colorFromStoredInfo(infoColor: String) -> UIColor {
-        var result = UIColor.clearColor()
-        let components = infoColor.componentsSeparatedByString(" ")
+    func colorFromStoredInfo(_ infoColor: String) -> UIColor {
+        var result = UIColor.clear
+        let components = infoColor.components(separatedBy: " ")
         let filtered = components.filter { (component) -> Bool in
             return component.isNumber()
         }
@@ -97,17 +97,17 @@ class AMKLabel: UIView, NSXMLParserDelegate {
         } else {
             let selectorName = components.last!
             let selector = NSSelectorFromString(selectorName)
-            if UIColor.respondsToSelector(selector) {
-                if let posibleColor = UIColor.performSelector(selector).takeRetainedValue() as? UIColor {
+            if UIColor.responds(to: selector) {
+                if let posibleColor = UIColor.perform(selector).takeRetainedValue() as? UIColor {
                     result = posibleColor
                 }
             }
         }
         return result
     }
-    func obtenerFamiliaFuente(inout chequeando: [String], inout componentes: [String]) -> String {
+    func obtenerFamiliaFuente(_ chequeando: inout [String], componentes: inout [String]) -> String {
         let flatted = chequeando.flatString(" ")
-        let fonts = UIFont.fontNamesForFamilyName(flatted)
+        let fonts = UIFont.fontNames(forFamilyName: flatted)
         if fonts.count > 0 {
             return flatted
         } else {
@@ -119,14 +119,14 @@ class AMKLabel: UIView, NSXMLParserDelegate {
             }
         }
     }
-    func fontFromStoredInfo(infoFont: String) -> UIFont {
+    func fontFromStoredInfo(_ infoFont: String) -> UIFont {
         let tTextSize = overrideStoredTextSize ? overrideTextSize : 16
-        let systemResult = UIFont.systemFontOfSize(tTextSize) // and default result
+        let systemResult = UIFont.systemFont(ofSize: tTextSize) // and default result
         if infoFont.contains("System") {
-            let italicSystemResult = UIFont.italicSystemFontOfSize(tTextSize)
-            let boldSystemResult = UIFont.boldSystemFontOfSize(tTextSize)
+            let italicSystemResult = UIFont.italicSystemFont(ofSize: tTextSize)
+            let boldSystemResult = UIFont.boldSystemFont(ofSize: tTextSize)
             
-            let components = infoFont.componentsSeparatedByString(" ")
+            let components = infoFont.components(separatedBy: " ")
             if components.count == 1 {
                 return systemResult
             } else {
@@ -138,18 +138,18 @@ class AMKLabel: UIView, NSXMLParserDelegate {
                 }
             }
         } else {
-            var components = infoFont.componentsSeparatedByString(" ")
+            var components = infoFont.components(separatedBy: " ")
             var checking = [components.removeFirst()]
             let familyName = obtenerFamiliaFuente(&checking, componentes: &components)
             if familyName.isEmpty {
                 return systemResult
             } else {
-                let family = UIFont.fontNamesForFamilyName(familyName)
+                let family = UIFont.fontNames(forFamilyName: familyName)
                 if family.count == 1 {
                     return UIFont.init(name: family.first!, size: overrideStoredTextSize ? overrideTextSize : 16)!
                 } else {
                     let filtered = family.filter { (comp) -> Bool in
-                        let sComponents = comp.componentsSeparatedByString("-")
+                        let sComponents = comp.components(separatedBy: "-")
                         return sComponents.last! == components.flatString() || sComponents.last! == components.flatString(" ")
                     }
                     if filtered.count == 1 {
@@ -220,25 +220,25 @@ class AMKLabel: UIView, NSXMLParserDelegate {
         }
         if let executer = delegate as? UIViewController {
             let aSelector = Selector.init(extendedGraphemeClusterLiteral: touchAction)
-            if executer.respondsToSelector(aSelector) {
-                executer.performSelector(aSelector, withObject: "")
+            if executer.responds(to: aSelector) {
+                executer.perform(aSelector, with: "")
             }
         } else if let executer = ez.topMostVC {
             let aSelector = Selector.init(extendedGraphemeClusterLiteral: touchAction)
-            if executer.respondsToSelector(aSelector) {
-                executer.performSelector(aSelector, withObject: "")
+            if executer.responds(to: aSelector) {
+                executer.performSelector(inBackground: aSelector, with: "")
             }
         }
     }
 }
 
-extension CollectionType where Generator.Element == String {
-    func flatString(separator: String = "") -> String {
+extension Collection where Iterator.Element == String {
+    func flatString(_ separator: String = "") -> String {
         var result = ""
         self.forEach { (component) in
-            result.appendContentsOf(component)
-            if self.indexOf(component)?.successor() != self.endIndex {
-                result.appendContentsOf(separator)
+            result.append(component)
+            if self.index(of: component) != self.endIndex {
+                result.append(separator)
             }
         }
         return result
@@ -247,7 +247,7 @@ extension CollectionType where Generator.Element == String {
 
 extension NSObject {
     func str() -> String {
-        return String(self)
+        return String(describing: self)
     }
 }
 

@@ -10,13 +10,13 @@ import UIKit
 
 extension CGRect {
     func toString() -> String {
-        return ",".join(["=".join(["x", String(x)]),
-                         "=".join(["y", String(y)]),
-                         "=".join(["w", String(w)]),
-                         "=".join(["h", String(h) + ","]) ])
+        return ",".join(["=".join(["x", String(describing: x)]),
+                         "=".join(["y", String(describing: y)]),
+                         "=".join(["w", String(describing: w)]),
+                         "=".join(["h", String(describing: h) + ","]) ])
     }
     
-    static public func loadFromString(model: String) -> CGRect {
+    static public func loadFromString(_ model: String) -> CGRect {
         var lModel = model
         let xValue = lModel.getNextValueForModel("x=", cutAt: ",")
         let yValue = lModel.getNextValueForModel("y=", cutAt: ",")
@@ -25,7 +25,7 @@ extension CGRect {
         return CGRect.init(x: xValue, y: yValue, width: wValue, height: hValue)
     }
     
-    func getScaledSize(factor: CGFloat, overSize: CGSize) -> CGSize {
+    func getScaledSize(_ factor: CGFloat, overSize: CGSize) -> CGSize {
         return CGSize.init(width: w * (factor / overSize.width), height: h * (factor / overSize.height))
     }
 }

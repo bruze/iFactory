@@ -5,7 +5,7 @@
 //  Created by Bruno Garelli on 9/27/16.
 //  Copyright © 2016 Bruno Garelli. All rights reserved.
 //
-
+import AssociatedValues
 import UIKit
 extension AMKSuperView {
     /*@IBOutlet weak var label: UILabel! {
@@ -36,10 +36,10 @@ extension AMKSuperView {
     }*/
     dynamic var label: AMKLabel {
         get {
-            return getProperty("label", initial: AMKLabel.init(frame: CGRectMake(0, 0, 100, 80)))
+            return getAssociatedValue(key: "label", object: self, initialValue: AMKLabel.init(frame: CGRect(x: 0, y: 0, width: 100, height: 80)))
         }
         set {
-            setValue(newValue, forProperty: "label")
+            set(associatedValue: newValue, key: "label", object: self)
         }
     }
 }

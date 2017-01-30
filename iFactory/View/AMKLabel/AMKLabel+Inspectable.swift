@@ -8,73 +8,73 @@
 
 import Foundation
 import UIKit
-
+import AssociatedValues
 extension AMKLabel {
     @IBInspectable dynamic var curve: Bool {
         get {
-            return getProperty("curve", initial: false)
+            return getAssociatedValue(key: "curve", object: self, initialValue: false)
         }
         set {
-            setValue(newValue, forProperty: "curve")
+            set(associatedValue: newValue, key: "curve", object: self)
         }
     }
     @IBInspectable dynamic var curveRadius: CGFloat {
         get {
-            return getProperty("curveRadius", initial: 1)
+            return getAssociatedValue(key: "curveRadius", object: self, initialValue: 1)
         }
         set {
-            setValue(newValue, forProperty: "curveRadius")
+            set(associatedValue: newValue, key: "curveRadius", object: self)
         }
     }
     @IBInspectable dynamic var curveAngle: CGFloat {
         get {
-            return getProperty("curveAngle", initial: 0)
+            return getAssociatedValue(key: "curveAngle", object: self, initialValue: 0)
         }
         set {
-            setValue(newValue, forProperty: "curveAngle")
+            set(associatedValue: newValue, key: "curveAngle", object: self)
         }
     }
     @IBInspectable dynamic var curveClockwise: Bool {
         get {
-            return getProperty("curveClockwise", initial: true)
+            return getAssociatedValue(key: "curveClockwise", object: self, initialValue: true)
         }
         set {
-            setValue(newValue, forProperty: "curveClockwise")
+            set(associatedValue: newValue, key: "curveClockwise", object: self)
         }
     }
     //MARK: Override Text
     @IBInspectable dynamic var overrideStoredText: Bool {
         get {
-            return getProperty("overrideStoredText", initial: true)
+            return getAssociatedValue(key: "overrideStoredText", object: self, initialValue: true)
         }
         set {
-            setValue(newValue, forProperty: "overrideStoredText")
+            set(associatedValue: newValue, key: "overrideStoredText", object: self)
         }
     }
     @IBInspectable dynamic var overrideText: String {
         get {
-            return getProperty("overrideText", initial: "overrideText")
+            return getAssociatedValue(key: "overrideText", object: self, initialValue: "overrideText")
         }
         set {
-            setValue(newValue, forProperty: "overrideText")
+            set(associatedValue: newValue, key: "overrideText", object: self)
         }
     }
     //MARK: Override Text Size
     @IBInspectable dynamic var overrideStoredTextSize: Bool {
         get {
-            return getProperty("overrideStoredTextSize", initial: false)
+            return getAssociatedValue(key: "overrideStoredTextSize", object: self, initialValue: false)
         }
         set {
-            setValue(newValue, forProperty: "overrideStoredTextSize")
+            set(associatedValue: newValue, key: "overrideStoredTextSize", object: self)
         }
     }
     @IBInspectable dynamic var overrideTextSize: CGFloat {
         get {
-            return getProperty("overrideTextSize", initial: 16)
+            return getAssociatedValue(key: "overrideTextSize", object: self, initialValue: 16)
         }
         set {
-            setValue(newValue, forProperty: "overrideTextSize")
-            let otherFont = textFont.fontWithSize(newValue)
+            set(associatedValue: newValue, key: "overrideTextSize", object: self)
+            let otherFont = textFont.withSize(newValue)
             self.textFont = otherFont
             setNeedsDisplay()
         }
@@ -82,10 +82,10 @@ extension AMKLabel {
     //MARK: Override Text Color
     @IBInspectable dynamic var overrideStoredTextColor: Bool {
         get {
-            return getProperty("overrideStoredTextColor", initial: false)
+            return getAssociatedValue(key: "overrideStoredTextColor", object: self, initialValue: false)
         }
         set {
-            setValue(newValue, forProperty: "overrideStoredTextColor")
+            set(associatedValue: newValue, key: "overrideStoredTextColor", object: self)
             if newValue {
                 textColor = overrideTextColor
                 setNeedsDisplay()
@@ -94,10 +94,10 @@ extension AMKLabel {
     }
     @IBInspectable dynamic var overrideTextColor: UIColor {
         get {
-            return getProperty("overrideTextColor", initial: UIColor.blackColor())
+            return getAssociatedValue(key: "overrideTextColor", object: self, initialValue: UIColor.black)
         }
         set {
-            setValue(newValue, forProperty: "overrideTextColor")
+            set(associatedValue: newValue, key: "overrideTextColor", object: self)
             if overrideStoredTextColor {
                 textColor = newValue
                 setNeedsDisplay()
@@ -107,27 +107,27 @@ extension AMKLabel {
     //MARK: Mutate on Touch
     @IBInspectable dynamic var mutateOnTouch: Bool {
         get {
-            return getProperty("mutateOnTouch", initial: false)
+            return getAssociatedValue(key: "mutateOnTouch", object: self, initialValue: false)
         }
         set {
-            setValue(newValue, forProperty: "mutateOnTouch")
+            set(associatedValue: newValue, key: "mutateOnTouch", object: self)
         }
     }
     @IBInspectable dynamic var mutateStoreID: String {
         get {
-            return getProperty("mutateStoreID", initial: "")
+            return getAssociatedValue(key: "mutateStoreID", object: self, initialValue: "")
         }
         set {
-            setValue(newValue, forProperty: "mutateStoreID")
+            set(associatedValue: newValue, key: "mutateStoreID", object: self)
         }
     }
     //MARK: Action on Touch
     @IBInspectable dynamic var touchAction: String {
         get {
-            return getProperty("touchAction", initial: "")
+            return getAssociatedValue(key: "touchAction", object: self, initialValue: "")
         }
         set {
-            setValue(newValue, forProperty: "touchAction")
+            set(associatedValue: newValue, key: "touchAction", object: self)
         }
     }
 }

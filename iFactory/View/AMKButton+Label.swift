@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import PropertyExtensions
+import AssociatedValues
 
 extension AMKButton {
     var currentDefaultLabel: UILabel? {
         get {
-            if let view = viewWithTag(AMKTypeTag.LabelDefault.rawValue) {
+            if let view = viewWithTag(AMKTypeTag.labelDefault.rawValue) {
                 return view as? UILabel
             }
             return nil
@@ -28,10 +28,10 @@ extension AMKButton {
     }
     @IBInspectable var defLabelXOffset: CGFloat {
         get {
-            return getProperty("defLabelXOffset", initial: 0)
+            return getAssociatedValue(key: "defLabelXOffset", object: self, initialValue: 0)
         }
         set {
-            setValue(newValue, forProperty: "defLabelXOffset")
+            set(associatedValue: newValue, key: "defLabelXOffset", object: self)
             currentDefaultLabel?.origin = CGPoint.init(x: defLabelXOffset, y: defLabelYOffset)
             /*if labelRelativeImage == 0 {
                 //currentDefaultLabel?.origin.x += defLabelXOffset
@@ -42,10 +42,10 @@ extension AMKButton {
     }
     @IBInspectable var defLabelYOffset: CGFloat {
         get {
-            return getProperty("defLabelYOffset", initial: 0)
+            return getAssociatedValue(key: "defLabelYOffset", object: self, initialValue: 0)
         }
         set {
-            setValue(newValue, forProperty: "defLabelYOffset")
+            set(associatedValue: newValue, key: "defLabelYOffset", object: self)
             currentDefaultLabel?.origin = CGPoint.init(x: defLabelXOffset, y: defLabelYOffset)
             /*if labelRelativeImage == 0 {
                 currentDefaultLabel?.origin.y += defLabelYOffset
@@ -56,20 +56,20 @@ extension AMKButton {
     }
     @IBInspectable var labelFontColor: UIColor {
         get {
-            return getProperty("labelFontColor", initial: UIColor.blackColor())
+            return getAssociatedValue(key: "labelFontColor", object: self, initialValue: UIColor.black)
         }
         set {
-            setValue(newValue, forProperty: "labelFontColor")
+            set(associatedValue: newValue, key: "labelFontColor", object: self)
             currentDefaultLabel?.textColor = newValue
         }
     }
 
     @IBInspectable var labelFontName: String {
         get {
-            return getProperty("labelFontName", initial: "")
+            return getAssociatedValue(key: "labelFontName", object: self, initialValue: "")
         }
         set {
-            setValue(newValue, forProperty: "labelFontName")
+            set(associatedValue: newValue, key: "labelFontName", object: self)
             let font = UIFont.init(name: newValue, size: labelFontSize)
             currentDefaultLabel?.font = font
         }
@@ -77,17 +77,17 @@ extension AMKButton {
 
     @IBInspectable var labelFontSize: CGFloat {
         get {
-            return getProperty("labelFontSize", initial: 16)
+            return getAssociatedValue(key: "labelFontSize", object: self, initialValue: 16)
         }
         set {
-            setValue(newValue, forProperty: "labelFontSize")
+            set(associatedValue: newValue, key: "labelFontSize", object: self)
             let font = UIFont.init(name: labelFontName, size: newValue)
             currentDefaultLabel?.font = font
         }
     }
     internal func addLabelWith(Text labelText: String, AndOffset offset: CGPoint) {
         let label = UILabel.init(frame: CGRect.init(x: 0, y: 0, w: w - (w/6), h: h - (h / 4)))
-        label.tag = AMKTypeTag.LabelDefault.rawValue
+        label.tag = AMKTypeTag.labelDefault.rawValue
         label.text = labelText
         addSubview(label)
         label.layer.zPosition = 1000

@@ -5,24 +5,24 @@
 //  Created by Bruno Garelli on 9/27/16.
 //  Copyright © 2016 Bruno Garelli. All rights reserved.
 //
-
+import AssociatedValues
 import UIKit
 extension AMKSuperView {
     @IBInspectable var backColor: UIColor {
         get {
-            return getProperty("defBackColor", initial: UIColor.clearColor())
+            return getAssociatedValue(key: "defBackColor", object: self, initialValue: UIColor.clear)
         }
         set {
-            setValue(newValue, forProperty: "defBackColor")
+            set(associatedValue: newValue, key: "defBackColor", object: self)
             backgroundColor = newValue
         }
     }
     @IBInspectable var touchBackColor: UIColor {
         get {
-            return getProperty("touchBackColor", initial: UIColor.clearColor())
+            return getAssociatedValue(key: "touchBackColor", object: self, initialValue: UIColor.clear)
         }
         set {
-            setValue(newValue, forProperty: "touchBackColor")
+            set(associatedValue: newValue, key: "touchBackColor", object: self)
         }
     }
 }

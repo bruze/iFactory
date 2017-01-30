@@ -17,12 +17,12 @@ class AMKSuperView: UIView {
              setNeedsLayout()*/
         }
     }
-    func handle(not: NSNotification) {
+    func handle(_ not: Notification) {
         print(not)
     }
     override func didMoveToWindow() {
         super.didMoveToWindow()
-        noti.addObserver(self, selector: #selector(handle), name: nil, object: nil)
+        //noti.addObserver(self, selector: #selector(handle), name: nil, object: nil)
         #if TARGET_INTERFACE_BUILDER
             if !storeLoaded && !storeID.isEmpty {
                 label.storeID = storeID
@@ -45,7 +45,7 @@ class AMKSuperView: UIView {
             if !storeLoaded && !storeID.isEmpty {
                 label.storeID = storeID
                 label.overrideStoredText = false
-                if let path = bundle.pathForResource(storeID.stringByAppendingString(".plist"), ofType: nil, inDirectory: "amk") {
+                if let path = bundle.path(forResource: storeID + ".plist", ofType: nil, inDirectory: "amk") {
                     let entityData = NSDictionary.init(contentsOfFile: path)
                     label.decode(entityData!)
                     addSubview(label)
@@ -78,8 +78,8 @@ class AMKSuperView: UIView {
         center = CGPoint.init(x: w / 2, y: h / 2)
         clipsToBounds = false
         #if !TARGET_INTERFACE_BUILDER
-        addObserver(self, forKeyPath: "enabled", options: NSKeyValueObservingOptions.New, context: &kvoContext)
-        addObserver(self, forKeyPath: "origin", options: NSKeyValueObservingOptions.New, context: &kvoContext)
+        addObserver(self, forKeyPath: "enabled", options: NSKeyValueObservingOptions.new, context: &kvoContext)
+        addObserver(self, forKeyPath: "origin", options: NSKeyValueObservingOptions.new, context: &kvoContext)
         #endif
         //decode()
         //addSubview(imageContainer)
@@ -92,8 +92,8 @@ class AMKSuperView: UIView {
         }*/
         //label.drawCurves(frame)
     }
-    override func drawRect(rect: CGRect) {
-        super.drawRect(rect)
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
         /*if label != nil {
             label.drawRect(rect)
         }*/

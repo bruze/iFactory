@@ -130,7 +130,7 @@ extension AMKLabel {
         // Move the origin by half the size of the text
         context.translateBy (x: -offset.width / 2, y: -offset.height / 2) // Move the origin to the centre of the text (negating the y-axis manually)
         // Draw the text
-        str.draw(at: CGPoint.zero, withAttributes: attributes)
+        str.draw(at: textOffset, withAttributes: attributes)
         // Restore the context
         context.restoreGState()
     }

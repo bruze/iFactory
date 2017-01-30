@@ -85,6 +85,16 @@ class AMKSuperView: UIView {
         //addSubview(imageContainer)
         //clipsToBounds = true
     }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        settleImageView()
+    }
+    override func intrinsicContentSize() -> CGSize {
+        let standardSize = frame.size
+        let scale = UIScreen.main.bounds.width / 375.0
+        let finalSize = CGSize.init(width: standardSize.width * scale, height: standardSize.height)
+        return finalSize
+    }
     override func prepareForInterfaceBuilder() {
         /*if label != nil {
             //label.drawTextInRect(label.bounds)

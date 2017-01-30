@@ -5,7 +5,7 @@
 //  Created by Bruno Garelli on 10/31/16.
 //  Copyright © 2016 Bruno Garelli. All rights reserved.
 //
-
+import EZSwiftExtensions
 import Foundation
 import UIKit
 import AssociatedValues
@@ -31,6 +31,38 @@ extension AMKLabel {
             //let path = NSBundle.mainBundle().pathForResource(storeID, ofType: ".plist")
             // print(NSFileManager.defaultManager().
         }*/
+    }
+    func getPointFromStringOffsets(data: String) -> CGPoint {
+        let components = data.components(separatedBy: "|")
+        let result = CGPoint.init(x: CGFloat(components[0].toFloat()!), y: CGFloat(components[1].toFloat()!))
+        return result
+    }
+    @IBInspectable dynamic var offsetsText: String {
+        get {
+            return getAssociatedValue(key: "offsetsText", object: self, initialValue: "")
+        }
+        set {
+            set(associatedValue: newValue, key: "offsetsText", object: self)
+            textOffset = getPointFromStringOffsets(data: offsetsText)
+        }
+    }
+    dynamic var textOffset: CGPoint {
+        get {
+            return getAssociatedValue(key: "textOffset", object: self, initialValue: CGPoint.zero)
+        }
+        set {
+            set(associatedValue: newValue, key: "textOffset", object: self)
+        }
+    }
+    dynamic var textSize: CGFloat {
+        get {
+            return getAssociatedValue(key: "textSize", object: self, initialValue: 10)
+        }
+        set {
+            set(associatedValue: newValue, key: "textSize", object: self)
+            let otherFont = textFont.withSize(newValue)
+            self.textFont = otherFont
+        }
     }
     dynamic var text: String {
         get {

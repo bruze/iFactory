@@ -65,6 +65,11 @@ class AMKButton: UIView {
     override func didMoveToWindow() {
         print("window Added")
     }*/
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        settleLabelOffset()
+        
+    }
     override func didMoveToSuperview() {
         if superview != nil {
             centerInSuperView()
@@ -89,6 +94,7 @@ class AMKButton: UIView {
     func initialize() {
         //decode()
         addSubview(imageContainer)
+        imageContainer.sizeThatFits(frame.size)
         clipsToBounds = true
     }
 }

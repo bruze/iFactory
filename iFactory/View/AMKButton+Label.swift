@@ -74,15 +74,28 @@ extension AMKButton {
             currentDefaultLabel?.font = font
         }
     }
-
+    @IBInspectable var iPadLabelFontSize: CGFloat {
+        get {
+            return getAssociatedValue(key: "iPadLabelFontSize", object: self, initialValue: 16)
+        }
+        set {
+            set(associatedValue: newValue, key: "iPadLabelFontSize", object: self)
+            if UI_USER_INTERFACE_IDIOM() == .pad {
+                let font = UIFont.init(name: labelFontName, size: newValue)
+                currentDefaultLabel?.font = font
+            }
+        }
+    }
     @IBInspectable var labelFontSize: CGFloat {
         get {
             return getAssociatedValue(key: "labelFontSize", object: self, initialValue: 16)
         }
         set {
             set(associatedValue: newValue, key: "labelFontSize", object: self)
-            let font = UIFont.init(name: labelFontName, size: newValue)
-            currentDefaultLabel?.font = font
+            if UI_USER_INTERFACE_IDIOM() == .phone {
+                let font = UIFont.init(name: labelFontName, size: newValue)
+                currentDefaultLabel?.font = font
+            }
         }
     }
     internal func addLabelWith(Text labelText: String, AndOffset offset: CGPoint) {
@@ -97,5 +110,13 @@ extension AMKButton {
             currentDefaultLabel?.origin.x = image.origin.x + image.w + labelRelativeImage
         }*/
         //updateViews()
+    }
+    internal func settleLabelOffset() {
+        if (UI_USER_INTERFACE_IDIOM() == .pad) {
+            let multiplier = iPadLabelFontSize / labelFontSize
+            defLabelXOffset *= multiplier
+            defLabelYOffset *= multiplier
+        }
+        currentDefaultLabel?.origin = CGPoint.init(x: defLabelXOffset, y: defLabelYOffset)
     }
 }

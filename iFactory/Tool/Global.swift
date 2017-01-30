@@ -28,4 +28,10 @@ public struct Global {
             return nil
         }
     }
+    static func scaleRelativeToStandardSize(myStandardSize: CGSize) -> CGSize {
+        let screenSize = UIScreen.main.bounds.size
+        let scale = screenSize.width / 375.0
+        let finalSize = CGSize.init(width: myStandardSize.width * scale, height: myStandardSize.height * scale)
+        return finalSize
+    }
 }

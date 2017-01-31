@@ -38,9 +38,6 @@
 		9D483D4B1D9ABD5C00AD569C /* Angles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D483D4A1D9ABD5C00AD569C /* Angles.swift */; };
 		9D483D4D1D9ABFF700AD569C /* Image+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D483D4C1D9ABFF700AD569C /* Image+Ext.swift */; };
 		9D483D4F1D9AEAE300AD569C /* AMKSuperView+KVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D483D4E1D9AEAE300AD569C /* AMKSuperView+KVO.swift */; };
-		9D483D511D9AEE0400AD569C /* AMKSuperView+Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D483D501D9AEE0400AD569C /* AMKSuperView+Background.swift */; };
-		9D483D531D9AF00400AD569C /* AMKSuperView+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D483D521D9AF00400AD569C /* AMKSuperView+View.swift */; };
-		9D483D551D9AFCA600AD569C /* AMKSuperView+Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D483D541D9AFCA600AD569C /* AMKSuperView+Text.swift */; };
 		9D483D571D9B10A500AD569C /* CGPoint+Aritmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D483D561D9B10A500AD569C /* CGPoint+Aritmetic.swift */; };
 		9D483D5A1D9BFB6000AD569C /* AMKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D483D591D9BFB6000AD569C /* AMKLabel.swift */; };
 		9D483D5C1D9BFD5E00AD569C /* AMKLabel+ArcText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D483D5B1D9BFD5E00AD569C /* AMKLabel+ArcText.swift */; };
@@ -48,9 +45,11 @@
 		9D6E84621D8879B9007A6E4C /* AMKButton+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E84611D8879B9007A6E4C /* AMKButton+Animation.swift */; };
 		9D7BD50B1DC7C244005FC81D /* AMKLabel+Inspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7BD50A1DC7C244005FC81D /* AMKLabel+Inspectable.swift */; };
 		9D7BD50D1DC7C386005FC81D /* AMKLabel+Var.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7BD50C1DC7C386005FC81D /* AMKLabel+Var.swift */; };
+		9D806DF51E4101A4004D6504 /* AMKSuperView+Var.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D806DF41E4101A4004D6504 /* AMKSuperView+Var.swift */; };
+		9D806DF71E4102C7004D6504 /* AMKSuperView+Override.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D806DF61E4102C7004D6504 /* AMKSuperView+Override.swift */; };
+		9DAFBBB31E40D0E5003E20CF /* AMKSuperView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAFBBB21E40D0E5003E20CF /* AMKSuperView+Shadow.swift */; };
 		9DC069EA1DAE8B4700A7CD05 /* 1212.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DC069E81DAE8B4700A7CD05 /* 1212.plist */; };
 		9DC069EC1DAE8C0400A7CD05 /* amk in Resources */ = {isa = PBXBuildFile; fileRef = 9DC069EB1DAE8C0400A7CD05 /* amk */; };
-		9DC167431DD11AA800ABCFDF /* AMKSuperView+Inspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC167421DD11AA800ABCFDF /* AMKSuperView+Inspectable.swift */; };
 		9DD823AD1D83247D003B2FAC /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD823AC1D83247D003B2FAC /* Global.swift */; };
 		9DD823DA1D87325D003B2FAC /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD823D91D87325D003B2FAC /* String+Extension.swift */; };
 		9DFDC46C1DCBD03B00785F9F /* AMKLabel+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFDC46B1DCBD03B00785F9F /* AMKLabel+Touch.swift */; };
@@ -105,9 +104,6 @@
 		9D483D4A1D9ABD5C00AD569C /* Angles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Angles.swift; path = Tool/Angles.swift; sourceTree = "<group>"; };
 		9D483D4C1D9ABFF700AD569C /* Image+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Image+Ext.swift"; path = "Tool/Image+Ext.swift"; sourceTree = "<group>"; };
 		9D483D4E1D9AEAE300AD569C /* AMKSuperView+KVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKSuperView+KVO.swift"; path = "View/AMKSuperView/AMKSuperView+KVO.swift"; sourceTree = "<group>"; };
-		9D483D501D9AEE0400AD569C /* AMKSuperView+Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKSuperView+Background.swift"; path = "View/AMKSuperView/AMKSuperView+Background.swift"; sourceTree = "<group>"; };
-		9D483D521D9AF00400AD569C /* AMKSuperView+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKSuperView+View.swift"; path = "View/AMKSuperView/AMKSuperView+View.swift"; sourceTree = "<group>"; };
-		9D483D541D9AFCA600AD569C /* AMKSuperView+Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKSuperView+Text.swift"; path = "View/AMKSuperView/AMKSuperView+Text.swift"; sourceTree = "<group>"; };
 		9D483D561D9B10A500AD569C /* CGPoint+Aritmetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGPoint+Aritmetic.swift"; path = "Tool/CGPoint+Aritmetic.swift"; sourceTree = "<group>"; };
 		9D483D591D9BFB6000AD569C /* AMKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AMKLabel.swift; path = View/AMKLabel/AMKLabel.swift; sourceTree = "<group>"; };
 		9D483D5B1D9BFD5E00AD569C /* AMKLabel+ArcText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKLabel+ArcText.swift"; path = "View/AMKLabel/AMKLabel+ArcText.swift"; sourceTree = "<group>"; };
@@ -115,9 +111,11 @@
 		9D6E84611D8879B9007A6E4C /* AMKButton+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKButton+Animation.swift"; path = "View/AMKButton+Animation.swift"; sourceTree = "<group>"; };
 		9D7BD50A1DC7C244005FC81D /* AMKLabel+Inspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKLabel+Inspectable.swift"; path = "View/AMKLabel/AMKLabel+Inspectable.swift"; sourceTree = "<group>"; };
 		9D7BD50C1DC7C386005FC81D /* AMKLabel+Var.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKLabel+Var.swift"; path = "View/AMKLabel/AMKLabel+Var.swift"; sourceTree = "<group>"; };
+		9D806DF41E4101A4004D6504 /* AMKSuperView+Var.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKSuperView+Var.swift"; path = "View/AMKSuperView/AMKSuperView+Var.swift"; sourceTree = "<group>"; };
+		9D806DF61E4102C7004D6504 /* AMKSuperView+Override.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKSuperView+Override.swift"; path = "View/AMKSuperView/AMKSuperView+Override.swift"; sourceTree = "<group>"; };
+		9DAFBBB21E40D0E5003E20CF /* AMKSuperView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKSuperView+Shadow.swift"; path = "View/AMKSuperView/AMKSuperView+Shadow.swift"; sourceTree = "<group>"; };
 		9DC069E91DAE8B4700A7CD05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/1212.plist; sourceTree = "<group>"; };
 		9DC069EB1DAE8C0400A7CD05 /* amk */ = {isa = PBXFileReference; lastKnownFileType = folder; path = amk; sourceTree = "<group>"; };
-		9DC167421DD11AA800ABCFDF /* AMKSuperView+Inspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKSuperView+Inspectable.swift"; path = "View/AMKSuperView/AMKSuperView+Inspectable.swift"; sourceTree = "<group>"; };
 		9DD823AC1D83247D003B2FAC /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = Tool/Global.swift; sourceTree = "<group>"; };
 		9DD823D91D87325D003B2FAC /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "Tool/String+Extension.swift"; sourceTree = "<group>"; };
 		9DFDC46B1DCBD03B00785F9F /* AMKLabel+Touch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKLabel+Touch.swift"; path = "View/AMKLabel/AMKLabel+Touch.swift"; sourceTree = "<group>"; };
@@ -243,16 +241,15 @@
 		9D483D3D1D9AACF100AD569C /* AMKSuperView */ = {
 			isa = PBXGroup;
 			children = (
+				9DAFBBB21E40D0E5003E20CF /* AMKSuperView+Shadow.swift */,
 				9D483D3E1D9AAD1100AD569C /* AMKSuperView.swift */,
 				9D483D4E1D9AEAE300AD569C /* AMKSuperView+KVO.swift */,
 				9D483D401D9AAE9100AD569C /* AMKSuperView+Gradient.swift */,
 				9D483D441D9AB01200AD569C /* AMKSuperView+Border.swift */,
 				9D483D461D9AB56F00AD569C /* AMKSuperView+Touch.swift */,
 				9D483D481D9AB5D900AD569C /* AMKSuperView+Image.swift */,
-				9D483D501D9AEE0400AD569C /* AMKSuperView+Background.swift */,
-				9D483D521D9AF00400AD569C /* AMKSuperView+View.swift */,
-				9D483D541D9AFCA600AD569C /* AMKSuperView+Text.swift */,
-				9DC167421DD11AA800ABCFDF /* AMKSuperView+Inspectable.swift */,
+				9D806DF41E4101A4004D6504 /* AMKSuperView+Var.swift */,
+				9D806DF61E4102C7004D6504 /* AMKSuperView+Override.swift */,
 			);
 			name = AMKSuperView;
 			sourceTree = "<group>";
@@ -411,17 +408,16 @@
 				9D2D8E061E3FB5440056C571 /* AMKCarousel+Draw.swift in Sources */,
 				9D483D4F1D9AEAE300AD569C /* AMKSuperView+KVO.swift in Sources */,
 				9D2D8E091E3FB5440056C571 /* AMKCarousel.swift in Sources */,
+				9D806DF71E4102C7004D6504 /* AMKSuperView+Override.swift in Sources */,
 				9D483D5A1D9BFB6000AD569C /* AMKLabel.swift in Sources */,
 				9D483D431D9AAF0900AD569C /* UIColor+Ext.swift in Sources */,
 				9D1F1CFB1D804E3E00DF41E6 /* AMKButton+KVO.swift in Sources */,
 				9D1F1CFD1D805B6300DF41E6 /* AMKButton+Persistence.swift in Sources */,
 				9D2D8E071E3FB5440056C571 /* AMKCarousel+Indicator.swift in Sources */,
-				9D483D531D9AF00400AD569C /* AMKSuperView+View.swift in Sources */,
 				9D1F1D0F1D8201F400DF41E6 /* AMKEncoder+Extension.swift in Sources */,
 				9D483D5E1D9C130400AD569C /* UILabel+ArcText.swift in Sources */,
 				9D483D491D9AB5D900AD569C /* AMKSuperView+Image.swift in Sources */,
 				9D7BD50D1DC7C386005FC81D /* AMKLabel+Var.swift in Sources */,
-				9D483D551D9AFCA600AD569C /* AMKSuperView+Text.swift in Sources */,
 				9D483D4D1D9ABFF700AD569C /* Image+Ext.swift in Sources */,
 				9D40580C1D7E19D9002C4571 /* AMKButton+Label.swift in Sources */,
 				9D40580E1D7F0288002C4571 /* AMKButton+View.swift in Sources */,
@@ -429,7 +425,6 @@
 				9D483D4B1D9ABD5C00AD569C /* Angles.swift in Sources */,
 				9D4058061D7DE9D0002C4571 /* AMKButton.swift in Sources */,
 				9DD823DA1D87325D003B2FAC /* String+Extension.swift in Sources */,
-				9D483D511D9AEE0400AD569C /* AMKSuperView+Background.swift in Sources */,
 				9DD823AD1D83247D003B2FAC /* Global.swift in Sources */,
 				9D2D8E081E3FB5440056C571 /* AMKCarousel+Scroll.swift in Sources */,
 				9D6E84621D8879B9007A6E4C /* AMKButton+Animation.swift in Sources */,
@@ -443,9 +438,10 @@
 				9DFDC46C1DCBD03B00785F9F /* AMKLabel+Touch.swift in Sources */,
 				9D483D3F1D9AAD1100AD569C /* AMKSuperView.swift in Sources */,
 				9D483D411D9AAE9100AD569C /* AMKSuperView+Gradient.swift in Sources */,
+				9DAFBBB31E40D0E5003E20CF /* AMKSuperView+Shadow.swift in Sources */,
 				9D2D8E0B1E3FB5640056C571 /* AMKInfiniteScroll.swift in Sources */,
 				9D483D451D9AB01200AD569C /* AMKSuperView+Border.swift in Sources */,
-				9DC167431DD11AA800ABCFDF /* AMKSuperView+Inspectable.swift in Sources */,
+				9D806DF51E4101A4004D6504 /* AMKSuperView+Var.swift in Sources */,
 				9D483D471D9AB56F00AD569C /* AMKSuperView+Touch.swift in Sources */,
 				9D4058101D7F037E002C4571 /* AMKButton+Image.swift in Sources */,
 			);

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -256,9 +257,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbe-ue-P26" customClass="AMKSuperView" customModule="iFactory" customModuleProvider="target">
-                                <rect key="frame" x="41" y="46" width="106" height="123"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="41" y="46" width="253" height="272"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6dC-12-ceA">
+                                        <rect key="frame" x="18" y="18" width="217" height="236"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableView>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="6dC-12-ceA" firstAttribute="top" secondItem="xbe-ue-P26" secondAttribute="top" constant="18" id="6ew-d1-Ubh"/>
+                                    <constraint firstAttribute="trailing" secondItem="6dC-12-ceA" secondAttribute="trailing" constant="18" id="Fdq-cy-y42"/>
+                                    <constraint firstAttribute="bottom" secondItem="6dC-12-ceA" secondAttribute="bottom" constant="18" id="Gs2-Ua-AWx"/>
+                                    <constraint firstItem="6dC-12-ceA" firstAttribute="leading" secondItem="xbe-ue-P26" secondAttribute="leading" constant="18" id="ReP-gy-Ihx"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backColor">
                                         <color key="value" red="0.58619791669999999" green="0.33069955690000002" blue="0.24746374870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -266,19 +278,36 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="touchBackColor">
                                         <color key="value" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="roundCorners">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="45"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="image" keyPath="touchImage" value="iconMyRedemp"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="idleImage" value="iconMyRedemp"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="skyBlue"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="storeButtonID" value="a"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="idlePositionAngle">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="idlePositionRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adoptImgSize" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shdwColor">
+                                        <color key="value" red="0.24705882370000001" green="0.67450982329999998" blue="0.78039217000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="shadowInsets" value="0|4"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shdwRadius">
+                                        <real key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shdwOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dropShdw" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.99215686319999996" green="0.64705884459999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKo-kT-mff" customClass="AMKSuperViewRefEncodable" customModule="iFactory" customModuleProvider="target">
@@ -301,9 +330,8 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="7q7-ZE-rs2"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zs4-9u-Pcy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zs4-9u-Pcy">
                                 <rect key="frame" x="176" y="345" width="145" height="92"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HoeflerText-BlackItalic" family="Hoefler Text" pointSize="35"/>
                                 <color key="textColor" red="0.81538380872483196" green="0.86637479026845643" blue="0.99296019855054407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -340,6 +368,12 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xbe-ue-P26" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="26" id="OLy-In-Vld"/>
+                            <constraint firstItem="zs4-9u-Pcy" firstAttribute="top" secondItem="xbe-ue-P26" secondAttribute="bottom" constant="27" id="S05-zC-fUv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xbe-ue-P26" secondAttribute="trailing" constant="65" id="dP8-Y8-VZa"/>
+                            <constraint firstItem="xbe-ue-P26" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="mf2-RX-RGM"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="MHm-MG-03C"/>
@@ -352,7 +386,6 @@
                                 <exclude reference="RMC-7t-CrC"/>
                                 <exclude reference="riQ-gS-HXA"/>
                                 <exclude reference="kyZ-Na-Vfd"/>
-                                <exclude reference="xbe-ue-P26"/>
                                 <exclude reference="MKo-kT-mff"/>
                                 <exclude reference="JUQ-bt-eQe"/>
                             </mask>

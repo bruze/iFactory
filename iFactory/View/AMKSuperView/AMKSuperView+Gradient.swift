@@ -8,38 +8,6 @@
 import UIKit
 import AssociatedValues
 extension AMKSuperView {
-    var capaGradiente: CAGradientLayer {
-        get {
-            return getAssociatedValue(key: "capaGradiente", object: self, initialValue: CAGradientLayer.init())
-        }
-        set {
-            set(associatedValue: newValue, key: "capaGradiente", object: self)
-        }
-    }
-    @IBInspectable var gradienteInicial: UIColor {
-        get {
-            return getAssociatedValue(key: "gradienteInicial", object: self, initialValue: UIColor.clear)
-        }
-        set {
-            set(associatedValue: newValue, key: "gradienteInicial", object: self)
-            if !gradienteFinal.isEmpty() {
-                tryShowGradient()
-            }
-        }
-    }
-    
-    @IBInspectable var gradienteFinal: UIColor {
-        get {
-            return getAssociatedValue(key: "gradienteFinal", object: self, initialValue: UIColor.clear)
-        }
-        set {
-            set(associatedValue: newValue, key: "gradienteFinal", object: self)
-            if !gradienteInicial.isEmpty() {
-                tryShowGradient()
-            }
-        }
-    }
-    
     internal func tryShowGradient() {
         capaGradiente = CAGradientLayer()
         //capaGradiente.removeFromSuperlayer()

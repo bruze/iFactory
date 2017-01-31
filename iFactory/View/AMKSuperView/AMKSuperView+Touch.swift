@@ -9,66 +9,6 @@ import AssociatedValues
 import UIKit
 import EZSwiftExtensions
 extension AMKSuperView {
-    @IBInspectable var blinkIfNoTouchImage: Bool {
-        get {
-            return getAssociatedValue(key: "blinkOnTouch", object: self, initialValue: false)
-        }
-        set {
-            set(associatedValue: newValue, key: "blinkOnTouch", object: self)
-        }
-    }
-    @IBInspectable var blinkLabelToo: Bool {
-        get {
-            return getAssociatedValue(key: "blinkLabelToo", object: self, initialValue: false)
-        }
-        set {
-            set(associatedValue: newValue, key: "blinkLabelToo", object: self)
-        }
-    }
-    @IBInspectable var touchImage: UIImage {
-        get {
-            return getAssociatedValue(key: "touchImage", object: self, initialValue: emptyImage)
-        }
-        set {
-            set(associatedValue: newValue, key: "touchImage", object: self)
-            let size = newValue.size
-            //var setX = centerX - size.width / 2
-            //var setY = centerY - size.height / 2
-            var setX = /*centerX*/frame.size.width / 2 - size.width / 2
-            var setY = /*centerY*/frame.size.height / 2 - size.height / 2
-            !touchPositionAngle.isZero && !touchPositionRadius.isZero ? {
-                setX += cos(touchPositionAngle.toRadians()) * touchPositionRadius
-                setY -= sin(touchPositionAngle.toRadians()) * touchPositionRadius
-                }() : {}()
-            addTouchImageView(CGPoint.init(x: setX, y: setY), size: size, image: touchImage)
-        }
-    }
-    @IBInspectable var touchPositionAngle: CGFloat {
-        get {
-            return getAssociatedValue(key: "touchPositionAngle", object: self, initialValue: 0)
-        }
-        set {
-            set(associatedValue: newValue, key: "touchPositionAngle", object: self)
-            updateImageViewLocation(touchPositionAngle, radius: touchPositionRadius, imageView: &touchImageView)
-        }
-    }
-    @IBInspectable var touchPositionRadius: CGFloat {
-        get {
-            return getAssociatedValue(key: "touchPositionRadius", object: self, initialValue: 0)
-        }
-        set {
-            set(associatedValue: newValue, key: "touchPositionRadius", object: self)
-            updateImageViewLocation(touchPositionAngle, radius: touchPositionRadius, imageView: &touchImageView)
-        }
-    }
-    var touchImageView: UIImageView {
-        get {
-            return getAssociatedValue(key: "touchImageView", object: self, initialValue: emptyImageView)
-        }
-        set {
-            set(associatedValue: newValue, key: "touchImageView", object: self)
-        }
-    }
     internal func addTouchImageView(_ origin: CGPoint, size: CGSize, image: UIImage) {
         touchImageView = UIImageView.init(x: origin.x, y: origin.y, w: size.width, h: size.height, image: image)
         touchImageView.isHidden = true

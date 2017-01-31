@@ -8,59 +8,6 @@
 import AssociatedValues
 import UIKit
 extension AMKSuperView {
-    @IBInspectable var adoptImgSize: Bool {
-        get {
-            return getAssociatedValue(key: "adoptImgSize", object: self, initialValue: false)
-        }
-        set {
-            set(associatedValue: newValue, key: "adoptImgSize", object: self)
-        }
-    }
-    @IBInspectable var idleImage: UIImage {
-        get {
-            return getAssociatedValue(key: "idleImage", object: self, initialValue: emptyImage)
-        }
-        set {
-            set(associatedValue: newValue, key: "idleImage", object: self)
-            var size = newValue.size
-            var setX = centerX - size.width / 2
-            var setY = centerY - size.height / 2
-            !idlePositionAngle.isZero && !idlePositionRadius.isZero ? {
-                setX += cos(idlePositionAngle.toRadians()) * idlePositionRadius
-                setY -= sin(idlePositionAngle.toRadians()) * idlePositionRadius
-            }() : {}()
-            if idleImageScale != 0 {
-                size = frame.getScaledSize(idleImageScale, overSize: newValue.size)
-            }
-            addIdleImageView(CGPoint.init(x: setX, y: setY), size: size, image: newValue)
-        }
-    }
-    @IBInspectable var idlePositionAngle: CGFloat {
-        get {
-            return getAssociatedValue(key: "idlePositionAngle", object: self, initialValue: 0)
-        }
-        set {
-            set(associatedValue: newValue, key: "idlePositionAngle", object: self)
-            updateImageViewLocation(idlePositionAngle, radius: idlePositionRadius, imageView: &idleImageView)
-        }
-    }
-    @IBInspectable var idlePositionRadius: CGFloat {
-        get {
-            return getAssociatedValue(key: "idlePositionRadius", object: self, initialValue: 0)
-        }
-        set {
-            set(associatedValue: newValue, key: "idlePositionRadius", object: self)
-            updateImageViewLocation(idlePositionAngle, radius: idlePositionRadius, imageView: &idleImageView)
-        }
-    }
-    var idleImageView: UIImageView {
-        get {
-            return getAssociatedValue(key: "idleImageView", object: self, initialValue: emptyImageView)
-        }
-        set {
-            set(associatedValue: newValue, key: "idleImageView", object: self)
-        }
-    }
     internal func addIdleImageView(_ origin: CGPoint, size: CGSize, image: UIImage) {
         idleImageView = UIImageView.init(x: origin.x, y: origin.y, w: size.width, h: size.height, image: image)
         addSubview(idleImageView)

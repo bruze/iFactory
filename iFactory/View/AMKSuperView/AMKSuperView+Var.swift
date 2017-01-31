@@ -332,3 +332,15 @@ extension AMKSuperView {
         }
     }
 }
+extension AMKSuperView {
+    //MARK: Alignment
+    @IBInspectable var alignment: String {
+        get {
+            return getAssociatedValue(key: "alignment", object: self, initialValue: "")
+        }
+        set {
+            set(associatedValue: newValue, key: "alignment", object: self)
+            realign()
+        }
+    }
+}

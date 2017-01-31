@@ -40,7 +40,7 @@ extension AMKSuperView {
         if context == &kvoContext {
             //print("Change at keyPath = \(keyPath) for \(object)")
             if keyPath == "enabled" {
-                if let value = change?[.newKey]! as? Bool {
+                //if let value = change?[.newKey]! as? Bool {
                     /*if value {
                         currentDefaultLabel?.alpha = 1.0
                         if !enabledAction.isEmpty {
@@ -52,7 +52,7 @@ extension AMKSuperView {
                             delegatePerformDisable()
                         }
                     }*/
-                }
+                //}
             }
         }
     }

@@ -35,7 +35,7 @@ extension AMKSuperView {
         }
     }
     override func encode() {
-        let parsedData = ["": idleImage.imageAsset.debugDescription]
+        //let parsedData = ["": idleImage.imageAsset.debugDescription]
     }
     override func decode(_ data: NSDictionary) {
     }

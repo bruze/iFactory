@@ -37,8 +37,8 @@ extension AMKSuperView {
             var setX = /*centerX*/frame.size.width / 2 - size.width / 2
             var setY = /*centerY*/frame.size.height / 2 - size.height / 2
             !touchPositionAngle.isZero && !touchPositionRadius.isZero ? {
-                setX += cos(touchPositionAngle.degreesToRadians()) * touchPositionRadius
-                setY -= sin(touchPositionAngle.degreesToRadians()) * touchPositionRadius
+                setX += cos(touchPositionAngle.toRadians()) * touchPositionRadius
+                setY -= sin(touchPositionAngle.toRadians()) * touchPositionRadius
                 }() : {}()
             addTouchImageView(CGPoint.init(x: setX, y: setY), size: size, image: touchImage)
         }

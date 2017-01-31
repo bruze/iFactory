@@ -16,11 +16,12 @@ extension AMKButton {
         set {
             set(associatedValue: newValue, key: "defaultImage", object: self)
             if defaultImage != nil {
-                resetView(imageContainer)
-                images[AMKTypeTag.imageDefault] = defaultImage
-                imageContainer = UIImageView.init(image: defaultImage!)
-                addSubview(imageContainer)
-                imageContainer.center = CGPoint.init(x: w / 2, y: h / 2)
+                if resetView(imageContainer) {
+                    images[AMKTypeTag.imageDefault] = defaultImage
+                    imageContainer = UIImageView.init(image: defaultImage!)
+                    addSubview(imageContainer)
+                    imageContainer.center = CGPoint.init(x: w / 2, y: h / 2)
+                }
             }
         }
     }
@@ -98,10 +99,11 @@ extension AMKButton {
     }
     internal func setImage(ForTag tag: AMKTypeTag) {
         if let toSet = getImage(ForTag: tag) {
-            resetView(imageContainer)
-            imageContainer = UIImageView.init(image: toSet)
-            addSubview(imageContainer)
-            imageContainer.center = CGPoint.init(x: w / 2 + imageLeading, y: h / 2 + imageYOffset)
+            if resetView(imageContainer) {
+                imageContainer = UIImageView.init(image: toSet)
+                addSubview(imageContainer)
+                imageContainer.center = CGPoint.init(x: w / 2 + imageLeading, y: h / 2 + imageYOffset)
+            }
         }
     }
 }

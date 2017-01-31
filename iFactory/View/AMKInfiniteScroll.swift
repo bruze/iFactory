@@ -252,7 +252,7 @@ class AMKInfiniteScroll: UIView, UIScrollViewDelegate {
         }
     }
     //MARK: ScrollView Delegate
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //let currentCenter = currentCenter()
         startedScrolling = true
         endedScrolling = false
@@ -269,7 +269,7 @@ class AMKInfiniteScroll: UIView, UIScrollViewDelegate {
         reArrangeViews()
         updateProgress()
     }
-    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         endedScrolling = true
         if !self.pagingEnabled /*&& !decelerate && self.needsCenterPage()*/ {
             let offset = scrollPosition
@@ -286,12 +286,12 @@ class AMKInfiniteScroll: UIView, UIScrollViewDelegate {
             }
         }
     }
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if !self.pagingEnabled && self.needsCenterPage() {
             self.scrollView?.setContentOffset(contentOffsetForIndex(index: self.currentIndex), animated: true)
         }
     }
-    func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: inout UnsafeMutablePointer<CGPoint>) {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if self.maxScrollDistance <= 0 {
             return
         }
@@ -377,7 +377,7 @@ class AMKInfiniteScroll: UIView, UIScrollViewDelegate {
         let iSmallSize = screenSize.height < 768
         var tW = CGFloat(6)
         var tH = CGFloat(6)
-        var separation = CGFloat(10)
+        let separation = CGFloat(10)
         if iPadSize {
             tW = 12
             tH = 12

@@ -14,9 +14,9 @@ extension AMKLabel {
             return
         }*/
         #if TARGET_INTERFACE_BUILDER
-            let size = frame.size//CGSize.init(width: 256, height: 256)
-        #else
             let size = rect.size
+        #else
+            let size = frame.size//CGSize.init(width: 256, height: 256)
         #endif
         
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
@@ -42,7 +42,7 @@ extension AMKLabel {
         /*centreArcPerpendicularText(label!.text!, context: context, radius: 40 + label!.curveRadius, angle: label!.curveAngle.degreesToRadians(), colour: label!.textColor, font: label!.font, clockwise: label!.curveClockwise)*/
         let drawText: String = overrideStoredText ? overrideText : text
         if curve {
-            centreArcPerpendicularText(drawText, context: context, radius: 40 + curveRadius, angle: /*CGFloat(-135)*/curveAngle.degreesToRadians(), colour: textColor, font: textFont, clockwise: curveClockwise)
+            centreArcPerpendicularText(drawText, context: context, radius: 40 + curveRadius, angle: /*CGFloat(-135)*/curveAngle.toRadians(), colour: textColor, font: textFont, clockwise: curveClockwise)
         } else {
             centreText(drawText, context: context, radius: 0, angle: 180, colour: textColor, font: textFont, slantAngle: 0)
         }

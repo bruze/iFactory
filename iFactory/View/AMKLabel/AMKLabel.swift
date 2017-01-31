@@ -38,12 +38,9 @@ class AMKLabel: UIView, XMLParserDelegate {
     override var intrinsicContentSize : CGSize {
         return frame.size
     }
-    override func didMoveToSuperview() {
-        //print("label move to superview")
-        //print(storeID)
-    }
-    override func didMoveToWindow() {
-        //print("label move to window")
+    /*override func didMoveToSuperview() {
+    }*/
+    /*override func didMoveToWindow() {
         #if TARGET_INTERFACE_BUILDER
             if !storeLoaded {
                 let path = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Overlays/amk/\(storeID).plist"
@@ -65,7 +62,7 @@ class AMKLabel: UIView, XMLParserDelegate {
                 }
             }
         #endif
-    }
+    }*/
     func reloadAMKConfig() {
         if let path = bundle.path(forResource: storeID + ".plist", ofType: nil, inDirectory: "amk") {
             let entityData = NSDictionary.init(contentsOfFile: path)
@@ -73,10 +70,10 @@ class AMKLabel: UIView, XMLParserDelegate {
         }
     }
     func initialConfig() {
-        if mutateOnTouch && storeID == mutateStoreID {
+        /*if mutateOnTouch && storeID == mutateStoreID {
             storeID = backStoreID
             reloadAMKConfig()
-        }
+        }*/
     }
     override func decode(_ data: NSDictionary) {
         text = (data["text"]! as AnyObject).str()
@@ -162,58 +159,6 @@ class AMKLabel: UIView, XMLParserDelegate {
         }
         return systemResult
     }
-    /*func fontFromStoredInfo(infoFont: String) -> UIFont {
-        let tTextSize = overrideStoredTextSize ? overrideTextSize : 16
-        var result = UIFont.systemFontOfSize(tTextSize)
-        let italicSystemResult = UIFont.italicSystemFontOfSize(tTextSize)
-        let boldSystemResult = UIFont.boldSystemFontOfSize(tTextSize)
-        
-        var components = infoFont.componentsSeparatedByString(" ")
-        var tryName = ""
-        
-        var lastComponent: [String] = []
-        
-        var testComponents = components
-        var testChequeando = lastComponent
-        testChequeando.append(testComponents.removeFirst())
-        //print(obtenerFamiliaFuente(&testChequeando, componentes: &testComponents))
-        
-        if components.count == 1 {
-            lastComponent = components
-        } else {
-            lastComponent = [components.popLast()!]
-        }
-        
-        let firstIsSystemCheck = components.count > 0 ? components.first! == "System" : false
-        if lastComponent.flatString() != "System" && !firstIsSystemCheck {
-            let flatString = components.flatString(" ")
-            var family = UIFont.fontNamesForFamilyName(flatString)
-            while family.count == 0 {
-                lastComponent.insertAsFirst(components.popLast()!)
-                let flatString = components.flatString()
-                family = UIFont.fontNamesForFamilyName(flatString)
-            }
-            let filtered = family.filter { (comp) -> Bool in
-                let sComponents = comp.componentsSeparatedByString("-")
-                return sComponents.last! == lastComponent.flatString(" ")
-            }
-            if filtered.count > 0 {
-                tryName = filtered.first!
-            } else {
-                tryName = family.first!
-            }
-            
-            result = UIFont.init(name: tryName, size: overrideStoredTextSize ? overrideTextSize : 16)!
-        } else if firstIsSystemCheck {
-            if lastComponent.flatString() == "Bold" {
-                result = boldSystemResult
-            } else if lastComponent.flatString() == "Italic" {
-                result = italicSystemResult
-            }
-        }
-        
-        return result
-    }*/
     internal func delegatePerformTouch() {
         guard !touchAction.isEmpty else {
             return

@@ -78,8 +78,6 @@ extension AMKCarousel: /*LTInfiniteScrollViewDataSource, LTInfiniteScrollViewDel
             }*/
             //currentIndicator = scrollView.currentIndex
             setNeedsDisplay()
-        } else {
-           let meKnow = true 
         }
         setNeedsDisplay()
     }
@@ -98,9 +96,6 @@ extension AMKCarousel: /*LTInfiniteScrollViewDataSource, LTInfiniteScrollViewDel
             currentIndicator += 1
         }
         setNeedsDisplay()
-        if indicatorJustUpdated {
-           let meKnow = true
-        }
     }
     internal func setupScroll() {
         scrollView.backgroundColor = UIColor.clear

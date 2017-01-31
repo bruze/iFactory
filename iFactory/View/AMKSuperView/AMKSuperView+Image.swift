@@ -26,8 +26,8 @@ extension AMKSuperView {
             var setX = centerX - size.width / 2
             var setY = centerY - size.height / 2
             !idlePositionAngle.isZero && !idlePositionRadius.isZero ? {
-                setX += cos(idlePositionAngle.degreesToRadians()) * idlePositionRadius
-                setY -= sin(idlePositionAngle.degreesToRadians()) * idlePositionRadius
+                setX += cos(idlePositionAngle.toRadians()) * idlePositionRadius
+                setY -= sin(idlePositionAngle.toRadians()) * idlePositionRadius
             }() : {}()
             if idleImageScale != 0 {
                 size = frame.getScaledSize(idleImageScale, overSize: newValue.size)
@@ -74,8 +74,8 @@ extension AMKSuperView {
             setY = 0
         }
         !idlePositionAngle.isZero && !idlePositionRadius.isZero ? {
-            setX += cos(idlePositionAngle.degreesToRadians()) * idlePositionRadius
-            setY -= sin(idlePositionAngle.degreesToRadians()) * idlePositionRadius
+            setX += cos(idlePositionAngle.toRadians()) * idlePositionRadius
+            setY -= sin(idlePositionAngle.toRadians()) * idlePositionRadius
             }() : {}()
         if idleImageScale != 0 {
             size = frame.getScaledSize(idleImageScale, overSize: idleImage.size)
@@ -90,8 +90,8 @@ extension AMKSuperView {
             setTY = 0
         }
         !touchPositionAngle.isZero && !touchPositionRadius.isZero ? {
-            setTX += cos(touchPositionAngle.degreesToRadians()) * touchPositionRadius
-            setTY -= sin(touchPositionAngle.degreesToRadians()) * touchPositionRadius
+            setTX += cos(touchPositionAngle.toRadians()) * touchPositionRadius
+            setTY -= sin(touchPositionAngle.toRadians()) * touchPositionRadius
             }() : {}()
         addTouchImageView(CGPoint.init(x: setTX, y: setTY), size: tSize, image: touchImage)
     }
@@ -104,8 +104,8 @@ extension AMKSuperView {
         var setX = centerX - size.width / 2
         var setY = centerY - size.height / 2
         if !angle.isZero && !radius.isZero {
-            setX += cos(angle.degreesToRadians()) * radius
-            setY -= sin(angle.degreesToRadians()) * radius
+            setX += cos(angle.toRadians()) * radius
+            setY -= sin(angle.toRadians()) * radius
         }
         if idleImageScale != 0 {
             size = frame.getScaledSize(idleImageScale, overSize: idleImage.size)

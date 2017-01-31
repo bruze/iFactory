@@ -20,9 +20,10 @@ extension AMKButton {
     }
     @IBInspectable override var defaultLabel: String {
         didSet {
-            resetView(currentDefaultLabel)
-            if !defaultLabel.isEmpty {
-                addLabelWith(Text: defaultLabel, AndOffset: CGPoint.zero)
+            if resetView(currentDefaultLabel) {
+                if !defaultLabel.isEmpty {
+                    addLabelWith(Text: defaultLabel, AndOffset: CGPoint.zero)
+                }
             }
         }
     }

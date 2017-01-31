@@ -255,7 +255,7 @@
                                 <color key="textColor" red="0.38667111474847327" green="0.75889423076923079" blue="0.59246620442848019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xbe-ue-P26" customClass="AMKSuperView" customModule="iFactory" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbe-ue-P26" customClass="AMKSuperView" customModule="iFactory" customModuleProvider="target">
                                 <rect key="frame" x="41" y="46" width="106" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -281,7 +281,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="storeButtonID" value="a"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MKo-kT-mff" customClass="AMKSuperViewRefEncodable" customModule="iFactory" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKo-kT-mff" customClass="AMKSuperViewRefEncodable" customModule="iFactory" customModuleProvider="target">
                                 <rect key="frame" x="67" y="219" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -289,15 +289,16 @@
                                     <outlet property="superView" destination="xbe-ue-P26" id="TID-64-0eB"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R6H-jF-dzl" customClass="AMKLabel" customModule="iFactory" customModuleProvider="target">
-                                <rect key="frame" x="60" y="438" width="240" height="128"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R6H-jF-dzl" customClass="AMKLabel" customModule="iFactory">
+                                <rect key="frame" x="60" y="438" width="261" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="storeID" value="softViolet"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="offsetsText" value="0|0"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="mutateOnTouch" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="label" destination="zs4-9u-Pcy" id="bS1-SY-rk9"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="7q7-ZE-rs2"/>
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zs4-9u-Pcy">
@@ -351,6 +352,8 @@
                                 <exclude reference="RMC-7t-CrC"/>
                                 <exclude reference="riQ-gS-HXA"/>
                                 <exclude reference="kyZ-Na-Vfd"/>
+                                <exclude reference="xbe-ue-P26"/>
+                                <exclude reference="MKo-kT-mff"/>
                                 <exclude reference="JUQ-bt-eQe"/>
                             </mask>
                         </variation>

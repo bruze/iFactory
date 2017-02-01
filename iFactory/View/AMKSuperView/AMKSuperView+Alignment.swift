@@ -7,11 +7,11 @@
 //
 import AssociatedValues
 import UIKit
-private let alignmentOperators: [String: (_ p: CGRect, _ m: inout CGRect) -> ()] =
-    [  "right": {parentFrame,myFrame in myFrame.x = parentFrame.width - myFrame.width; return },
-        "left": {parentFrame,myFrame in myFrame.x = 0; return },
-        "top": {parentFrame,myFrame in myFrame.y = 0; return },
-        "bottom": {parentFrame,myFrame in myFrame.y = parentFrame.height - myFrame.height; return }
+private let alignmentOperators: [String: (_ p: CGRect, _ m: inout CGRect, _ o: CGPoint) -> ()] =
+    [  "right": {parentFrame,myFrame,offset in myFrame.x = parentFrame.width - myFrame.width + offset.x; return },
+        "left": {parentFrame,myFrame,offset in myFrame.x = 0 + offset.x; return },
+        "top": {parentFrame,myFrame,offset in myFrame.y = 0 + offset.y; return },
+        "bottom": {parentFrame,myFrame,offset in myFrame.y = parentFrame.height - myFrame.height + offset.y; return }
      ]
 extension AMKSuperView {
     func realign() {
@@ -25,7 +25,12 @@ extension AMKSuperView {
         let superFrame = superview?.frame
         let components = alignment.components(separatedBy: "|")
         for component in components {
-            alignmentOperators[component]!(superFrame!, &frame)
+            alignmentOperators[component]!(superFrame!, &frame, alignmentOffsets)
         }
+    }
+    func getAlignmentOffsets() -> CGPoint {
+        let components = alignOffsets.components(separatedBy: "|")
+        let result = CGPoint.init(x: components[0].toInt()!, y: components[1].toInt()!)
+        return result
     }
 }

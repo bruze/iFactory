@@ -343,4 +343,23 @@ extension AMKSuperView {
             realign()
         }
     }
+    internal var alignmentOffsets: CGPoint {
+        get {
+            return getAssociatedValue(key: "alignmentOffsets", object: self, initialValue: CGPoint.zero)
+        }
+        set {
+            set(associatedValue: newValue, key: "alignmentOffsets", object: self)
+        }
+    }
+    @IBInspectable var alignOffsets: String {
+        get {
+            return getAssociatedValue(key: "alignOffsets", object: self, initialValue: "")
+        }
+        set {
+            set(associatedValue: newValue, key: "alignOffsets", object: self)
+            alignmentOffsets = getAlignmentOffsets()
+            print(alignmentOffsets)
+            realign()
+        }
+    }
 }

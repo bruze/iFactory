@@ -18,6 +18,9 @@
 		9D2D8E081E3FB5440056C571 /* AMKCarousel+Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2D8E041E3FB5440056C571 /* AMKCarousel+Scroll.swift */; };
 		9D2D8E091E3FB5440056C571 /* AMKCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2D8E051E3FB5440056C571 /* AMKCarousel.swift */; };
 		9D2D8E0B1E3FB5640056C571 /* AMKInfiniteScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2D8E0A1E3FB5640056C571 /* AMKInfiniteScroll.swift */; };
+		9D3527951E42547A00AF6801 /* AMKScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3527941E42547A00AF6801 /* AMKScroller.swift */; };
+		9D3527971E4255C200AF6801 /* AMKScroller+Override.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3527961E4255C200AF6801 /* AMKScroller+Override.swift */; };
+		9D3527991E4258BF00AF6801 /* AMKScroller+Var.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3527981E4258BF00AF6801 /* AMKScroller+Var.swift */; };
 		9D4057F31D7DE8A8002C4571 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4057F21D7DE8A8002C4571 /* AppDelegate.swift */; };
 		9D4057F51D7DE8A8002C4571 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4057F41D7DE8A8002C4571 /* ViewController.swift */; };
 		9D4057F81D7DE8A8002C4571 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D4057F61D7DE8A8002C4571 /* Main.storyboard */; };
@@ -83,6 +86,9 @@
 		9D2D8E041E3FB5440056C571 /* AMKCarousel+Scroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AMKCarousel+Scroll.swift"; sourceTree = "<group>"; };
 		9D2D8E051E3FB5440056C571 /* AMKCarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMKCarousel.swift; sourceTree = "<group>"; };
 		9D2D8E0A1E3FB5640056C571 /* AMKInfiniteScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AMKInfiniteScroll.swift; path = View/AMKInfiniteScroll.swift; sourceTree = "<group>"; };
+		9D3527941E42547A00AF6801 /* AMKScroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AMKScroller.swift; path = View/AMKScroller/AMKScroller.swift; sourceTree = "<group>"; };
+		9D3527961E4255C200AF6801 /* AMKScroller+Override.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKScroller+Override.swift"; path = "View/AMKScroller/AMKScroller+Override.swift"; sourceTree = "<group>"; };
+		9D3527981E4258BF00AF6801 /* AMKScroller+Var.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKScroller+Var.swift"; path = "View/AMKScroller/AMKScroller+Var.swift"; sourceTree = "<group>"; };
 		9D4057EF1D7DE8A8002C4571 /* iFactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D4057F21D7DE8A8002C4571 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D4057F41D7DE8A8002C4571 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +190,16 @@
 			path = View/AMKCarousel;
 			sourceTree = "<group>";
 		};
+		9D3527931E42545400AF6801 /* AMKScroller */ = {
+			isa = PBXGroup;
+			children = (
+				9D3527941E42547A00AF6801 /* AMKScroller.swift */,
+				9D3527961E4255C200AF6801 /* AMKScroller+Override.swift */,
+				9D3527981E4258BF00AF6801 /* AMKScroller+Var.swift */,
+			);
+			name = AMKScroller;
+			sourceTree = "<group>";
+		};
 		9D4057E61D7DE8A8002C4571 = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +239,7 @@
 		9D4058041D7DE9B1002C4571 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9D3527931E42545400AF6801 /* AMKScroller */,
 				9D2D8E0A1E3FB5640056C571 /* AMKInfiniteScroll.swift */,
 				9D2D8E011E3FB5440056C571 /* AMKCarousel */,
 				9D483D581D9BFB4100AD569C /* AMKLabel */,
@@ -416,6 +433,7 @@
 				9D806DF91E411570004D6504 /* AMKSuperView+Alignment.swift in Sources */,
 				9D483D431D9AAF0900AD569C /* UIColor+Ext.swift in Sources */,
 				9D1F1CFB1D804E3E00DF41E6 /* AMKButton+KVO.swift in Sources */,
+				9D3527951E42547A00AF6801 /* AMKScroller.swift in Sources */,
 				9D1F1CFD1D805B6300DF41E6 /* AMKButton+Persistence.swift in Sources */,
 				9D2D8E071E3FB5440056C571 /* AMKCarousel+Indicator.swift in Sources */,
 				9D1F1D0F1D8201F400DF41E6 /* AMKEncoder+Extension.swift in Sources */,
@@ -426,6 +444,7 @@
 				9D40580C1D7E19D9002C4571 /* AMKButton+Label.swift in Sources */,
 				9D40580E1D7F0288002C4571 /* AMKButton+View.swift in Sources */,
 				9D4057F51D7DE8A8002C4571 /* ViewController.swift in Sources */,
+				9D3527971E4255C200AF6801 /* AMKScroller+Override.swift in Sources */,
 				9D483D4B1D9ABD5C00AD569C /* Angles.swift in Sources */,
 				9D4058061D7DE9D0002C4571 /* AMKButton.swift in Sources */,
 				9DD823DA1D87325D003B2FAC /* String+Extension.swift in Sources */,
@@ -440,6 +459,7 @@
 				9D4058141D7F1D55002C4571 /* AMKButton+Delegate.swift in Sources */,
 				9D1F1D0B1D81F3EE00DF41E6 /* AMKEncoder.swift in Sources */,
 				9DFDC46C1DCBD03B00785F9F /* AMKLabel+Touch.swift in Sources */,
+				9D3527991E4258BF00AF6801 /* AMKScroller+Var.swift in Sources */,
 				9D483D3F1D9AAD1100AD569C /* AMKSuperView.swift in Sources */,
 				9D483D411D9AAE9100AD569C /* AMKSuperView+Gradient.swift in Sources */,
 				9DAFBBB31E40D0E5003E20CF /* AMKSuperView+Shadow.swift in Sources */,

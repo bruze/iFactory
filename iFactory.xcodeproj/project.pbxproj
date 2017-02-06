@@ -45,6 +45,8 @@
 		9D483D5A1D9BFB6000AD569C /* AMKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D483D591D9BFB6000AD569C /* AMKLabel.swift */; };
 		9D483D5C1D9BFD5E00AD569C /* AMKLabel+ArcText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D483D5B1D9BFD5E00AD569C /* AMKLabel+ArcText.swift */; };
 		9D483D5E1D9C130400AD569C /* UILabel+ArcText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D483D5D1D9C130400AD569C /* UILabel+ArcText.swift */; };
+		9D67076C1E47FAC000A9DB3B /* CGPoint+Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D67076B1E47FAC000A9DB3B /* CGPoint+Encrypt.swift */; };
+		9D67076E1E47FEEC00A9DB3B /* CGRect+Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D67076D1E47FEEC00A9DB3B /* CGRect+Encrypt.swift */; };
 		9D6E84621D8879B9007A6E4C /* AMKButton+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E84611D8879B9007A6E4C /* AMKButton+Animation.swift */; };
 		9D7BD50B1DC7C244005FC81D /* AMKLabel+Inspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7BD50A1DC7C244005FC81D /* AMKLabel+Inspectable.swift */; };
 		9D7BD50D1DC7C386005FC81D /* AMKLabel+Var.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7BD50C1DC7C386005FC81D /* AMKLabel+Var.swift */; };
@@ -115,6 +117,8 @@
 		9D483D591D9BFB6000AD569C /* AMKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AMKLabel.swift; path = View/AMKLabel/AMKLabel.swift; sourceTree = "<group>"; };
 		9D483D5B1D9BFD5E00AD569C /* AMKLabel+ArcText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKLabel+ArcText.swift"; path = "View/AMKLabel/AMKLabel+ArcText.swift"; sourceTree = "<group>"; };
 		9D483D5D1D9C130400AD569C /* UILabel+ArcText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UILabel+ArcText.swift"; path = "Tool/UILabel+ArcText.swift"; sourceTree = "<group>"; };
+		9D67076B1E47FAC000A9DB3B /* CGPoint+Encrypt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGPoint+Encrypt.swift"; path = "Tool/CGPoint+Encrypt.swift"; sourceTree = "<group>"; };
+		9D67076D1E47FEEC00A9DB3B /* CGRect+Encrypt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGRect+Encrypt.swift"; path = "Tool/CGRect+Encrypt.swift"; sourceTree = "<group>"; };
 		9D6E84611D8879B9007A6E4C /* AMKButton+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKButton+Animation.swift"; path = "View/AMKButton+Animation.swift"; sourceTree = "<group>"; };
 		9D7BD50A1DC7C244005FC81D /* AMKLabel+Inspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKLabel+Inspectable.swift"; path = "View/AMKLabel/AMKLabel+Inspectable.swift"; sourceTree = "<group>"; };
 		9D7BD50C1DC7C386005FC81D /* AMKLabel+Var.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKLabel+Var.swift"; path = "View/AMKLabel/AMKLabel+Var.swift"; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 				9D483D4C1D9ABFF700AD569C /* Image+Ext.swift */,
 				9D483D561D9B10A500AD569C /* CGPoint+Aritmetic.swift */,
 				9D483D5D1D9C130400AD569C /* UILabel+ArcText.swift */,
+				9D67076B1E47FAC000A9DB3B /* CGPoint+Encrypt.swift */,
+				9D67076D1E47FEEC00A9DB3B /* CGRect+Encrypt.swift */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -435,6 +441,7 @@
 				9D1F1CFB1D804E3E00DF41E6 /* AMKButton+KVO.swift in Sources */,
 				9D3527951E42547A00AF6801 /* AMKScroller.swift in Sources */,
 				9D1F1CFD1D805B6300DF41E6 /* AMKButton+Persistence.swift in Sources */,
+				9D67076E1E47FEEC00A9DB3B /* CGRect+Encrypt.swift in Sources */,
 				9D2D8E071E3FB5440056C571 /* AMKCarousel+Indicator.swift in Sources */,
 				9D1F1D0F1D8201F400DF41E6 /* AMKEncoder+Extension.swift in Sources */,
 				9D483D5E1D9C130400AD569C /* UILabel+ArcText.swift in Sources */,
@@ -458,6 +465,7 @@
 				9D483D5C1D9BFD5E00AD569C /* AMKLabel+ArcText.swift in Sources */,
 				9D4058141D7F1D55002C4571 /* AMKButton+Delegate.swift in Sources */,
 				9D1F1D0B1D81F3EE00DF41E6 /* AMKEncoder.swift in Sources */,
+				9D67076C1E47FAC000A9DB3B /* CGPoint+Encrypt.swift in Sources */,
 				9DFDC46C1DCBD03B00785F9F /* AMKLabel+Touch.swift in Sources */,
 				9D3527991E4258BF00AF6801 /* AMKScroller+Var.swift in Sources */,
 				9D483D3F1D9AAD1100AD569C /* AMKSuperView.swift in Sources */,

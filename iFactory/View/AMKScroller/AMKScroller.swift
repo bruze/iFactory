@@ -22,54 +22,66 @@ class AMKScroller: UIView {
     }
     func initialize() {
         /*center = CGPoint.init(x: w / 2, y: h / 2)*/
-        clipsToBounds = true
+        clipsToBounds = false
         backgroundColor = UIColor.red
         //actions["default"] = defaultAction
         addGestureRecognizer(gesture)
     }
-    func defaultAction(down: Bool) {
-        var decreaser = CGFloat(-10)
-        if down {
-            decreaser = 10
+    func scroll(moves: [Direction]) {
+        //CHECKS
+        var moves = moves
+        let checkScroll = ScrollModeOperators[.normalize]!(self, moves)
+        for move in moves {
+            if !checkScroll[move]! {
+                moves.removeObject(move)
+            }
         }
-        let first = subviews.first!
-        let last = subviews.last!
-        if !(last.frame.y + decreaser < maxYSubviews) {
-            canScrollDown = false
-        } else if !(first.frame.y + decreaser > -maxYSubviews) {
-            canScrollUp = false
-        }
-        if (down && !canScrollDown) || (!down && !canScrollUp) {
+        guard moves.count > 0 else {
+            scrolling.toggle()
             return
         }
+        //PERFORM MOVES
         for sv in subviews {
-            var f = sv.frame
-            let newY = f.y + decreaser
-            f.y = newY
-            /*animate(animations: {
-                sv.frame = f
-            })*/
-            animate(animations: { 
-                sv.frame = f
+            animate(duration: TimeInterval(dragSpeed), animations: {
+                for move in moves {
+                    ScrollOperations[move]!(self, sv, move.isHMove() ? self.deltaDrag.x : self.deltaDrag.y)
+                }
             }, completion: { (completed) in
-                if completed {
-                    self.canScrollDown = true
-                    self.canScrollUp = true
+                if sv == self.subviews.last {
+                    self.scrolling.toggle()
                 }
             })
         }
     }
-    func didPan(recognizer: UIPanGestureRecognizer) {
-        let translation = recognizer.translation(in: self)
-        if translation.y > 0 {
-            if !canScrollUp {
-                return
-            }
-        } else {
-            if !canScrollDown {
-                return
-            }
+    func check(View view: UIView, For move: Direction) -> Bool {
+        switch move {
+        case .down:
+            return view == topView
+        case .left:
+            return view == leftView
+        case .right:
+            return view == rightView
+        case .up:
+            return view == botView
         }
-        defaultAction(down: translation.y < 0)
+    }
+    func didPan(recognizer: UIPanGestureRecognizer) {
+        if !scrolling {
+            scrolling.toggle()
+            //////////////////////////////////////////////////
+            let translation = recognizer.translation(in: self)
+            var setMoves: [Direction] = []
+            if translation.y > 0 {
+                setMoves.append(.up)
+            } else if translation.y < 0 {
+                setMoves.append(.down)
+            }
+            if translation.x > 0 {
+                setMoves.append(.left)
+            } else if translation.x < 0 {
+                setMoves.append(.right)
+            }
+            scroll(moves: setMoves)
+        }
     }
 }

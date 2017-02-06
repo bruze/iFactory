@@ -13,9 +13,31 @@ let bundle = Bundle.main
 let fileMan = FileManager.default
 let noti = NotificationCenter.default
 //////////////////////////////////
+let emptyPoint = CGPoint.init()
+let emptyRect = CGRect.init()
 let emptyLayer = CALayer.init()
 let emptyImage = UIImage.init()
+let emptyView  = UIView.init()
 let emptyImageView = UIImageView.init()
+//////////////////////////////////
+enum Direction: Int {
+    case left = 0
+    case right = 1
+    case up = 2
+    case down = 4
+    func isHMove() -> Bool {
+        return self == .left || self == .right
+    }
+    func isVMove() -> Bool {
+        return !isHMove()
+    }
+}
+enum ScrollMode {
+    case normalize
+    case customOffset
+    case autoOffset
+}
+//////////////////////////////////
 public struct Global {
     enum RLMove {
         case right

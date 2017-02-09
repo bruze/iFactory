@@ -16,58 +16,48 @@ internal let defaultScrollAllowed: ScrollAllowed = [
 internal let ScrollOperations: [Direction: (_ view: AMKScroller,_ subview: UIView,_ offset: CGFloat)->()] =
     [.left: {view,subview,off in
             var setValue = subview.frame.x - off
-            let right = view.rightView
-            if right == subview && setValue < 0 {
-                setValue = 0
+            if view.rightView.x < view.rightEdge {
+                setValue = subview.frame.x - 0.25
             }
-            subview.frame.x = setValue; return},
-     .right: {view,subview,off in
+            subview.frame.x = setValue
+            },
+     .right:{view,subview,off in
             var setValue = subview.frame.x + off
-            let left = view.leftView
-            if left == subview && setValue + subview.frame.w > view.w {
-                setValue = view.w - subview.frame.w
+            if view.leftView.x >= view.leftEdge {
+                setValue = subview.frame.x + 0.25
             }
-            subview.frame.x = setValue; return},
-     .up: {view,subview,off in
+            subview.frame.x = setValue
+            },
+     .up:   {view,subview,off in
             var setValue = subview.frame.y - off
-            let bot = view.botView
-            if bot == subview && setValue < 0 {
-                setValue = 0
+            if view.botView.y < view.botEdge {
+                setValue = subview.frame.y - 0.25
             }
-            subview.frame.y = setValue; return},
+            subview.frame.y = setValue
+            },
      .down: {view,subview,off in
             var setValue = subview.frame.y + off
-            let top = view.topView
-            if top == subview && setValue + subview.frame.h > view.h {
-                setValue = view.h - subview.frame.h
+            if view.topView.y >= view.topEdge {
+                setValue = subview.frame.y + 0.25
             }
-            subview.frame.y = setValue; return}]
+            subview.frame.y = setValue
+            }]
 internal let ScrollModeOperators: [ScrollMode: (_ view: AMKScroller, _ moves: [Direction])->ScrollAllowed] = [
     .normalize: {view,moves in
         var result = defaultScrollAllowed
-        let first = view.topView//view.subviews.first!
-        let last = view.botView//view.subviews.last!
-        //if !(last.frame.y + decreaser < maxYSubviews) {
-        if first.frame.y >= 0 {
+        let first = view.topView
+        let last = view.botView
+        if first.frame.y >= /*0 + view.scrollOffsets.y + view.bounceOffsets.y*/view.topBorder {
             result[.down] = false
-            //} else if !(first.frame.y + decreaser > -maxYSubviews) {
-        } else if last.frame.y + last.size.height <= view.size.height {
+        } else if last.frame.y + last.size.height <= /*view.size.height - view.scrollOffsets.y - view.bounceOffsets.h*/view.botBorder {
             result[.up] = false
         }
         let left = view.leftView
         let right = view.rightView
-        if right.frame.x + right.size.width >= view.size.width {
-            result[.right] = false
-        } else if left.frame.x <= 0 {
+        if right.frame.x <= /*0 - view.scrollOffsets.x - view.bounceOffsets.x*/view.leftBorder {
             result[.left] = false
-            /*if let superView = view.superview {
-                let coord = superView.convert(left.frame, to: superView)
-                print(coord)
-                print(view.rightView)
-                if coord.x <= -view.w {
-                    result[.left] = false
-                }
-            }*/
+        } else if left.x + left.w > /*view.w + view.scrollOffsets.w + view.bounceOffsets.w*/view.rightBorder {
+            result[.right] = false
         }
         return result},
     .customOffset: {view,moves in
@@ -86,6 +76,48 @@ internal let ScrollModeOperators: [ScrollMode: (_ view: AMKScroller, _ moves: [D
         return result},
     .autoOffset: {_ in return [:]}]
 extension AMKScroller {
+    //MARK: Edges
+    var topEdge: CGFloat {
+        get {
+            return scrollOffsets.y
+        }
+    }
+    var botEdge: CGFloat {
+        get {
+            return size.height - scrollOffsets.y
+        }
+    }
+    var leftEdge: CGFloat {
+        get {
+            return -scrollOffsets.x
+        }
+    }
+    var rightEdge: CGFloat {
+        get {
+            return w + scrollOffsets.w
+        }
+    }
+    //MARK: Borders
+    var topBorder: CGFloat {
+        get {
+            return scrollOffsets.y + bounceOffsets.y
+        }
+    }
+    var botBorder: CGFloat {
+        get {
+            return size.height - scrollOffsets.y - bounceOffsets.h
+        }
+    }
+    var leftBorder: CGFloat {
+        get {
+            return -scrollOffsets.x + -bounceOffsets.x
+        }
+    }
+    var rightBorder: CGFloat {
+        get {
+            return w + scrollOffsets.w + bounceOffsets.w
+        }
+    }
     //MARK: Subviews
     var topView: UIView {
         get {
@@ -209,6 +241,38 @@ extension AMKScroller {
             set(associatedValue: newValue, key: "scrollOffsets", object: self)
         }
     }
+    var bounceOffsets: CGRect {
+        get {
+            return getAssociatedValue(key: "bounceOffsets", object: self, initialValue: emptyRect)
+        }
+        set {
+            set(associatedValue: newValue, key: "bounceOffsets", object: self)
+        }
+    }
+    var sensibility: CGRect {
+        get {
+            return getAssociatedValue(key: "sensibility", object: self, initialValue: emptyRect)
+        }
+        set {
+            set(associatedValue: newValue, key: "sensibility", object: self)
+        }
+    }
+    var scrollAnchor: CGPoint {
+        get {
+            return getAssociatedValue(key: "scrollAnchor", object: self, initialValue: emptyPoint)
+        }
+        set {
+            set(associatedValue: newValue, key: "scrollAnchor", object: self)
+        }
+    }
+    var animator: UIDynamicAnimator {
+        get {
+            return getAssociatedValue(key: "animator", object: self, initialValue: UIDynamicAnimator.init(referenceView: self))
+        }
+        set {
+            set(associatedValue: newValue, key: "animator", object: self)
+        }
+    }
 }
 extension AMKScroller {
     //MARK: Inspectable
@@ -229,11 +293,20 @@ extension AMKScroller {
     }
     @IBInspectable var extendOffsetsLTRB: String {
         get {
-            return getAssociatedValue(key: "extendOffsetsLTRB", object: self, initialValue: "50|100")
+            return getAssociatedValue(key: "extendOffsetsLTRB", object: self, initialValue: "0|0|0|0")
         }
         set {
             set(associatedValue: newValue, key: "extendOffsetsLTRB", object: self)
             scrollOffsets = CGRect.loadFromEncrypted(Chain: extendOffsetsLTRB)
+        }
+    }
+    @IBInspectable var bounceOffsetsLTRB: String {
+        get {
+            return getAssociatedValue(key: "bounceOffsetsLTRB", object: self, initialValue: "0|0|0|0")
+        }
+        set {
+            set(associatedValue: newValue, key: "bounceOffsetsLTRB", object: self)
+            bounceOffsets = CGRect.loadFromEncrypted(Chain: bounceOffsetsLTRB)
         }
     }
     @IBInspectable var deltaDragXY: String {
@@ -251,6 +324,15 @@ extension AMKScroller {
         }
         set {
             set(associatedValue: newValue, key: "dragSpeed", object: self)
+        }
+    }
+    @IBInspectable var sensibilityLTRB: String {
+        get {
+            return getAssociatedValue(key: "sensibilityLTRB", object: self, initialValue: "1|-1|-1|1")
+        }
+        set {
+            set(associatedValue: newValue, key: "sensibilityLTRB", object: self)
+            sensibility = CGRect.loadFromEncrypted(Chain: sensibilityLTRB)
         }
     }
 }

@@ -13,6 +13,8 @@ let bundle = Bundle.main
 let fileMan = FileManager.default
 let noti = NotificationCenter.default
 //////////////////////////////////
+let emptyEncryptPoint = "0|0"
+let emptyEncryptRect = "0|0|0|0"
 let emptyPoint = CGPoint.init()
 let emptyRect = CGRect.init()
 let emptyLayer = CALayer.init()

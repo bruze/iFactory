@@ -53,6 +53,7 @@
 		9D806DF51E4101A4004D6504 /* AMKSuperView+Var.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D806DF41E4101A4004D6504 /* AMKSuperView+Var.swift */; };
 		9D806DF71E4102C7004D6504 /* AMKSuperView+Override.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D806DF61E4102C7004D6504 /* AMKSuperView+Override.swift */; };
 		9D806DF91E411570004D6504 /* AMKSuperView+Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D806DF81E411570004D6504 /* AMKSuperView+Alignment.swift */; };
+		9D9975C31E4BB0D4000D151B /* AMKScroller+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9975C21E4BB0D4000D151B /* AMKScroller+Touch.swift */; };
 		9DAFBBB31E40D0E5003E20CF /* AMKSuperView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAFBBB21E40D0E5003E20CF /* AMKSuperView+Shadow.swift */; };
 		9DC069EA1DAE8B4700A7CD05 /* 1212.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DC069E81DAE8B4700A7CD05 /* 1212.plist */; };
 		9DC069EC1DAE8C0400A7CD05 /* amk in Resources */ = {isa = PBXBuildFile; fileRef = 9DC069EB1DAE8C0400A7CD05 /* amk */; };
@@ -125,6 +126,7 @@
 		9D806DF41E4101A4004D6504 /* AMKSuperView+Var.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKSuperView+Var.swift"; path = "View/AMKSuperView/AMKSuperView+Var.swift"; sourceTree = "<group>"; };
 		9D806DF61E4102C7004D6504 /* AMKSuperView+Override.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKSuperView+Override.swift"; path = "View/AMKSuperView/AMKSuperView+Override.swift"; sourceTree = "<group>"; };
 		9D806DF81E411570004D6504 /* AMKSuperView+Alignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKSuperView+Alignment.swift"; path = "View/AMKSuperView/AMKSuperView+Alignment.swift"; sourceTree = "<group>"; };
+		9D9975C21E4BB0D4000D151B /* AMKScroller+Touch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKScroller+Touch.swift"; path = "View/AMKScroller/AMKScroller+Touch.swift"; sourceTree = "<group>"; };
 		9DAFBBB21E40D0E5003E20CF /* AMKSuperView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AMKSuperView+Shadow.swift"; path = "View/AMKSuperView/AMKSuperView+Shadow.swift"; sourceTree = "<group>"; };
 		9DC069E91DAE8B4700A7CD05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/1212.plist; sourceTree = "<group>"; };
 		9DC069EB1DAE8C0400A7CD05 /* amk */ = {isa = PBXFileReference; lastKnownFileType = folder; path = amk; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		9D3527931E42545400AF6801 /* AMKScroller */ = {
 			isa = PBXGroup;
 			children = (
+				9D9975C21E4BB0D4000D151B /* AMKScroller+Touch.swift */,
 				9D3527941E42547A00AF6801 /* AMKScroller.swift */,
 				9D3527961E4255C200AF6801 /* AMKScroller+Override.swift */,
 				9D3527981E4258BF00AF6801 /* AMKScroller+Var.swift */,
@@ -334,7 +337,7 @@
 					amk,
 				);
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Bruno Garelli";
 				TargetAttributes = {
 					9D4057EE1D7DE8A8002C4571 = {
@@ -435,6 +438,7 @@
 				9D483D4F1D9AEAE300AD569C /* AMKSuperView+KVO.swift in Sources */,
 				9D2D8E091E3FB5440056C571 /* AMKCarousel.swift in Sources */,
 				9D806DF71E4102C7004D6504 /* AMKSuperView+Override.swift in Sources */,
+				9D9975C31E4BB0D4000D151B /* AMKScroller+Touch.swift in Sources */,
 				9D483D5A1D9BFB6000AD569C /* AMKLabel.swift in Sources */,
 				9D806DF91E411570004D6504 /* AMKSuperView+Alignment.swift in Sources */,
 				9D483D431D9AAF0900AD569C /* UIColor+Ext.swift in Sources */,

@@ -19,12 +19,17 @@ extension AMKScroller {
         if let firstTouch = touches.first {
             let movePoint = firstTouch.location(in: self)
             let deltaPoint = movePoint.substract(scrollAnchor)
-            //deltaDrag = deltaPoint
+            scrollSpeed = 
             scroll(moves: movesFor(Translation: deltaPoint))
         }
     }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
+        if let firstTouch = touches.first {
+            let movePoint = firstTouch.location(in: self)
+            let deltaPoint = movePoint.substract(scrollAnchor)
+            print(deltaPoint)
+        }
         let topBorder = scrollOffsets.y + bounceOffsets.y
         if topView.frame.y >= topEdge {
             scrolling.toggle()

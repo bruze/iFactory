@@ -48,7 +48,7 @@ class AMKScroller: UIView {
                 break
             }*/
             for move in moves {
-                ScrollOperations[move]!(self, sv, move.isHMove() ? self.deltaDrag.x : self.deltaDrag.y)
+                ScrollOperations[move]!(self, sv, move.isHMove() ? self.deltaDrag.x : self.deltaDrag.y, scrollSpeed)
             }
             /*animate(duration: TimeInterval(dragSpeed), animations: {
                 for move in moves {

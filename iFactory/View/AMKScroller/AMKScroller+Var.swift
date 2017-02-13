@@ -13,30 +13,34 @@ internal let defaultScrollAllowed: ScrollAllowed = [
     .up: true,
     .down: true
     ]
-internal let ScrollOperations: [Direction: (_ view: AMKScroller,_ subview: UIView,_ offset: CGFloat)->()] =
-    [.left: {view,subview,off in
-            var setValue = subview.frame.x - off
-            if view.rightView.x < view.rightEdge {
-                setValue = subview.frame.x - 0.25
+internal let ScrollOperations: [Direction: (_ view: AMKScroller,_ subview: UIView,_ offset: CGFloat,_ speed: CGFloat)->()] =
+    [.left: {view,subview,off,speed in
+            let offset = off / speed
+            var setValue = subview.frame.x - offset
+            if view.rightView.x + view.rightView.w < view.rightEdge {
+                //setValue = subview.frame.x - 0.25
             }
             subview.frame.x = setValue
             },
-     .right:{view,subview,off in
-            var setValue = subview.frame.x + off
+     .right:{view,subview,off,speed in
+            let offset = off / speed
+            var setValue = subview.frame.x + offset
             if view.leftView.x >= view.leftEdge {
                 setValue = subview.frame.x + 0.25
             }
             subview.frame.x = setValue
             },
-     .up:   {view,subview,off in
-            var setValue = subview.frame.y - off
-            if view.botView.y < view.botEdge {
+     .up:   {view,subview,off,speed in
+            let offset = off / speed
+            var setValue = subview.frame.y - offset
+            if view.botView.y + view.botView.h < view.botEdge {
                 setValue = subview.frame.y - 0.25
             }
             subview.frame.y = setValue
             },
-     .down: {view,subview,off in
-            var setValue = subview.frame.y + off
+     .down: {view,subview,off,speed in
+            let offset = off / speed
+            var setValue = subview.frame.y + offset
             if view.topView.y >= view.topEdge {
                 setValue = subview.frame.y + 0.25
             }
@@ -263,6 +267,14 @@ extension AMKScroller {
         }
         set {
             set(associatedValue: newValue, key: "scrollAnchor", object: self)
+        }
+    }
+    var scrollSpeed: CGFloat {
+        get {
+            return getAssociatedValue(key: "scrollSpeed", object: self, initialValue: 1.0)
+        }
+        set {
+            set(associatedValue: newValue, key: "scrollSpeed", object: self)
         }
     }
     var animator: UIDynamicAnimator {

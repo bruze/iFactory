@@ -19,7 +19,7 @@ extension AMKScroller {
         if let firstTouch = touches.first {
             let movePoint = firstTouch.location(in: self)
             let deltaPoint = movePoint.substract(scrollAnchor)
-            scrollSpeed = 
+            scrollSpeed = max(abs(deltaPoint.x) / w, abs(deltaPoint.y) / h)
             scroll(moves: movesFor(Translation: deltaPoint))
         }
     }

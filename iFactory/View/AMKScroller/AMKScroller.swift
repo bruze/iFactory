@@ -29,13 +29,13 @@ class AMKScroller: UIView {
     }
     func scroll(moves: [Direction]) {
         //CHECKS
-        /*var moves = moves
+        var moves = moves
         let checkScroll = ScrollModeOperators[.normalize]!(self, moves)
         for move in moves {
             if !checkScroll[move]! {
                 moves.removeObject(move)
             }
-        }*/
+        }
         guard moves.count > 0 else {
             scrolling.toggle()
             return
@@ -66,7 +66,7 @@ class AMKScroller: UIView {
         }
         scrolling.toggle()
     }
-    func check(View view: UIView, For move: Direction) -> Bool {
+    /*func check(View view: UIView, For move: Direction) -> Bool {
         switch move {
         case .down:
             return view == topView
@@ -77,7 +77,7 @@ class AMKScroller: UIView {
         case .up:
             return view == botView
         }
-    }
+    }*/
     func movesFor(Translation translation: CGPoint) -> [Direction] {
         var setMoves: [Direction] = []
         if translation.y > /*60*/sensibility.h {
@@ -92,13 +92,13 @@ class AMKScroller: UIView {
         }
         return setMoves
     }
-    func didPan(recognizer: UIPanGestureRecognizer) {
+    /*func didPan(recognizer: UIPanGestureRecognizer) {
         if !scrolling {
             scrolling.toggle()
             //////////////////////////////////////////////////
             let translation = recognizer.translation(in: self)
             let speed = recognizer.velocity(in: self)
-            print(speed)
+            //print(speed)
             /*var setMoves: [Direction] = []
             if translation.y > 60 {
                 setMoves.append(.down)
@@ -112,5 +112,5 @@ class AMKScroller: UIView {
             }*/
             scroll(moves: movesFor(Translation: translation))
         }
-    }
+    }*/
 }

@@ -165,14 +165,14 @@ extension AMKScroller {
             set(associatedValue: newValue, key: "actions", object: self)
         }
     }
-    var gesture: UIPanGestureRecognizer {
+    /*var gesture: UIPanGestureRecognizer {
         get {
             return getAssociatedValue(key: "gesture", object: self, initialValue: UIPanGestureRecognizer.init(target: self, action: #selector(didPan)))
         }
         set {
             set(associatedValue: newValue, key: "gesture", object: self)
         }
-    }
+    }*/
     var maxYSubviews: CGFloat {
         get {
             return getAssociatedValue(key: "maxYSubviews", object: self, initialValue: 0)

@@ -25,11 +25,11 @@ extension AMKScroller {
     }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        if let firstTouch = touches.first {
+        /*if let firstTouch = touches.first {
             let movePoint = firstTouch.location(in: self)
             let deltaPoint = movePoint.substract(scrollAnchor)
-            print(deltaPoint)
-        }
+            //print(deltaPoint)
+        }*/
         let topBorder = scrollOffsets.y + bounceOffsets.y
         if topView.frame.y >= topEdge {
             scrolling.toggle()
@@ -43,24 +43,24 @@ extension AMKScroller {
                     } else {
                         view.frame.y -= diff
                     }
-                    print(view.frame)
+                    //print(view.frame)
                 }
             }, completion: { (completed) in
-                self.interpolate(&self.topView, topBorder)
+                self.interpolateY(&self.topView, topBorder)
             })
         }
     }
-    func interpolate(_ view: inout UIView, _ d: CGFloat) {
+    func interpolateY(_ view: inout UIView, _ d: CGFloat) {
         var view = view
         if abs(d) <= 5 {
             self.scrolling.toggle()
-            print(view.frame)
+            //print(view.frame)
             view.frame.y = self.topEdge//scrollOffsets.y + bounceOffsets.y
         } else {
             animate(duration: 0.1, animations: { 
                 view.frame.y += d
             }, completion: { (completed) in
-                self.interpolate(&view, -d/2)
+                self.interpolateY(&view, -d/2)
             })
         }
     }

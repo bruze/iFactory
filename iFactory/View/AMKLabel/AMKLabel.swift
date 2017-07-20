@@ -40,20 +40,21 @@ class AMKLabel: UIView, XMLParserDelegate {
     }
     /*override func didMoveToSuperview() {
     }*/
-    /*override func didMoveToWindow() {
-        #if TARGET_INTERFACE_BUILDER
+    override func didMoveToWindow() {
+        /*#if TARGET_INTERFACE_BUILDER
             if !storeLoaded {
-                let path = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Overlays/amk/\(storeID).plist"
+                /*let path = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Overlays/amk/\(storeID).plist"*/
+                let path = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Overlays/amk/" + "fontDescription1" + ".plist"
                 if fileMan.fileExistsAtPath(path) {
                     let entityData = NSDictionary.init(contentsOfFile: path)
                     decode(entityData!)
                     storeLoaded = true
                 }
             }
-            if let _ = label {
+            /*if let _ = label {
                 drawRect(frame)
-            }
-        #else
+            }*/
+        #else*/
             if !storeLoaded {
                 if let path = bundle.path(forResource: storeID + ".plist", ofType: nil, inDirectory: "amk") {
                     let entityData = NSDictionary.init(contentsOfFile: path)
@@ -61,8 +62,8 @@ class AMKLabel: UIView, XMLParserDelegate {
                     storeLoaded = true
                 }
             }
-        #endif
-    }*/
+        //#endif
+    }
     func reloadAMKConfig() {
         if let path = bundle.path(forResource: storeID + ".plist", ofType: nil, inDirectory: "amk") {
             let entityData = NSDictionary.init(contentsOfFile: path)
@@ -76,12 +77,28 @@ class AMKLabel: UIView, XMLParserDelegate {
         }*/
     }
     override func decode(_ data: NSDictionary) {
-        text = (data["text"]! as AnyObject).str()
-        textColor = overrideStoredTextColor ? overrideTextColor : colorFromStoredInfo((data["textColor"]! as AnyObject).str())
-        let fontName = (data["fontName"]! as AnyObject).str()
+        //text = (data["text"]! as AnyObject).str()
+        if let rawData = data["textColor"] {
+            textColor = overrideStoredTextColor ? overrideTextColor : colorFromStoredInfo(any2(obj: rawData, cast2: String.self))
+        } else {
+            textColor = overrideStoredTextColor ? overrideTextColor : colorFromStoredInfoDict(data)
+        }
+        /*textColor = overrideStoredTextColor ? overrideTextColor : colorFromStoredInfo((data["textColor"]! as AnyObject).str())*/
+        
+        var fontName = "System"
+        if let rawName = data["fontName"] {
+            fontName = any2(obj: rawName, cast2: String.self)
+        } else {
+            if let rawName = data["name"] {
+                fontName = any2(obj: rawName, cast2: String.self)
+            }
+        }
         //let family = UIFont.fontNamesForFamilyName(fontName)
         textFont = fontFromStoredInfo(fontName)//UIFont.init(name: fontName + "- Bold", size: 16)!
-        setNeedsDisplay()
+        //setNeedsDisplay()
+    }
+    func colorFromStoredInfoDict(_ info: NSDictionary) -> UIColor {
+        return UIColor.init(r: any2(obj: info["red"]!, cast2: String.self).toFloat()!.cg(), g: any2(obj: info["green"]!, cast2: String.self).toFloat()!.cg(), b: any2(obj: info["blue"]!, cast2: String.self).toFloat()!.cg(), a: any2(obj: info["alpha"]!, cast2: String.self).toFloat()!.cg())
     }
     func colorFromStoredInfo(_ infoColor: String) -> UIColor {
         var result = UIColor.clear
@@ -104,6 +121,14 @@ class AMKLabel: UIView, XMLParserDelegate {
     }
     func obtenerFamiliaFuente(_ chequeando: inout [String], componentes: inout [String]) -> String {
         let flatted = chequeando.flatString(" ")
+        /*for family: String in UIFont.familyNames
+        {
+            print("\(family)")
+            for names: String in UIFont.fontNames(forFamilyName: family)
+            {
+                print("== \(names)")
+            }
+        }*/
         let fonts = UIFont.fontNames(forFamilyName: flatted)
         if fonts.count > 0 {
             return flatted
@@ -135,8 +160,62 @@ class AMKLabel: UIView, XMLParserDelegate {
                 }
             }
         } else {
-            var components = infoFont.components(separatedBy: " ")
-            var checking = [components.removeFirst()]
+            let components = infoFont.components(separatedBy: " ")
+            for str in UIFont.familyNames {
+                var maxCoincidence = 0
+                var storeMatches: [(Int, String)] = []
+                for comp in UIFont.fontNames(forFamilyName: str) {
+                    var coincidences = 0
+                    let lower1 = infoFont.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "-", with: "").lowercased()
+                    let lower2 = comp.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "-", with: "").lowercased()
+                    if lower1 == lower2 {
+                        return UIFont.init(name: comp, size: overrideStoredTextSize ? overrideTextSize : 16)!
+                    } else {
+                        for anotherComp in components {
+                            if comp.contains(anotherComp) {
+                                coincidences += 1
+                            }
+                        }
+                        if coincidences > maxCoincidence {
+                            storeMatches.append((coincidences, comp))
+                            maxCoincidence = coincidences
+                        }
+                    }
+                    if let resultFont = storeMatches/*.sorted(by: { (obj, obj2) -> Bool in
+                        if obj.0 == obj2.0 {
+                            return obj.1.length > obj2.1.length
+                        } else {
+                            return obj.0 > obj2.0
+                        }
+                    })*/.first {
+                        return UIFont.init(name: resultFont.1, size: overrideStoredTextSize ? overrideTextSize : 16)!
+                    }
+                    /*if lower1 == lower2  {
+                        found = comp
+                    } else if lower1.contains(lower2) {
+                        if lower2.length > found.length {
+                            found = comp
+                            coincidences += 1
+                        }
+                    }*/
+                    /*if infoFont.contains(comp) {
+                        coincidences += 1
+                        found += comp + "+"
+                        //print(str)
+                    }*/
+                }
+                
+            }
+            /*if !found.isEmpty {
+                for comp in infoFont.lowercased().components(separatedBy: "-") {
+                    if found.contains(comp) {
+                        print(comp)
+                    }
+                }
+            } else {
+               print()
+            }*/
+            /*var checking = [components.removeFirst()]
             let familyName = obtenerFamiliaFuente(&checking, componentes: &components)
             if familyName.isEmpty {
                 return systemResult
@@ -155,7 +234,7 @@ class AMKLabel: UIView, XMLParserDelegate {
                         return systemResult
                     }
                 }
-            }
+            }*/
         }
         return systemResult
     }

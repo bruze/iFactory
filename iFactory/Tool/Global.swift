@@ -40,6 +40,10 @@ enum ScrollMode {
     case autoOffset
 }
 //////////////////////////////////
+func any2<T>(obj: Any, cast2: T.Type) -> T {
+    return (obj as? T)!
+}
+//////////////////////////////////
 public struct Global {
     enum RLMove {
         case right

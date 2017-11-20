@@ -98,7 +98,13 @@ class AMKLabel: UIView, XMLParserDelegate {
         //setNeedsDisplay()
     }
     func colorFromStoredInfoDict(_ info: NSDictionary) -> UIColor {
-        return UIColor.init(r: any2(obj: info["red"]!, cast2: String.self).toFloat()!.cg(), g: any2(obj: info["green"]!, cast2: String.self).toFloat()!.cg(), b: any2(obj: info["blue"]!, cast2: String.self).toFloat()!.cg(), a: any2(obj: info["alpha"]!, cast2: String.self).toFloat()!.cg())
+        /*return UIColor.init(r: any2(obj: info["red"]!, cast2: NSString.self).floatValue.cg(), g: any2(obj: info["green"]!, cast2: NSString.self).floatValue.cg(), b: any2(obj: info["blue"]!, cast2: NSString.self).floatValue.cg(), a: any2(obj: info["alpha"]!, cast2: NSString.self).floatValue.cg())*/
+        let unsaf = UnsafeMutablePointer<CGFloat>.allocate(capacity: 4)
+        unsaf[0] = CGFloat((info["red"] as! String).toFloat()!.cg())
+        unsaf[1] = CGFloat((info["green"] as! String).toFloat()!.cg())
+        unsaf[2] = CGFloat((info["blue"] as! String).toFloat()!.cg())
+        unsaf[3] = CGFloat((info["alpha"] as! String).toFloat()!.cg())
+        return UIColor.init(red: unsaf[0], green: unsaf[1], blue: unsaf[2], alpha: unsaf[3])
     }
     func colorFromStoredInfo(_ infoColor: String) -> UIColor {
         var result = UIColor.clear

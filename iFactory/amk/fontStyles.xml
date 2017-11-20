@@ -1,0 +1,63 @@
+﻿<?xml version="1.0"?>
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<!--!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"-->
+<Styles>
+    <Style name="Title1">
+      <stylename>Title1</stylename>
+      <family>System</family>
+	    <fontName>System</fontName>
+	    <pointSize>37</pointSize>
+	    <text>Label</text>
+      <!--NSCustomColorSpace HD 709-A colorspace 0.898039 0.772549 0.341176 1-->
+	    <textColor>
+        <Color>
+          <Red>0.898039</Red>
+          <Green>0.772549</Green>
+          <Blue>0.341176</Blue>
+          <Alpha>1</Alpha>
+        </Color>
+      </textColor>
+	    <type>1</type>
+	    <weightCategory>0</weightCategory>
+	   </Style>
+     <Style name="FontDesc1">
+      <stylename>FontDesc1</stylename>
+      <family>Hoefler Text</family>
+ 	    <fontName>HoeflerText-BlackItalic</fontName>
+ 	    <pointSize>35</pointSize>
+ 	    <text>Label</text>
+      <textColor>
+        <Color>
+          <Red>0.815383</Red>
+          <Green>0.866374</Green>
+          <Blue>0.992960</Blue>
+          <Alpha>1</Alpha>
+        </Color>
+      </textColor>
+ 	    <type>1</type>
+ 	    <weightCategory>0</weightCategory>
+ 	   </Style>
+
+	<!--FontDescription1>
+	<key>alpha</key>
+	<string>1</string>
+	<key>blue</key>
+	<string>0.99296019855054407</string>
+	<key>colorSpace</key>
+	<string>custom</string>
+	<key>customColorSpace</key>
+	<string>sRGB</string>
+	<key>family</key>
+	<string>Hoefler Text</string>
+	<key>green</key>
+	<string>0.86637479026845643</string>
+	<key>key</key>
+	<string>textColor</string>
+	<key>name</key>
+	<string>HoeflerText-BlackItalic</string>
+	<key>pointSize</key>
+	<string>35</string>
+	<key>red</key>
+	<string>0.81538380872483196</string>
+</FontDescription1-->
+</Styles>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>alpha</key>
+	<string>1</string>
+	<key>blue</key>
+	<string>0.99296019855054407</string>
+	<key>colorSpace</key>
+	<string>custom</string>
+	<key>customColorSpace</key>
+	<string>sRGB</string>
+	<key>family</key>
+	<string>Hoefler Text</string>
+	<key>green</key>
+	<string>0.86637479026845643</string>
+	<key>key</key>
+	<string>textColor</string>
+	<key>name</key>
+	<string>HoeflerText-BlackItalic</string>
+	<key>pointSize</key>
+	<string>35</string>
+	<key>red</key>
+	<string>0.81538380872483196</string>
+</dict>
+</plist>
